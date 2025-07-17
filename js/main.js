@@ -1,6 +1,11 @@
+// Load environment variables
+const EMAILJS_PUBLIC_KEY = process.env.EMAILJS_PUBLIC_KEY;
+const EMAILJS_SERVICE_ID = process.env.EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = process.env.EMAILJS_TEMPLATE_ID;
+
 // Initialize EmailJS with error handling
 try {
-    emailjs.init("BbFvNI4fNDPUdSSRs"); // Public key
+    emailjs.init(EMAILJS_PUBLIC_KEY);
 } catch (error) {
     console.error('EmailJS initialization failed:', error);
     document.getElementById('contact-form').innerHTML = '<div class="p-4 bg-red-100 border border-red-400 text-red-700 rounded">Contact form temporarily unavailable. Please email me directly at babashir8811@gmail.com</div>';
@@ -114,11 +119,9 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
         message: document.getElementById('message').value
     };
 
-    // Send email using EmailJS with proper configuration
-    const serviceID = 'service_l7pwlsp';    // Your EmailJS service ID
-    const templateID = 'template_23q705u';  // Your EmailJS template ID
-
-    // Add template parameters
+            // Send email using EmailJS with environment variables
+            const serviceID = EMAILJS_SERVICE_ID;
+            const templateID = EMAILJS_TEMPLATE_ID;    // Add template parameters
     const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
