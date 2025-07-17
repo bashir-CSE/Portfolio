@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD Bashir Ahmed - IT Professional Portfolio</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon"
+        href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iOCIgZmlsbD0iIzAzMDIxMyIvPgo8dGV4dCB4PSIxNiIgeT0iMjIiIGZvcnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5CPC90ZXh0Pgo8L3N2Zz4K">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- typify -->
+    <script src="https://unpkg.com/typify.js@1.1.9/dist/typify.min.js"></script>
+</head>
+
+<body class="min-h-screen">
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progress-bar"></div>
+
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur" role="banner">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold">MD Bashir Ahmed</h1>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#home" class="nav-link hover:text-blue-600 transition-colors">Home</a>
+                    <a href="#about" class="nav-link hover:text-blue-600 transition-colors">About</a>
+                    <a href="#experience" class="nav-link hover:text-blue-600 transition-colors">Experience</a>
+                    <a href="#projects" class="nav-link hover:text-blue-600 transition-colors">Projects</a>
+                    <a href="#contact" class="nav-link hover:text-blue-600 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Social Links -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="https://www.linkedin.com/in/bashir-6923131b0" target="_blank" rel="noopener noreferrer"
+                        class="social-icon text-gray-600 hover:text-blue-600 transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                        <span class="sr-only">LinkedIn Profile</span>
+                    </a>
+                    <a href="https://github.com/bashir-CSE" target="_blank" rel="noopener noreferrer"
+                        class="social-icon text-gray-600 hover:text-blue-600 transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                        <span class="sr-only">GitHub Profile</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors">
+                    <i id="menu-icon" class="fas fa-bars text-xl"></i>
+                    <i id="close-icon" class="fas fa-times text-xl hidden"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="mobile-menu md:hidden py-4 border-t">
+                <nav class="flex flex-col space-y-2">
+                    <a href="#home" class="text-left py-2 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="#about" class="text-left py-2 hover:text-blue-600 transition-colors">About</a>
+                    <a href="#experience" class="text-left py-2 hover:text-blue-600 transition-colors">Experience</a>
+                    <a href="#projects" class="text-left py-2 hover:text-blue-600 transition-colors">Projects</a>
+                    <a href="#blog" class="text-left py-2 hover:text-blue-600 transition-colors">Blog</a>
+                    <a href="#contact" class="text-left py-2 hover:text-blue-600 transition-colors">Contact</a>
+                    <div class="flex items-center space-x-4 pt-4">
+                        <a href="https://www.linkedin.com/in/bashir-6923131b0" target="_blank" rel="noopener noreferrer"
+                            class="social-icon text-gray-600 hover:text-blue-600 transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="https://github.com/bashir-CSE" target="_blank" rel="noopener noreferrer"
+                            class="social-icon text-gray-600 hover:text-blue-600 transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-16 lg:py-24 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="heroBG/vecteezy_a-minimal-contemporary-interior-featuring-a-plant-in-a_57338552.jpg"
+                alt="Hero Background" class="w-full h-full object-cover">
+        </div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center">
+                <div data-aos="fade-up">
+                    <h1 class="text-4xl lg:text-6xl mb-6 font-bold text-white">MD Bashir Ahmed</h1>
+                    <p class="text-xl lg:text-2xl text-white mb-8 max-w-3xl mx-auto" id="typify-text"></p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="300">
+                    <a href="#contact"
+                        class="btn-primary px-8 py-3 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors">
+                        <i class="fas fa-envelope mr-2"></i>Get In Touch
+                    </a>
+                    <a href="#projects"
+                        class="btn-outline px-8 py-3 font-medium rounded-lg hover:bg-gray-50 transition-colors">
+                        <i class="fas fa-eye mr-2"></i>View Projects
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold" data-aos="fade-up">About Me</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="card p-6 mb-8 shadow-sm" data-aos="fade-right" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-user-tie text-2xl text-blue-600 mr-3"></i>
+                        <h3 class="text-xl font-semibold">Professional Summary</h3>
+                    </div>
+                    <p class="text-lg leading-relaxed text-gray-700">
+                        Detail-oriented IT graduate with expertise in data analysis, reporting, and system support.
+                        Proficient in Power BI, Excel, Power Query, and Google Apps Script for actionable insights
+                        and automation. Skilled in database management, IT operations, and documentation.
+                    </p>
+                </div>
+
+                <div class="card p-6 shadow-sm" data-aos="fade-left" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-code text-2xl text-blue-600 mr-3"></i>
+                        <h3 class="text-xl font-semibold">Key Skills</h3>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                        <span class="badge px-3 py-2 text-sm font-medium text-center rounded-md">
+                            <i class="fas fa-chart-bar mr-1"></i>Power BI
+                        </span>
+                        <span class="badge px-3 py-2 text-sm font-medium text-center rounded-md">
+                            <i class="fas fa-file-excel mr-1"></i>Advanced Excel
+                        </span>
+                        <span class="badge px-3 py-2 text-sm font-medium text-center rounded-md">
+                            <i class="fas fa-search mr-1"></i>Power Query
+                        </span>
+                        <span class="badge px-3 py-2 text-sm font-medium text-center rounded-md">
+                            <i class="fab fa-google mr-1"></i>Google Apps Script
+                        </span>
+                        <span class="badge px-3 py-2 text-sm font-medium text-center rounded-md">
+                            <i class="fab fa-python mr-1"></i>Python
+                        </span>
+                        <span class="badge px-3 py-2 text-sm font-medium text-center rounded-md">
+                            <i class="fas fa-database mr-1"></i>SQL
+                        </span>
+                        <span class="badge px-3 py-2 text-sm font-medium text-center rounded-md">
+                            <i class="fas fa-server mr-1"></i>Oracle ERP
+                        </span>
+                        <span class="badge px-3 py-2 text-sm font-medium text-center rounded-md">
+                            <i class="fab fa-microsoft mr-1"></i>Microsoft 365
+                        </span>
+                        <span class="badge px-3 py-2 text-sm font-medium text-center rounded-md">
+                            <i class="fab fa-google mr-1"></i>Google Workspace
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold" data-aos="fade-up">Experience</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Current Position -->
+                    <div class="card p-6 shadow-sm" data-aos="fade-left">
+                        <div class="flex flex-col mb-4">
+                            <h3 class="text-xl font-semibold flex items-center">
+                                <i class="fas fa-chart-line text-red-600 mr-2"></i>Officer - IT Operations
+                            </h3>
+                            <p class="text-lg text-gray-600">Aloha Bangladesh</p>
+                            <div class="flex items-center text-sm text-gray-500 mt-1">
+                                <i class="fas fa-map-marker-alt mr-1"></i>
+                                <span>Dhaka</span>
+                                <span class="mx-2">|</span>
+                                <i class="fas fa-calendar-alt mr-1"></i>
+                                <span>Nov 2024 - Present</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Managed Student Database Management
+                                systems</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Created comprehensive Power BI
+                                dashboards</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Automated processes using Google Apps
+                                Script</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Provided technical IT support and
+                                training</li>
+                        </ul>
+                    </div>
+
+                    <!-- Internship Position -->
+                    <div class="card p-6 shadow-sm" data-aos="fade-right" data-aos-delay="300">
+                        <div class="flex flex-col mb-4">
+                            <h3 class="text-xl font-semibold flex items-center">
+                                <i class="fas fa-laptop-code text-purple-600 mr-2"></i>Intern - ERP & Production
+                                Planning
+                            </h3>
+                            <p class="text-lg text-gray-600">DB Trims, DBL Group</p>
+                            <div class="flex items-center text-sm text-gray-500 mt-1">
+                                <i class="fas fa-map-marker-alt mr-1"></i>
+                                <span>Gazipur</span>
+                                <span class="mx-2">|</span>
+                                <i class="fas fa-calendar-alt mr-1"></i>
+                                <span>Apr 2024 - Jul 2024</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Supported Oracle ERP data management and
+                                maintenance</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Prepared analytical reports using Excel
+                                and Power Query</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Optimized business processes through
+                                data analysis</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Collaborated with cross-functional teams
+                                on production planning</li>
+                        </ul>
+                    </div>
+
+                    <!-- Assistant Admin Position -->
+                    <div class="card p-6 shadow-sm" data-aos="fade-right" data-aos-delay="100">
+                        <div class="flex flex-col mb-4">
+                            <h3 class="text-xl font-semibold flex items-center">
+                                <i class="fas fa-building text-blue-600 mr-2"></i>Assistant Admin
+                            </h3>
+                            <p class="text-lg text-gray-600">Corus Knit Composite Ltd.</p>
+                            <div class="flex items-center text-sm text-gray-500 mt-1">
+                                <i class="fas fa-map-marker-alt mr-1"></i>
+                                <span>Gazipur</span>
+                                <span class="mx-2">|</span>
+                                <i class="fas fa-calendar-alt mr-1"></i>
+                                <span>Apr 2024 – May 2024</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Assisted HR and admin functions using
+                                Excel and digital tools</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Supported shift planning and document
+                                control</li>
+                        </ul>
+                    </div>
+
+                    <!-- Teaching Position -->
+                    <div class="card p-6 shadow-sm" data-aos="fade-left" data-aos-delay="200">
+                        <div class="flex flex-col mb-4">
+                            <h3 class="text-xl font-semibold flex items-center">
+                                <i class="fas fa-chalkboard-teacher text-green-600 mr-2"></i>Assistant ICT Teacher
+                            </h3>
+                            <p class="text-lg text-gray-600">Amin Model Town School and College</p>
+                            <div class="flex items-center text-sm text-gray-500 mt-1">
+                                <i class="fas fa-map-marker-alt mr-1"></i>
+                                <span>Savar</span>
+                                <span class="mx-2">|</span>
+                                <i class="fas fa-calendar-alt mr-1"></i>
+                                <span>Jan 2024 – Mar 2024</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Taught Class 11 ICT curriculum and basic
+                                computer skills</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Conducted assessments and supported
+                                extracurricular tech activities</li>
+                        </ul>
+                    </div>
+
+                    
+
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold" data-aos="fade-up">Projects</h2>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+                <div class="card p-6 shadow-sm" data-aos="fade-right" data-aos-delay="100">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-chart-line text-2xl text-blue-600 mr-3"></i>
+                        <h3 class="text-xl font-semibold">Student Data Analytics Dashboard</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Power BI • Aloha Bangladesh</p>
+                    <p class="text-gray-700 mb-4">
+                        Comprehensive Power BI dashboard analyzing student enrollment trends,
+                        performance metrics, and demographic insights for strategic decision-making.
+                    </p>
+                    <div class="flex items-center text-sm">
+                        <span class="badge-outline px-2 py-1 text-xs font-medium rounded mr-2">Power BI</span>
+                        <span class="badge-outline px-2 py-1 text-xs font-medium rounded">Data Analysis</span>
+                    </div>
+                </div>
+
+                <div class="card p-6 shadow-sm" data-aos="fade-left" data-aos-delay="200">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-users text-2xl text-green-600 mr-3"></i>
+                        <h3 class="text-xl font-semibold">HR Data Analysis System</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Excel • Power Query • DBL Group</p>
+                    <p class="text-gray-700 mb-4">
+                        Advanced Excel-based HR analytics solution using Power Query for
+                        automated data processing and comprehensive reporting during ERP internship.
+                    </p>
+                    <div class="flex items-center text-sm">
+                        <span class="badge-outline px-2 py-1 text-xs font-medium rounded mr-2">Excel</span>
+                        <span class="badge-outline px-2 py-1 text-xs font-medium rounded">Power Query</span>
+                    </div>
+                </div>
+
+                <div class="card p-6 shadow-sm" data-aos="fade-right" data-aos-delay="300">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-robot text-2xl text-purple-600 mr-3"></i>
+                        <h3 class="text-xl font-semibold">Process Automation Scripts</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Google Apps Script • Automation</p>
+                    <p class="text-gray-700 mb-4">
+                        Automated data extraction and validation processes using Google Apps Script,
+                        reducing manual work by 60% and improving data accuracy.
+                    </p>
+                    <div class="flex items-center text-sm">
+                        <span class="badge-outline px-2 py-1 text-xs font-medium rounded mr-2">Google Apps Script</span>
+                        <span class="badge-outline px-2 py-1 text-xs font-medium rounded">Automation</span>
+                    </div>
+                </div>
+
+                <div class="card p-6 shadow-sm" data-aos="fade-left" data-aos-delay="400">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-database text-2xl text-red-600 mr-3"></i>
+                        <h3 class="text-xl font-semibold">Database Management Solutions</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">SQL • Oracle ERP • Database Design</p>
+                    <p class="text-gray-700 mb-4">
+                        Developed and maintained database solutions for student information systems,
+                        ensuring data integrity and optimized query performance.
+                    </p>
+                    <div class="flex items-center text-sm">
+                        <span class="badge-outline px-2 py-1 text-xs font-medium rounded mr-2">SQL</span>
+                        <span class="badge-outline px-2 py-1 text-xs font-medium rounded">Database Design</span>
+                    </div>
+                </div>
+            </div>
+
+           
+        </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold" data-aos="fade-up">Education &amp;
+                Certifications</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- Education -->
+                    <div class="card p-6 shadow-sm" data-aos="fade-right" data-aos-delay="100">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-graduation-cap text-2xl text-blue-600 mr-3"></i>
+                            <h3 class="text-xl font-semibold">Education</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-medium">B.Sc. in Computer Science and Engineering</h4>
+                                <p class="text-gray-600">Gono Bishwabidyalay • 2018-2022 • GPA: 3.34</p>
+                            </div>
+                            <hr class="border-gray-200">
+                            <div>
+                                <h4 class="font-medium">Higher Secondary Certificate (HSC)</h4>
+                                <p class="text-gray-600">MEH Arif College • 2017 • GPA: 4.50</p>
+                            </div>
+                            <hr class="border-gray-200">
+                            <div>
+                                <h4 class="font-medium">Secondary School Certificate (SSC)</h4>
+                                <p class="text-gray-600">Baidgaon High School • 2015 • GPA: 4.86</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="card p-6 shadow-sm" data-aos="fade-left" data-aos-delay="200">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-certificate text-2xl text-green-600 mr-3"></i>
+                            <h3 class="text-xl font-semibold">Certifications (2024)</h3>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-award text-yellow-500 mt-1 mr-3"></i>
+                                <span>Excel Basics for Data Analysis</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-award text-yellow-500 mt-1 mr-3"></i>
+                                <span>Programming in Python</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-award text-yellow-500 mt-1 mr-3"></i>
+                                <span>Technical Support Fundamentals</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-award text-yellow-500 mt-1 mr-3"></i>
+                                <span>Foundations of Cybersecurity</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities & Volunteering -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold" data-aos="fade-up">Activities &amp;
+                Volunteering</h2>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-6">
+                <div class="card p-6 shadow-sm" data-aos="fade-right" data-aos-delay="100">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-user-tie text-2xl text-blue-600 mr-3"></i>
+                        <h3 class="text-lg font-semibold">Executive Member</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">GBPC</p>
+                    <p class="text-gray-700">
+                        Delivered comprehensive training sessions on Excel, Python, HTML/CSS to students and
+                        professionals.
+                    </p>
+                </div>
+
+                <div class="card p-6 shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-users text-2xl text-green-600 mr-3"></i>
+                        <h3 class="text-lg font-semibold">Member</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">BASIS Students' Chapter</p>
+                    <p class="text-gray-700">
+                        Active participation in professional development activities and technology-focused initiatives.
+                    </p>
+                </div>
+
+                <div class="card p-6 shadow-sm" data-aos="fade-left" data-aos-delay="300">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-heart text-2xl text-red-600 mr-3"></i>
+                        <h3 class="text-lg font-semibold">Volunteer</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Blood Plus</p>
+                    <p class="text-gray-700">
+                        Organized and participated in 4+ blood donation drives, contributing to community health
+                        initiatives.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendations Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold" data-aos="fade-up">Recommendations</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Recommendation 1 -->
+                    <div class="card p-6 shadow-sm" data-aos="fade-right" data-aos-delay="100">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-quote-left text-3xl text-blue-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-700 text-lg mb-4">"Bashir was quick to learn ERP data operations and
+                                    demonstrated great attention to detail during his internship."</p>
+                                <div class="flex items-center">
+                                    <div>
+                                        <p class="font-semibold text-gray-800">Indican Islam</p>
+                                        <p class="text-gray-600">Lead Production Planning, DBL Group</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation 2 -->
+                    <div class="card p-6 shadow-sm" data-aos="fade-left" data-aos-delay="200">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-quote-left text-3xl text-blue-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-700 text-lg mb-4">"He is highly proactive and supportive when it
+                                    comes to technical issues and system maintenance."</p>
+                                <div class="flex items-center">
+                                    <div>
+                                        <p class="font-semibold text-gray-800">Supervisor</p>
+                                        <p class="text-gray-600">Unicom Education Consultant Services Ltd.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold" data-aos="fade-up">Get In Touch</h2>
+            <div class="max-w-4xl mx-auto grid lg:grid-cols-2 gap-8">
+                <!-- Contact Information -->
+                <div class="card p-6 shadow-sm" data-aos="fade-right" data-aos-delay="100">
+                    <h3 class="text-xl font-semibold text-center mb-2">Contact Information</h3>
+                    <p class="text-gray-600 text-center mb-6">
+                        Let's connect and discuss opportunities
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-phone text-xl text-blue-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">Phone</p>
+                                <a href="tel:+8801793761605"
+                                    class="text-gray-600 hover:text-blue-600 transition-colors">
+                                    +880 1793 761605
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-3">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-envelope text-xl text-blue-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">Email</p>
+                                <a href="mailto:babashir8811@gmail.com"
+                                    class="text-gray-600 hover:text-blue-600 transition-colors">
+                                    babashir8811@gmail.com
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-3">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-xl text-blue-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">Present Address</p>
+                                <p class="text-gray-600">Dhanmondi, Jigatola, Road 4/A, House 13/9, Dhaka</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-3">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-home text-xl text-blue-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">Permanent Address</p>
+                                <p class="text-gray-600">Koltasuti, BKSP, Zirani, Savar, Dhaka</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-3">
+                            <div class="flex-shrink-0">
+                                <i class="fab fa-linkedin text-xl text-blue-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">LinkedIn</p>
+                                <a href="https://www.linkedin.com/in/bashir-6923131b0" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-gray-600 hover:text-blue-600 transition-colors">
+                                    www.linkedin.com/in/bashir-6923131b0
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-3">
+                            <div class="flex-shrink-0">
+                                <i class="fab fa-github text-xl text-blue-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">GitHub</p>
+                                <a href="https://github.com/bashir-CSE" target="_blank" rel="noopener noreferrer"
+                                    class="text-gray-600 hover:text-blue-600 transition-colors">
+                                    github.com/bashir-CSE
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="card p-6 shadow-sm" data-aos="fade-left" data-aos-delay="200">
+                    <h3 class="text-xl font-semibold mb-4">Send Me a Message</h3>
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium mb-1">Name *</label>
+                            <input type="text" id="name" name="name" required class="form-input">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-1">Email *</label>
+                            <input type="email" id="email" name="email" required class="form-input"
+                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                title="Please enter a valid email address">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium mb-1">Subject *</label>
+                            <input type="text" id="subject" name="subject" required class="form-input">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-1">Message *</label>
+                            <textarea id="message" name="message" rows="4" required
+                                class="form-input resize-none"></textarea>
+                        </div>
+                        <button type="submit" id="submit-btn"
+                            class="btn-primary w-full px-6 py-3 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors">
+                            <span id="btn-text">
+                                <i class="fas fa-paper-plane mr-2"></i>Send Message
+                            </span>
+                            <span id="btn-loading" class="hidden">
+                                <span class="spinner inline-block mr-2"></span>Sending...
+                            </span>
+                        </button>
+                    </form>
+                    <div id="form-message" class="mt-4 hidden"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Structure -->
+    <div id="projectModal" class="modal-overlay">
+        <div class="modal">
+            <button class="modal-close">&times;</button>
+            <h2 id="modalTitle" class="text-2xl font-bold mb-4"></h2>
+            <div id="modalContent" class="space-y-4">
+                <!-- Content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t py-8 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-gray-600">
+                <p>&copy; 2025 MD Bashir Ahmed ❤. All rights reserved.</p>
+                <p class="mt-2">Built with HTML, CSS and Tailwind CSS</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <!-- JavaScript Libraries -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/typify.js@1.1.9/dist/typify.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
