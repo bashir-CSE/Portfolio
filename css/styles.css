@@ -324,3 +324,31 @@ textarea:focus-visible {
     z-index: 9999;
     transition: width 0.3s ease;
 }
+
+/* Scroll to Top Button */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: #2563eb; /* Corresponds to Tailwind's bg-blue-600 */
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+}
+.scroll-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}

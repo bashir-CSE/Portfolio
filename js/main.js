@@ -203,27 +203,21 @@ const initProjectHandlers = () => {
             const title = card.querySelector('h3').textContent;
             const description = card.getAttribute('data-description');
             const images = card.getAttribute('data-images');
-            
-            let content = `
-                <p class="mb-4">${description}</p>
-                ${images ? `<img src="${images}" alt="${title}" class="rounded-lg shadow-md mb-4">` : ''}
-                <div class="flex gap-4">
-                    <a href="#" class="download-btn">View Live</a>
-                    <a href="#" class="download-btn">View Code</a>
-                </div>
-            `;
-            
-            modal.show(title, content);
-        });
-    });
-};
+            const liveLink = card.getAttribute('data-live-link');
+            const codeLink = card.getAttribute('data-code-link');
 
-// Initialize AOS
-const initAOS = () => {
-    AOS.init({
-        duration: 800,
-        once: true,
-        delay: 0
+            if (liveLink || codeLink) {
+                let content = `
+                    <p class="mb-4">${description}</p>
+                    ${images ? `<img src="${images}" alt="${title}" class="rounded-lg shadow-md mb-4">` : ''}
+                    <div class="flex gap-4">
+                        ${liveLink ? `<a href="${liveLink}" target="_blank" class="download-btn">View Live</a>` : ''}
+                        ${codeLink ? `<a href="${codeLink}" target="_blank" class="download-btn">View Code</a>` : ''}
+                    </div>
+                `;
+                modal.show(title, content);
+            }
+        });
     });
 };
 
@@ -246,10 +240,33 @@ const initTyping = () => {
     return new Typed('#typed-text', options);
 };
 
+// Scroll to Top functionality
+const initScrollToTop = () => {
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    if (!scrollTopBtn) return;
+
+    // Show or hide the button based on scroll position
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) { // Show after 300px of scrolling
+            scrollTopBtn.classList.add('visible');
+        } else {
+            scrollTopBtn.classList.remove('visible');
+        }
+    });
+
+    // Scroll to the top when the button is clicked
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+};
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    initAOS();
     initTyping();
     modal.init();
     initProjectHandlers();
+    initScrollToTop();
 });
