@@ -1,15 +1,16 @@
-// Load environment variables
-const EMAILJS_PUBLIC_KEY = process.env.EMAILJS_PUBLIC_KEY;
-const EMAILJS_SERVICE_ID = process.env.EMAILJS_SERVICE_ID;
-const EMAILJS_TEMPLATE_ID = process.env.EMAILJS_TEMPLATE_ID;
-
 // Initialize EmailJS with error handling
-try {
-    emailjs.init(EMAILJS_PUBLIC_KEY);
-} catch (error) {
-    console.error('EmailJS initialization failed:', error);
-    document.getElementById('contact-form').innerHTML = '<div class="p-4 bg-red-100 border border-red-400 text-red-700 rounded">Contact form temporarily unavailable. Please email me directly at babashir8811@gmail.com</div>';
-}
+(function() {
+    emailjs.init({
+        publicKey: "BbFvNI4fNDPUdSSRs",
+        blockHeadless: false,
+        limitRate: {
+            timeout: 1500
+        },
+        globalVariables: {
+            defaultToEmail: 'babashir8811@gmail.com'
+        }
+    });
+})();
 
 // Mobile menu functionality
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -119,15 +120,19 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
         message: document.getElementById('message').value
     };
 
-            // Send email using EmailJS with environment variables
-            const serviceID = EMAILJS_SERVICE_ID;
-            const templateID = EMAILJS_TEMPLATE_ID;    // Add template parameters
+    // Send email using EmailJS with proper configuration
+    const serviceID = 'service_l7pwlsp';    // Your EmailJS service ID
+    const templateID = 'template_23q705u';  // Your EmailJS template ID
+
+    // Add template parameters - make sure these match EXACTLY with your EmailJS template variables
     const templateParams = {
+        to_name: 'MD Bashir Ahmed',
+        to_email: 'babashir8811@gmail.com',
         from_name: formData.name,
         from_email: formData.email,
-        subject: formData.subject,
+        reply_to: formData.email,
         message: formData.message,
-        to_name: 'MD Bashir Ahmed'  // Your name as the recipient
+        subject: formData.subject
     };
 
     emailjs.send(serviceID, templateID, templateParams)
@@ -224,18 +229,21 @@ const initAOS = () => {
 
 // Initialize Typing Animation
 const initTyping = () => {
-    return new Typed('#typed-text', {
+    const options = {
         strings: [
-            "Detail-Oriented Information Technology Professional",
+            " Detail-Oriented Information Technology Professional",
             "Specializing in Data Analysis and System Automation",
             "Transforming Data into Actionable Insights"
         ],
-        typeSpeed: 50,
-        backSpeed: 30,
-        backDelay: 1500,
-        startDelay: 1000,
-        loop: true
-    });
+        typeSpeed: 30,
+        backSpeed: 15,
+        backDelay: 100,
+        startDelay: 0,
+        loop: true,
+        showCursor: true,
+        cursorChar: ''
+    };
+    return new Typed('#typed-text', options);
 };
 
 // Initialize everything when DOM is loaded
