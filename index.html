@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MD Bashir Ahmed - IT Professional Portfolio</title>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon"
-        href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iOCIgZmlsbD0iIzAzMDIxMyIvPgo8dGV4dCB4PSIxNiIgeT0iMjIiIGZvcnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5CPC90ZXh0Pgo8L3N2Zz4K">
-
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -25,11 +21,14 @@
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- typify -->
-    <script src="https://unpkg.com/typify.js@1.1.9/dist/typify.min.js"></script>
 </head>
 
 <body class="min-h-screen">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
     <!-- Progress Bar -->
     <div class="progress-bar" id="progress-bar"></div>
 
@@ -38,16 +37,17 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between">
                 <div class="flex items-center">
-                    <h1 class="text-xl font-bold">MD Bashir Ahmed</h1>
+                    <h1 class="text-xl font-bold logo-gradient">MD Bashir Ahmed</h1>
                 </div>
 
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex items-center space-x-6">
-                    <a href="#home" class="nav-link hover:text-blue-600 transition-colors">Home</a>
-                    <a href="#about" class="nav-link hover:text-blue-600 transition-colors">About</a>
-                    <a href="#experience" class="nav-link hover:text-blue-600 transition-colors">Experience</a>
-                    <a href="#projects" class="nav-link hover:text-blue-600 transition-colors">Projects</a>
-                    <a href="#contact" class="nav-link hover:text-blue-600 transition-colors">Contact</a>
+                    <a href="#home" class="nav-link font-bold hover:text-blue-600 transition-colors">Home</a>
+                    <a href="#about" class="nav-link font-bold hover:text-blue-600 transition-colors">About</a>
+                    <a href="#experience" class="nav-link font-bold hover:text-blue-600 transition-colors">Experience</a>
+                    <a href="#projects" class="nav-link font-bold hover:text-blue-600 transition-colors">Projects</a>
+                    <a href="#learning" class="nav-link font-bold hover:text-blue-600 transition-colors">Learning</a>
+                    <a href="#contact" class="nav-link font-bold hover:text-blue-600 transition-colors">Contact</a>
                 </nav>
 
                 <!-- Social Links -->
@@ -78,7 +78,7 @@
                     <a href="#about" class="text-left py-2 hover:text-blue-600 transition-colors">About</a>
                     <a href="#experience" class="text-left py-2 hover:text-blue-600 transition-colors">Experience</a>
                     <a href="#projects" class="text-left py-2 hover:text-blue-600 transition-colors">Projects</a>
-                    <a href="#blog" class="text-left py-2 hover:text-blue-600 transition-colors">Blog</a>
+                    <a href="#learning" class="text-left py-2 hover:text-blue-600 transition-colors">Learning</a>
                     <a href="#contact" class="text-left py-2 hover:text-blue-600 transition-colors">Contact</a>
                     <div class="flex items-center space-x-4 pt-4">
                         <a href="https://www.linkedin.com/in/bashir-6923131b0" target="_blank" rel="noopener noreferrer"
@@ -96,27 +96,23 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="py-16 h-[50vh] lg:h-[100vh] relative overflow-hidden">
-        <div class="absolute inset-0">
-            <img src="heroBG/vecteezy_a-minimal-contemporary-interior-featuring-a-plant-in-a_57338552.jpg"
-                alt="Hero Background" class="w-full h-full object-cover">
-        </div>
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative flex items-center justify-center h-full">
+    <section id="home" class="py-16 h-[50vh] lg:h-[100vh] relative overflow-hidden bg-gray-900">
+        <div id="particles-js" class="absolute inset-0"></div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative flex items-center justify-center h-full z-10">
             <div class="text-center">
                 <div data-aos="zoom-in-right">
                     <h1 class="text-4xl lg:text-6xl mb-6 font-bold text-white">MD Bashir Ahmed</h1>
                     <p class="text-xl lg:text-2xl text-white mb-8 max-w-3xl mx-auto" id="typed-text"></p>
-                    <span class="typed-cursor"> </span>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="zoom-in-left" data-aos-delay="300">
-                    <a href="https://docs.google.com/document/d/1UVzJH8TB3A4bp8JS7foTl2y2dy-_oqfh/export?format=pdf"
-                        download="MD Bashir Ahmed - Resume.pdf"
-                        class="btn-primary px-8 py-3 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors">
-                        <i class="fas fa-envelope mr-2"></i>Get In Touch
+                    <a href="resume/MD_Bashir_Ahmed_Resume.pdf"
+                        download="MD_Bashir_Ahmed_Resume.pdf"
+                        class="btn-primary px-8 py-3 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors flex items-center justify-center">
+                        <i class="fas fa-download mr-2"></i>Download Resume
                     </a>
-                    <a href="#projects"
-                        class="btn-outline px-8 py-3 font-medium rounded-lg hover:bg-gray-50 transition-colors">
-                        <i class="fas fa-eye mr-2"></i>View Projects
+                    <a href="#contact"
+                        class="btn-outline px-8 py-3 font-medium rounded-lg hover:bg-gray-50 transition-colors flex items-center justify-center">
+                        <i class="fas fa-paper-plane mr-2"></i>Contact Me
                     </a>
                 </div>
             </div>
@@ -179,6 +175,51 @@
         </div>
     </section>
 
+    <!-- Technical Skills Section -->
+    <section id="skills" class="py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold" data-aos="zoom-in">Technical Skills</h2>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                <div class="skill-item" data-aos="fade-up">
+                    <div class="flex justify-between mb-1">
+                        <span class="font-medium">Power BI & Data Analysis</span>
+                        <span class="text-sm font-medium skill-percentage" data-goal="90">0%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex justify-between mb-1">
+                        <span class="font-medium">Advanced Excel & Power Query</span>
+                        <span class="text-sm font-medium skill-percentage" data-goal="95">0%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-between mb-1">
+                        <span class="font-medium">Google Apps Script & Automation</span>
+                        <span class="text-sm font-medium skill-percentage" data-goal="85">0%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex justify-between mb-1">
+                        <span class="font-medium">SQL & Database Management</span>
+                        <span class="text-sm font-medium skill-percentage" data-goal="80">0%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="80%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Experience Section -->
     <section id="experience" class="py-16">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -197,12 +238,11 @@
                                 <span>Dhaka</span>
                                 <span class="mx-2">|</span>
                                 <i class="fas fa-calendar-alt mr-1"></i>
-                                <span>Nov 2024 - Present</span>
+                                <span>Nov 2023 - Present</span>
                             </div>
                         </div>
                         <ul class="space-y-2 text-gray-600">
-                            <li><i class="fas fa-check text-green-500 mr-2"></i>Managed Student Database Management
-                                systems</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Managed student database systems</li>
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Created comprehensive Power BI
                                 dashboards</li>
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Automated processes using Google Apps
@@ -252,7 +292,7 @@
                                 <span>Gazipur</span>
                                 <span class="mx-2">|</span>
                                 <i class="fas fa-calendar-alt mr-1"></i>
-                                <span>Apr 2024 – May 2024</span>
+                                <span>Apr 2023 – May 2023</span>
                             </div>
                         </div>
                         <ul class="space-y-2 text-gray-600">
@@ -424,6 +464,61 @@
                             </li>
                         </ul>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Currently Learning Section -->
+    <section id="learning" class="py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold" data-aos="zoom-in">Currently Learning</h2>
+            <p class="text-center text-lg text-gray-600 max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">
+                I'm always eager to expand my skillset and am continuously exploring the AI world. Here are some of the
+                technologies and concepts I'm currently focused on.
+            </p>
+            <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
+                <!-- Learning Item 1 -->
+                <div class="card p-6 shadow-sm" data-aos="zoom-in-up" data-aos-delay="200">
+                    <div class="text-4xl text-blue-600 mb-3">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold">AIoT</h3>
+                </div>
+                <!-- Learning Item 2 -->
+                <div class="card p-6 shadow-sm" data-aos="zoom-in-up" data-aos-delay="300">
+                    <div class="text-4xl text-blue-600 mb-3">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold">Advanced Python</h3>
+                </div>
+                <!-- Learning Item 3 -->
+                <div class="card p-6 shadow-sm" data-aos="zoom-in-up" data-aos-delay="400">
+                    <div class="text-4xl text-blue-600 mb-3">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold">Machine Learning</h3>
+                </div>
+                <!-- Learning Item 4 -->
+                <div class="card p-6 shadow-sm" data-aos="zoom-in-up" data-aos-delay="500">
+                    <div class="text-4xl text-blue-600 mb-3">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold">Data Structures & Algorithms</h3>
+                </div>
+                <!-- Learning Item 5 -->
+                <div class="card p-6 shadow-sm" data-aos="zoom-in-up" data-aos-delay="600">
+                    <div class="text-4xl text-blue-600 mb-3">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold">English Proficiency</h3>
+                </div>
+                <!-- Learning Item 6 -->
+                <div class="card p-6 shadow-sm" data-aos="zoom-in-up" data-aos-delay="700">
+                    <div class="text-4xl text-blue-600 mb-3">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold">AI Exploration</h3>
                 </div>
             </div>
         </div>
@@ -647,26 +742,31 @@
         </div>
     </section>
 
-    <!-- Modal Structure -->
-    <div id="projectModal" class="modal-overlay">
-        <div class="modal">
-            <button class="modal-close">&times;</button>
-            <h2 id="modalTitle" class="text-2xl font-bold mb-4"></h2>
-            <div id="modalContent" class="space-y-4">
-                <!-- Content will be dynamically inserted here -->
-            </div>
-        </div>
-    </div>
-
     <!-- Footer -->
-    <footer class="border-t py-8 bg-white">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center text-gray-600">
-                <p>&copy; 2024 MD Bashir Ahmed ❤. All rights reserved.</p>
-                <p class="mt-2">Built with HTML, CSS and Tailwind CSS</p>
-            </div>
+    <footer class="text-gray-600 body-font border-t bg-white">
+        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+            <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:py-2 sm:mt-0 mt-4">
+                © 2024 MD Bashir Ahmed —
+                <a href="https://github.com/bashir-CSE" class="text-gray-600 ml-1" rel="noopener noreferrer"
+                    target="_blank">@bashir-CSE</a>
+            </p>
+            <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+                <a href="https://github.com/bashir-CSE" target="_blank" rel="noopener noreferrer"
+                    class="text-gray-500 hover:text-gray-900 transition-colors">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/bashir-6923131b0" target="_blank" rel="noopener noreferrer"
+                    class="ml-3 text-gray-500 hover:text-gray-900 transition-colors">
+                    <i class="fab fa-linkedin text-xl"></i>
+                </a>
+            </span>
         </div>
     </footer>
+
+    <!-- Floating Contact Button -->
+    <a href="#contact" title="Contact Me" class="floating-contact-btn">
+        <i class="fas fa-envelope"></i>
+    </a>
 
     <!-- Scroll to Top Button -->
     <button id="scrollTopBtn" title="Go to top" class="scroll-top-btn">
@@ -675,6 +775,7 @@
 
     <!-- JavaScript -->
     <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -682,10 +783,17 @@
     <script src="js/main.js"></script>
 
     <script>
+        // Initialize Particles.js
+        particlesJS.load('particles-js', 'particles.json', function() {
+            console.log('callback - particles.js config loaded');
+        });
+
+        // Initialize Animate On Scroll (AOS)
         AOS.init({
-            delay: 500,
-            duration: 1000,
+            delay: 100,
+            duration: 500,
         });
     </script>
 </body>
+
 </html>

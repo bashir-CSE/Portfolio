@@ -1,0 +1,14 @@
+# Environment variables
+# This file contains secrets and should not be committed.
+.env
+.env.example
+
+# Resume folder containing personal documents
+/resume/
+
+# Configuration files
+particles.json
+
+# Editor-specific settings
+# This folder contains user-specific workspace settings.
+.vscode/
