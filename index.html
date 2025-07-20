@@ -1,799 +1,1059 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>MD Bashir Ahmed - IT Professional Portfolio</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MD Bashir Ahmed - IT Professional Portfolio</title>
+		<!-- Tailwind CSS -->
+		<script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+		<!-- Font Awesome -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		/>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<!-- EmailJS -->
+		<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-    <!-- EmailJS -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+	<body class="min-h-screen">
+		<!-- Preloader -->
+		<div id="preloader">
+			<div class="spinner"></div>
+		</div>
 
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<!-- Progress Bar -->
+		<div class="progress-bar" id="progress-bar"></div>
 
-</head>
+		<!-- Header/Navigation -->
+		<header
+			class="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur"
+			role="banner"
+		>
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="flex h-16 items-center justify-between">
+					<div class="flex items-center">
+						<h1 class="text-xl font-bold logo-gradient">MD Bashir Ahmed</h1>
+					</div>
 
-<body class="min-h-screen">
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="spinner"></div>
-    </div>
+					<!-- Desktop Navigation -->
+					<nav class="hidden md:flex items-center space-x-6">
+						<a
+							href="#home"
+							class="nav-link font-bold hover:text-blue-600 transition-colors"
+							>Home</a
+						>
+						<a
+							href="#about"
+							class="nav-link font-bold hover:text-blue-600 transition-colors"
+							>About</a
+						>
+						<a
+							href="#experience"
+							class="nav-link font-bold hover:text-blue-600 transition-colors"
+							>Experience</a
+						>
+						<a
+							href="#projects"
+							class="nav-link font-bold hover:text-blue-600 transition-colors"
+							>Projects</a
+						>
+						<a
+							href="#learning"
+							class="nav-link font-bold hover:text-blue-600 transition-colors"
+							>Learning</a
+						>
+						<a
+							href="#contact"
+							class="nav-link font-bold hover:text-blue-600 transition-colors"
+							>Contact</a
+						>
+					</nav>
 
-    <!-- Progress Bar -->
-    <div class="progress-bar" id="progress-bar"></div>
+					<!-- Social Links -->
+					<div class="hidden md:flex items-center space-x-4">
+						<a
+							href="https://www.linkedin.com/in/bashir-6923131b0"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="social-icon text-gray-600 hover:text-blue-600 transition-colors"
+						>
+							<i class="fab fa-linkedin text-xl"></i>
+							<span class="sr-only">LinkedIn Profile</span>
+						</a>
+						<a
+							href="https://github.com/bashir-CSE"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="social-icon text-gray-600 hover:text-blue-600 transition-colors"
+						>
+							<i class="fab fa-github text-xl"></i>
+							<span class="sr-only">GitHub Profile</span>
+						</a>
+					</div>
 
-    <!-- Header/Navigation -->
-    <header class="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur" role="banner">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex h-16 items-center justify-between">
-                <div class="flex items-center">
-                    <h1 class="text-xl font-bold logo-gradient">MD Bashir Ahmed</h1>
-                </div>
+					<!-- Mobile Menu Button -->
+					<button
+						id="mobile-menu-btn"
+						class="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors"
+					>
+						<i id="menu-icon" class="fas fa-bars text-xl"></i>
+						<i id="close-icon" class="fas fa-times text-xl hidden"></i>
+					</button>
+				</div>
 
-                <!-- Desktop Navigation -->
-                <nav class="hidden md:flex items-center space-x-6">
-                    <a href="#home" class="nav-link font-bold hover:text-blue-600 transition-colors">Home</a>
-                    <a href="#about" class="nav-link font-bold hover:text-blue-600 transition-colors">About</a>
-                    <a href="#experience" class="nav-link font-bold hover:text-blue-600 transition-colors">Experience</a>
-                    <a href="#projects" class="nav-link font-bold hover:text-blue-600 transition-colors">Projects</a>
-                    <a href="#learning" class="nav-link font-bold hover:text-blue-600 transition-colors">Learning</a>
-                    <a href="#contact" class="nav-link font-bold hover:text-blue-600 transition-colors">Contact</a>
-                </nav>
+				<!-- Mobile Navigation -->
+				<div id="mobile-menu" class="mobile-menu md:hidden py-4 border-t">
+					<nav class="flex flex-col space-y-2">
+						<a
+							href="#home"
+							class="text-left py-2 hover:text-blue-600 transition-colors"
+							>Home</a
+						>
+						<a
+							href="#about"
+							class="text-left py-2 hover:text-blue-600 transition-colors"
+							>About</a
+						>
+						<a
+							href="#experience"
+							class="text-left py-2 hover:text-blue-600 transition-colors"
+							>Experience</a
+						>
+						<a
+							href="#projects"
+							class="text-left py-2 hover:text-blue-600 transition-colors"
+							>Projects</a
+						>
+						<a
+							href="#learning"
+							class="text-left py-2 hover:text-blue-600 transition-colors"
+							>Learning</a
+						>
+						<a
+							href="#contact"
+							class="text-left py-2 hover:text-blue-600 transition-colors"
+							>Contact</a
+						>
+						<div class="flex items-center space-x-4 pt-4">
+							<a
+								href="https://www.linkedin.com/in/bashir-6923131b0"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="social-icon text-gray-600 hover:text-blue-600 transition-colors"
+							>
+								<i class="fab fa-linkedin text-xl"></i>
+							</a>
+							<a
+								href="https://github.com/bashir-CSE"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="social-icon text-gray-600 hover:text-blue-600 transition-colors"
+							>
+								<i class="fab fa-github text-xl"></i>
+							</a>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</header>
 
-                <!-- Social Links -->
-                <div class="hidden md:flex items-center space-x-4">
-                    <a href="https://www.linkedin.com/in/bashir-6923131b0" target="_blank" rel="noopener noreferrer"
-                        class="social-icon text-gray-600 hover:text-blue-600 transition-colors">
-                        <i class="fab fa-linkedin text-xl"></i>
-                        <span class="sr-only">LinkedIn Profile</span>
-                    </a>
-                    <a href="https://github.com/bashir-CSE" target="_blank" rel="noopener noreferrer"
-                        class="social-icon text-gray-600 hover:text-blue-600 transition-colors">
-                        <i class="fab fa-github text-xl"></i>
-                        <span class="sr-only">GitHub Profile</span>
-                    </a>
-                </div>
+		<!-- Hero Section -->
+		<section
+			id="home"
+			class="py-16 h-[50vh] lg:h-[100vh] relative overflow-hidden bg-gray-900"
+		>
+			<div id="particles-js" class="absolute inset-0"></div>
+			<div
+				class="container mx-auto px-4 sm:px-6 lg:px-8 relative flex items-center justify-center h-full z-10"
+			>
+				<div class="text-center">
+					<div>
+						<h1 class="text-4xl lg:text-6xl mb-6 font-bold text-white">
+							MD Bashir Ahmed
+						</h1>
+						<p
+							class="text-xl lg:text-2xl text-white mb-8 max-w-3xl mx-auto"
+							id="typed-text"
+						></p>
+					</div>
+					<div class="flex flex-col sm:flex-row gap-4 justify-center">
+						<a
+							href="resume/MD_Bashir_Ahmed_Resume.pdf"
+							download="MD_Bashir_Ahmed_Resume.pdf"
+							class="btn-primary px-8 py-3 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors flex items-center justify-center"
+						>
+							<i class="fas fa-download mr-2"></i>Download Resume
+						</a>
+						<a
+							href="#contact"
+							class="btn-outline px-8 py-3 font-medium rounded-lg hover:bg-gray-50 transition-colors flex items-center justify-center"
+						>
+							<i class="fas fa-paper-plane mr-2"></i>Contact Me
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
 
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors">
-                    <i id="menu-icon" class="fas fa-bars text-xl"></i>
-                    <i id="close-icon" class="fas fa-times text-xl hidden"></i>
-                </button>
-            </div>
+		<!-- About Section -->
+		<section id="about" class="py-16 bg-gray-50">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold">
+					About Me
+				</h2>
+				<div class="max-w-4xl mx-auto">
+					<div class="card p-6 mb-8 shadow-sm">
+						<div class="flex items-center mb-4">
+							<i class="fas fa-user-tie text-2xl text-blue-600 mr-3"></i>
+							<h3 class="text-xl font-semibold">Professional Summary</h3>
+						</div>
+						<p class="text-lg leading-relaxed text-gray-700">
+							Detail-oriented IT graduate with expertise in data analysis,
+							reporting, and system support. Proficient in Power BI, Excel,
+							Power Query, and Google Apps Script for actionable insights and
+							automation. Skilled in database management, IT operations, and
+							documentation.
+						</p>
+					</div>
 
-            <!-- Mobile Navigation -->
-            <div id="mobile-menu" class="mobile-menu md:hidden py-4 border-t">
-                <nav class="flex flex-col space-y-2">
-                    <a href="#home" class="text-left py-2 hover:text-blue-600 transition-colors">Home</a>
-                    <a href="#about" class="text-left py-2 hover:text-blue-600 transition-colors">About</a>
-                    <a href="#experience" class="text-left py-2 hover:text-blue-600 transition-colors">Experience</a>
-                    <a href="#projects" class="text-left py-2 hover:text-blue-600 transition-colors">Projects</a>
-                    <a href="#learning" class="text-left py-2 hover:text-blue-600 transition-colors">Learning</a>
-                    <a href="#contact" class="text-left py-2 hover:text-blue-600 transition-colors">Contact</a>
-                    <div class="flex items-center space-x-4 pt-4">
-                        <a href="https://www.linkedin.com/in/bashir-6923131b0" target="_blank" rel="noopener noreferrer"
-                            class="social-icon text-gray-600 hover:text-blue-600 transition-colors">
-                            <i class="fab fa-linkedin text-xl"></i>
-                        </a>
-                        <a href="https://github.com/bashir-CSE" target="_blank" rel="noopener noreferrer"
-                            class="social-icon text-gray-600 hover:text-blue-600 transition-colors">
-                            <i class="fab fa-github text-xl"></i>
-                        </a>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </header>
+					<div class="card p-6 shadow-sm">
+						<div class="flex items-center mb-4">
+							<i class="fas fa-code text-2xl text-blue-600 mr-3"></i>
+							<h3 class="text-xl font-semibold">Key Skills</h3>
+						</div>
+						<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+							<span
+								class="badge px-3 py-2 text-sm font-medium text-center rounded-md"
+							>
+								<i class="fas fa-chart-bar mr-1"></i>Power BI
+							</span>
+							<span
+								class="badge px-3 py-2 text-sm font-medium text-center rounded-md"
+							>
+								<i class="fas fa-file-excel mr-1"></i>Advanced Excel
+							</span>
+							<span
+								class="badge px-3 py-2 text-sm font-medium text-center rounded-md"
+							>
+								<i class="fas fa-search mr-1"></i>Power Query
+							</span>
+							<span
+								class="badge px-3 py-2 text-sm font-medium text-center rounded-md"
+							>
+								<i class="fab fa-google mr-1"></i>Google Apps Script
+							</span>
+							<span
+								class="badge px-3 py-2 text-sm font-medium text-center rounded-md"
+							>
+								<i class="fab fa-python mr-1"></i>Python
+							</span>
+							<span
+								class="badge px-3 py-2 text-sm font-medium text-center rounded-md"
+							>
+								<i class="fas fa-database mr-1"></i>SQL
+							</span>
+							<span
+								class="badge px-3 py-2 text-sm font-medium text-center rounded-md"
+							>
+								<i class="fas fa-server mr-1"></i>Oracle ERP
+							</span>
+							<span
+								class="badge px-3 py-2 text-sm font-medium text-center rounded-md"
+							>
+								<i class="fab fa-microsoft mr-1"></i>Microsoft 365
+							</span>
+							<span
+								class="badge px-3 py-2 text-sm font-medium text-center rounded-md"
+							>
+								<i class="fab fa-google mr-1"></i>Google Workspace
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- Hero Section -->
-    <section id="home" class="py-16 h-[50vh] lg:h-[100vh] relative overflow-hidden bg-gray-900">
-        <div id="particles-js" class="absolute inset-0"></div>
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative flex items-center justify-center h-full z-10">
-            <div class="text-center">
-                <div data-aos="zoom-in-right">
-                    <h1 class="text-4xl lg:text-6xl mb-6 font-bold text-white">MD Bashir Ahmed</h1>
-                    <p class="text-xl lg:text-2xl text-white mb-8 max-w-3xl mx-auto" id="typed-text"></p>
-                </div>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="zoom-in-left" data-aos-delay="300">
-                    <a href="resume/MD_Bashir_Ahmed_Resume.pdf"
-                        download="MD_Bashir_Ahmed_Resume.pdf"
-                        class="btn-primary px-8 py-3 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors flex items-center justify-center">
-                        <i class="fas fa-download mr-2"></i>Download Resume
-                    </a>
-                    <a href="#contact"
-                        class="btn-outline px-8 py-3 font-medium rounded-lg hover:bg-gray-50 transition-colors flex items-center justify-center">
-                        <i class="fas fa-paper-plane mr-2"></i>Contact Me
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+		<!-- Technical Skills Section -->
+		<section id="skills" class="py-16">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold">
+					Technical Skills
+				</h2>
+				<div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+					<div class="skill-item">
+						<div class="flex justify-between mb-1">
+							<span class="font-medium">Power BI & Data Analysis</span>
+							<span class="text-sm font-medium skill-percentage" data-goal="90"
+								>0%</span
+							>
+						</div>
+						<div class="skill-bar">
+							<div class="skill-bar-fill" data-width="90%"></div>
+						</div>
+					</div>
+					<div class="skill-item">
+						<div class="flex justify-between mb-1">
+							<span class="font-medium">Advanced Excel & Power Query</span>
+							<span class="text-sm font-medium skill-percentage" data-goal="95"
+								>0%</span
+							>
+						</div>
+						<div class="skill-bar">
+							<div class="skill-bar-fill" data-width="95%"></div>
+						</div>
+					</div>
+					<div class="skill-item">
+						<div class="flex justify-between mb-1">
+							<span class="font-medium">Google Apps Script & Automation</span>
+							<span class="text-sm font-medium skill-percentage" data-goal="85"
+								>0%</span
+							>
+						</div>
+						<div class="skill-bar">
+							<div class="skill-bar-fill" data-width="85%"></div>
+						</div>
+					</div>
+					<div class="skill-item">
+						<div class="flex justify-between mb-1">
+							<span class="font-medium">SQL & Database Management</span>
+							<span class="text-sm font-medium skill-percentage" data-goal="80"
+								>0%</span
+							>
+						</div>
+						<div class="skill-bar">
+							<div class="skill-bar-fill" data-width="80%"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- About Section -->
-    <section id="about" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold" data-aos="zoom-in">About Me</h2>
-            <div class="max-w-4xl mx-auto">
-                <div class="card p-6 mb-8 shadow-sm" data-aos="zoom-in-right" data-aos-delay="100">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-user-tie text-2xl text-blue-600 mr-3"></i>
-                        <h3 class="text-xl font-semibold">Professional Summary</h3>
-                    </div>
-                    <p class="text-lg leading-relaxed text-gray-700">
-                        Detail-oriented IT graduate with expertise in data analysis, reporting, and system support.
-                        Proficient in Power BI, Excel, Power Query, and Google Apps Script for actionable insights
-                        and automation. Skilled in database management, IT operations, and documentation.
-                    </p>
-                </div>
+		<!-- Experience Section -->
+		<section id="experience" class="py-16">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold">
+					Experience
+				</h2>
+				<div class="max-w-4xl mx-auto">
+					<div class="grid md:grid-cols-2 gap-6">
+						<!-- Current Position -->
+						<div class="card p-6 shadow-sm">
+							<div class="flex flex-col mb-4">
+								<h3 class="text-xl font-semibold flex items-center">
+									<i class="fas fa-chart-line text-red-600 mr-2"></i>Officer -
+									IT Operations
+								</h3>
+								<p class="text-lg text-gray-600">Aloha Bangladesh</p>
+								<div class="flex items-center text-sm text-gray-500 mt-1">
+									<i class="fas fa-map-marker-alt mr-1"></i>
+									<span>Dhaka</span>
+									<span class="mx-2">|</span>
+									<i class="fas fa-calendar-alt mr-1"></i>
+									<span>Nov 2023 - Present</span>
+								</div>
+							</div>
+							<ul class="space-y-2 text-gray-600">
+								<li>
+									<i class="fas fa-check text-green-500 mr-2"></i>Managed
+									student database systems
+								</li>
+								<li>
+									<i class="fas fa-check text-green-500 mr-2"></i>Created
+									comprehensive Power BI dashboards
+								</li>
+								<li>
+									<i class="fas fa-check text-green-500 mr-2"></i>Automated
+									processes using Google Apps Script
+								</li>
+								<li>
+									<i class="fas fa-check text-green-500 mr-2"></i>Provided
+									technical IT support and training
+								</li>
+							</ul>
+						</div>
 
-                <div class="card p-6 shadow-sm" data-aos="zoom-in-left" data-aos-delay="200">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-code text-2xl text-blue-600 mr-3"></i>
-                        <h3 class="text-xl font-semibold">Key Skills</h3>
-                    </div>
-                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                        <span class="badge px-3 py-2 text-sm font-medium text-center rounded-md">
-                            <i class="fas fa-chart-bar mr-1"></i>Power BI
-                        </span>
-                        <span class="badge px-3 py-2 text-sm font-medium text-center rounded-md">
-                            <i class="fas fa-file-excel mr-1"></i>Advanced Excel
-                        </span>
-                        <span class="badge px-3 py-2 text-sm font-medium text-center rounded-md">
-                            <i class="fas fa-search mr-1"></i>Power Query
-                        </span>
-                        <span class="badge px-3 py-2 text-sm font-medium text-center rounded-md">
-                            <i class="fab fa-google mr-1"></i>Google Apps Script
-                        </span>
-                        <span class="badge px-3 py-2 text-sm font-medium text-center rounded-md">
-                            <i class="fab fa-python mr-1"></i>Python
-                        </span>
-                        <span class="badge px-3 py-2 text-sm font-medium text-center rounded-md">
-                            <i class="fas fa-database mr-1"></i>SQL
-                        </span>
-                        <span class="badge px-3 py-2 text-sm font-medium text-center rounded-md">
-                            <i class="fas fa-server mr-1"></i>Oracle ERP
-                        </span>
-                        <span class="badge px-3 py-2 text-sm font-medium text-center rounded-md">
-                            <i class="fab fa-microsoft mr-1"></i>Microsoft 365
-                        </span>
-                        <span class="badge px-3 py-2 text-sm font-medium text-center rounded-md">
-                            <i class="fab fa-google mr-1"></i>Google Workspace
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+						<!-- Internship Position -->
+						<div class="card p-6 shadow-sm">
+							<div class="flex flex-col mb-4">
+								<h3 class="text-xl font-semibold flex items-center">
+									<i class="fas fa-laptop-code text-purple-600 mr-2"></i>Intern
+									- ERP & Production Planning
+								</h3>
+								<p class="text-lg text-gray-600">DB Trims, DBL Group</p>
+								<div class="flex items-center text-sm text-gray-500 mt-1">
+									<i class="fas fa-map-marker-alt mr-1"></i>
+									<span>Gazipur</span>
+									<span class="mx-2">|</span>
+									<i class="fas fa-calendar-alt mr-1"></i>
+									<span>Apr 2024 - Jul 2024</span>
+								</div>
+							</div>
+							<ul class="space-y-2 text-gray-600">
+								<li>
+									<i class="fas fa-check text-green-500 mr-2"></i>Supported
+									Oracle ERP data management and maintenance
+								</li>
+								<li>
+									<i class="fas fa-check text-green-500 mr-2"></i>Prepared
+									analytical reports using Excel and Power Query
+								</li>
+								<li>
+									<i class="fas fa-check text-green-500 mr-2"></i>Optimized
+									business processes through data analysis
+								</li>
+								<li>
+									<i class="fas fa-check text-green-500 mr-2"></i>Collaborated
+									with cross-functional teams on production planning
+								</li>
+							</ul>
+						</div>
 
-    <!-- Technical Skills Section -->
-    <section id="skills" class="py-16">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold" data-aos="zoom-in">Technical Skills</h2>
-            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-                <div class="skill-item" data-aos="fade-up">
-                    <div class="flex justify-between mb-1">
-                        <span class="font-medium">Power BI & Data Analysis</span>
-                        <span class="text-sm font-medium skill-percentage" data-goal="90">0%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-bar-fill" data-width="90%"></div>
-                    </div>
-                </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex justify-between mb-1">
-                        <span class="font-medium">Advanced Excel & Power Query</span>
-                        <span class="text-sm font-medium skill-percentage" data-goal="95">0%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-bar-fill" data-width="95%"></div>
-                    </div>
-                </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex justify-between mb-1">
-                        <span class="font-medium">Google Apps Script & Automation</span>
-                        <span class="text-sm font-medium skill-percentage" data-goal="85">0%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-bar-fill" data-width="85%"></div>
-                    </div>
-                </div>
-                <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="flex justify-between mb-1">
-                        <span class="font-medium">SQL & Database Management</span>
-                        <span class="text-sm font-medium skill-percentage" data-goal="80">0%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-bar-fill" data-width="80%"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+						<!-- Assistant Admin Position -->
+						<div class="card p-6 shadow-sm">
+							<div class="flex flex-col mb-4">
+								<h3 class="text-xl font-semibold flex items-center">
+									<i class="fas fa-building text-blue-600 mr-2"></i>Assistant
+									Admin
+								</h3>
+								<p class="text-lg text-gray-600">Corus Knit Composite Ltd.</p>
+								<div class="flex items-center text-sm text-gray-500 mt-1">
+									<i class="fas fa-map-marker-alt mr-1"></i>
+									<span>Gazipur</span>
+									<span class="mx-2">|</span>
+									<i class="fas fa-calendar-alt mr-1"></i>
+									<span>Apr 2023 – May 2023</span>
+								</div>
+							</div>
+							<ul class="space-y-2 text-gray-600">
+								<li>
+									<i class="fas fa-check text-green-500 mr-2"></i>Assisted HR
+									and admin functions using Excel and digital tools
+								</li>
+								<li>
+									<i class="fas fa-check text-green-500 mr-2"></i>Supported
+									shift planning and document control
+								</li>
+							</ul>
+						</div>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-16">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold" data-aos="zoom-in">Experience</h2>
-            <div class="max-w-4xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <!-- Current Position -->
-                    <div class="card p-6 shadow-sm" data-aos="zoom-in-right">
-                        <div class="flex flex-col mb-4">
-                            <h3 class="text-xl font-semibold flex items-center">
-                                <i class="fas fa-chart-line text-red-600 mr-2"></i>Officer - IT Operations
-                            </h3>
-                            <p class="text-lg text-gray-600">Aloha Bangladesh</p>
-                            <div class="flex items-center text-sm text-gray-500 mt-1">
-                                <i class="fas fa-map-marker-alt mr-1"></i>
-                                <span>Dhaka</span>
-                                <span class="mx-2">|</span>
-                                <i class="fas fa-calendar-alt mr-1"></i>
-                                <span>Nov 2023 - Present</span>
-                            </div>
-                        </div>
-                        <ul class="space-y-2 text-gray-600">
-                            <li><i class="fas fa-check text-green-500 mr-2"></i>Managed student database systems</li>
-                            <li><i class="fas fa-check text-green-500 mr-2"></i>Created comprehensive Power BI
-                                dashboards</li>
-                            <li><i class="fas fa-check text-green-500 mr-2"></i>Automated processes using Google Apps
-                                Script</li>
-                            <li><i class="fas fa-check text-green-500 mr-2"></i>Provided technical IT support and
-                                training</li>
-                        </ul>
-                    </div>
+						<!-- Teaching Position -->
+						<div class="card p-6 shadow-sm">
+							<div class="flex flex-col mb-4">
+								<h3 class="text-xl font-semibold flex items-center">
+									<i class="fas fa-chalkboard-teacher text-green-600 mr-2"></i
+									>Assistant ICT Teacher
+								</h3>
+								<p class="text-lg text-gray-600">
+									Amin Model Town School and College
+								</p>
+								<div class="flex items-center text-sm text-gray-500 mt-1">
+									<i class="fas fa-map-marker-alt mr-1"></i>
+									<span>Savar</span>
+									<span class="mx-2">|</span>
+									<i class="fas fa-calendar-alt mr-1"></i>
+									<span>Jan 2024 – Mar 2024</span>
+								</div>
+							</div>
+							<ul class="space-y-2 text-gray-600">
+								<li>
+									<i class="fas fa-check text-green-500 mr-2"></i>Taught Class
+									11 ICT curriculum and basic computer skills
+								</li>
+								<li>
+									<i class="fas fa-check text-green-500 mr-2"></i>Conducted
+									assessments and supported extracurricular tech activities
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-                    <!-- Internship Position -->
-                    <div class="card p-6 shadow-sm" data-aos="zoom-in-left" data-aos-delay="100">
-                        <div class="flex flex-col mb-4">
-                            <h3 class="text-xl font-semibold flex items-center">
-                                <i class="fas fa-laptop-code text-purple-600 mr-2"></i>Intern - ERP & Production
-                                Planning
-                            </h3>
-                            <p class="text-lg text-gray-600">DB Trims, DBL Group</p>
-                            <div class="flex items-center text-sm text-gray-500 mt-1">
-                                <i class="fas fa-map-marker-alt mr-1"></i>
-                                <span>Gazipur</span>
-                                <span class="mx-2">|</span>
-                                <i class="fas fa-calendar-alt mr-1"></i>
-                                <span>Apr 2024 - Jul 2024</span>
-                            </div>
-                        </div>
-                        <ul class="space-y-2 text-gray-600">
-                            <li><i class="fas fa-check text-green-500 mr-2"></i>Supported Oracle ERP data management and
-                                maintenance</li>
-                            <li><i class="fas fa-check text-green-500 mr-2"></i>Prepared analytical reports using Excel
-                                and Power Query</li>
-                            <li><i class="fas fa-check text-green-500 mr-2"></i>Optimized business processes through
-                                data analysis</li>
-                            <li><i class="fas fa-check text-green-500 mr-2"></i>Collaborated with cross-functional teams
-                                on production planning</li>
-                        </ul>
-                    </div>
+		<!-- Projects Section -->
+		<section id="projects" class="py-16 bg-gray-50">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold">
+					Projects
+				</h2>
+				<div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+					<div class="card p-6 shadow-sm">
+						<div class="flex items-center mb-3">
+							<i class="fas fa-chart-line text-2xl text-blue-600 mr-3"></i>
+							<h3 class="text-xl font-semibold">
+								Student Data Analytics Dashboard
+							</h3>
+						</div>
+						<p class="text-gray-600 mb-4">Power BI • Aloha Bangladesh</p>
+						<p class="text-gray-700 mb-4">
+							Comprehensive Power BI dashboard analyzing student enrollment
+							trends, performance metrics, and demographic insights for
+							strategic decision-making.
+						</p>
+						<div class="flex items-center text-sm">
+							<span
+								class="badge-outline px-2 py-1 text-xs font-medium rounded mr-2"
+								>Power BI</span
+							>
+							<span class="badge-outline px-2 py-1 text-xs font-medium rounded"
+								>Data Analysis</span
+							>
+						</div>
+					</div>
 
-                    <!-- Assistant Admin Position -->
-                    <div class="card p-6 shadow-sm" data-aos="zoom-in-right" data-aos-delay="200">
-                        <div class="flex flex-col mb-4">
-                            <h3 class="text-xl font-semibold flex items-center">
-                                <i class="fas fa-building text-blue-600 mr-2"></i>Assistant Admin
-                            </h3>
-                            <p class="text-lg text-gray-600">Corus Knit Composite Ltd.</p>
-                            <div class="flex items-center text-sm text-gray-500 mt-1">
-                                <i class="fas fa-map-marker-alt mr-1"></i>
-                                <span>Gazipur</span>
-                                <span class="mx-2">|</span>
-                                <i class="fas fa-calendar-alt mr-1"></i>
-                                <span>Apr 2023 – May 2023</span>
-                            </div>
-                        </div>
-                        <ul class="space-y-2 text-gray-600">
-                            <li><i class="fas fa-check text-green-500 mr-2"></i>Assisted HR and admin functions using
-                                Excel and digital tools</li>
-                            <li><i class="fas fa-check text-green-500 mr-2"></i>Supported shift planning and document
-                                control</li>
-                        </ul>
-                    </div>
+					<div class="card p-6 shadow-sm">
+						<div class="flex items-center mb-3">
+							<i class="fas fa-users text-2xl text-green-600 mr-3"></i>
+							<h3 class="text-xl font-semibold">HR Data Analysis System</h3>
+						</div>
+						<p class="text-gray-600 mb-4">Excel • Power Query • DBL Group</p>
+						<p class="text-gray-700 mb-4">
+							Advanced Excel-based HR analytics solution using Power Query for
+							automated data processing and comprehensive reporting during ERP
+							internship.
+						</p>
+						<div class="flex items-center text-sm">
+							<span
+								class="badge-outline px-2 py-1 text-xs font-medium rounded mr-2"
+								>Excel</span
+							>
+							<span class="badge-outline px-2 py-1 text-xs font-medium rounded"
+								>Power Query</span
+							>
+						</div>
+					</div>
 
-                    <!-- Teaching Position -->
-                    <div class="card p-6 shadow-sm" data-aos="zoom-in-left" data-aos-delay="300">
-                        <div class="flex flex-col mb-4">
-                            <h3 class="text-xl font-semibold flex items-center">
-                                <i class="fas fa-chalkboard-teacher text-green-600 mr-2"></i>Assistant ICT Teacher
-                            </h3>
-                            <p class="text-lg text-gray-600">Amin Model Town School and College</p>
-                            <div class="flex items-center text-sm text-gray-500 mt-1">
-                                <i class="fas fa-map-marker-alt mr-1"></i>
-                                <span>Savar</span>
-                                <span class="mx-2">|</span>
-                                <i class="fas fa-calendar-alt mr-1"></i>
-                                <span>Jan 2024 – Mar 2024</span>
-                            </div>
-                        </div>
-                        <ul class="space-y-2 text-gray-600">
-                            <li><i class="fas fa-check text-green-500 mr-2"></i>Taught Class 11 ICT curriculum and basic
-                                computer skills</li>
-                            <li><i class="fas fa-check text-green-500 mr-2"></i>Conducted assessments and supported
-                                extracurricular tech activities</li>
-                        </ul>
-                    </div>
+					<div class="card p-6 shadow-sm">
+						<div class="flex items-center mb-3">
+							<i class="fas fa-robot text-2xl text-purple-600 mr-3"></i>
+							<h3 class="text-xl font-semibold">Process Automation Scripts</h3>
+						</div>
+						<p class="text-gray-600 mb-4">Google Apps Script • Automation</p>
+						<p class="text-gray-700 mb-4">
+							Automated data extraction and validation processes using Google
+							Apps Script, reducing manual work by 60% and improving data
+							accuracy.
+						</p>
+						<div class="flex items-center text-sm">
+							<span
+								class="badge-outline px-2 py-1 text-xs font-medium rounded mr-2"
+								>Google Apps Script</span
+							>
+							<span class="badge-outline px-2 py-1 text-xs font-medium rounded"
+								>Automation</span
+							>
+						</div>
+					</div>
 
-                    
+					<div class="card p-6 shadow-sm">
+						<div class="flex items-center mb-3">
+							<i class="fas fa-database text-2xl text-red-600 mr-3"></i>
+							<h3 class="text-xl font-semibold">
+								Database Management Solutions
+							</h3>
+						</div>
+						<p class="text-gray-600 mb-4">SQL • Oracle ERP • Database Design</p>
+						<p class="text-gray-700 mb-4">
+							Developed and maintained database solutions for student
+							information systems, ensuring data integrity and optimized query
+							performance.
+						</p>
+						<div class="flex items-center text-sm">
+							<span
+								class="badge-outline px-2 py-1 text-xs font-medium rounded mr-2"
+								>SQL</span
+							>
+							<span class="badge-outline px-2 py-1 text-xs font-medium rounded"
+								>Database Design</span
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-                    
-                </div>
-            </div>
-        </div>
-    </section>
+		<!-- Education & Certifications -->
+		<section id="education" class="py-16 bg-gray-50">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold">
+					Education &amp; Certifications
+				</h2>
+				<div class="max-w-4xl mx-auto">
+					<div class="grid lg:grid-cols-2 gap-8">
+						<!-- Education -->
+						<div class="card p-6 shadow-sm">
+							<div class="flex items-center mb-4">
+								<i
+									class="fas fa-graduation-cap text-2xl text-blue-600 mr-3"
+								></i>
+								<h3 class="text-xl font-semibold">Education</h3>
+							</div>
+							<div class="space-y-4">
+								<div>
+									<h4 class="font-medium">
+										B.Sc. in Computer Science and Engineering
+									</h4>
+									<p class="text-gray-600">
+										Gono Bishwabidyalay • 2018-2022 • GPA: 3.34
+									</p>
+								</div>
+								<hr class="border-gray-200" />
+								<div>
+									<h4 class="font-medium">
+										Higher Secondary Certificate (HSC)
+									</h4>
+									<p class="text-gray-600">
+										MEH Arif College • 2017 • GPA: 4.50
+									</p>
+								</div>
+								<hr class="border-gray-200" />
+								<div>
+									<h4 class="font-medium">
+										Secondary School Certificate (SSC)
+									</h4>
+									<p class="text-gray-600">
+										Baidgaon High School • 2015 • GPA: 4.86
+									</p>
+								</div>
+							</div>
+						</div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold" data-aos="zoom-in">Projects</h2>
-            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
-                <div class="card p-6 shadow-sm" data-aos="zoom-in-right" data-aos-delay="100">
-                    <div class="flex items-center mb-3">
-                        <i class="fas fa-chart-line text-2xl text-blue-600 mr-3"></i>
-                        <h3 class="text-xl font-semibold">Student Data Analytics Dashboard</h3>
-                    </div>
-                    <p class="text-gray-600 mb-4">Power BI • Aloha Bangladesh</p>
-                    <p class="text-gray-700 mb-4">
-                        Comprehensive Power BI dashboard analyzing student enrollment trends,
-                        performance metrics, and demographic insights for strategic decision-making.
-                    </p>
-                    <div class="flex items-center text-sm">
-                        <span class="badge-outline px-2 py-1 text-xs font-medium rounded mr-2">Power BI</span>
-                        <span class="badge-outline px-2 py-1 text-xs font-medium rounded">Data Analysis</span>
-                    </div>
-                </div>
+						<!-- Certifications -->
+						<div class="card p-6 shadow-sm">
+							<div class="flex items-center mb-4">
+								<i class="fas fa-certificate text-2xl text-green-600 mr-3"></i>
+								<h3 class="text-xl font-semibold">Certifications (2024)</h3>
+							</div>
+							<ul class="space-y-3">
+								<li class="flex items-start">
+									<i class="fas fa-award text-yellow-500 mt-1 mr-3"></i>
+									<span>Excel Basics for Data Analysis</span>
+								</li>
+								<li class="flex items-start">
+									<i class="fas fa-award text-yellow-500 mt-1 mr-3"></i>
+									<span>Programming in Python</span>
+								</li>
+								<li class="flex items-start">
+									<i class="fas fa-award text-yellow-500 mt-1 mr-3"></i>
+									<span>Technical Support Fundamentals</span>
+								</li>
+								<li class="flex items-start">
+									<i class="fas fa-award text-yellow-500 mt-1 mr-3"></i>
+									<span>Foundations of Cybersecurity</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-                <div class="card p-6 shadow-sm" data-aos="zoom-in-left" data-aos-delay="200">
-                    <div class="flex items-center mb-3">
-                        <i class="fas fa-users text-2xl text-green-600 mr-3"></i>
-                        <h3 class="text-xl font-semibold">HR Data Analysis System</h3>
-                    </div>
-                    <p class="text-gray-600 mb-4">Excel • Power Query • DBL Group</p>
-                    <p class="text-gray-700 mb-4">
-                        Advanced Excel-based HR analytics solution using Power Query for
-                        automated data processing and comprehensive reporting during ERP internship.
-                    </p>
-                    <div class="flex items-center text-sm">
-                        <span class="badge-outline px-2 py-1 text-xs font-medium rounded mr-2">Excel</span>
-                        <span class="badge-outline px-2 py-1 text-xs font-medium rounded">Power Query</span>
-                    </div>
-                </div>
+		<!-- Currently Learning Section -->
+		<section id="learning" class="py-16">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold">
+					Currently Learning
+				</h2>
+				<p class="text-center text-lg text-gray-600 max-w-2xl mx-auto mb-10">
+					I'm always eager to expand my skillset and am continuously exploring
+					the AI world. Here are some of the technologies and concepts I'm
+					currently focused on.
+				</p>
+				<div
+					class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-6 text-center"
+				>
+					<!-- Learning Item 1 -->
+					<div class="card p-6 shadow-sm">
+						<div class="text-4xl text-blue-600 mb-3">
+							<i class="fas fa-brain"></i>
+						</div>
+						<h3 class="text-lg font-semibold">AIoT</h3>
+					</div>
+					<!-- Learning Item 2 -->
+					<div class="card p-6 shadow-sm">
+						<div class="text-4xl text-blue-600 mb-3">
+							<i class="fab fa-python"></i>
+						</div>
+						<h3 class="text-lg font-semibold">Advanced Python</h3>
+					</div>
+					<!-- Learning Item 3 -->
+					<div class="card p-6 shadow-sm">
+						<div class="text-4xl text-blue-600 mb-3">
+							<i class="fas fa-robot"></i>
+						</div>
+						<h3 class="text-lg font-semibold">Machine Learning</h3>
+					</div>
+					<!-- Learning Item 4 -->
+					<div class="card p-6 shadow-sm">
+						<div class="text-4xl text-blue-600 mb-3">
+							<i class="fas fa-sitemap"></i>
+						</div>
+						<h3 class="text-lg font-semibold">Data Structures & Algorithms</h3>
+					</div>
+					<!-- Learning Item 5 -->
+					<div class="card p-6 shadow-sm">
+						<div class="text-4xl text-blue-600 mb-3">
+							<i class="fas fa-language"></i>
+						</div>
+						<h3 class="text-lg font-semibold">English Proficiency</h3>
+					</div>
+					<!-- Learning Item 6 -->
+					<div class="card p-6 shadow-sm">
+						<div class="text-4xl text-blue-600 mb-3">
+							<i class="fas fa-search"></i>
+						</div>
+						<h3 class="text-lg font-semibold">AI Exploration</h3>
+					</div>
+				</div>
+			</div>
+		</section>
 
-                <div class="card p-6 shadow-sm" data-aos="zoom-in-right" data-aos-delay="300">
-                    <div class="flex items-center mb-3">
-                        <i class="fas fa-robot text-2xl text-purple-600 mr-3"></i>
-                        <h3 class="text-xl font-semibold">Process Automation Scripts</h3>
-                    </div>
-                    <p class="text-gray-600 mb-4">Google Apps Script • Automation</p>
-                    <p class="text-gray-700 mb-4">
-                        Automated data extraction and validation processes using Google Apps Script,
-                        reducing manual work by 60% and improving data accuracy.
-                    </p>
-                    <div class="flex items-center text-sm">
-                        <span class="badge-outline px-2 py-1 text-xs font-medium rounded mr-2">Google Apps Script</span>
-                        <span class="badge-outline px-2 py-1 text-xs font-medium rounded">Automation</span>
-                    </div>
-                </div>
+		<!-- Activities & Volunteering -->
+		<section id="activities" class="py-16">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold">
+					Activities &amp; Volunteering
+				</h2>
+				<div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-6">
+					<div class="card p-6 shadow-sm">
+						<div class="flex items-center mb-3">
+							<i class="fas fa-user-tie text-2xl text-blue-600 mr-3"></i>
+							<h3 class="text-lg font-semibold">Executive Member</h3>
+						</div>
+						<p class="text-gray-600 mb-4">GBPC</p>
+						<p class="text-gray-700">
+							Delivered comprehensive training sessions on Excel, Python,
+							HTML/CSS to students and professionals.
+						</p>
+					</div>
 
-                <div class="card p-6 shadow-sm" data-aos="zoom-in-left" data-aos-delay="400">
-                    <div class="flex items-center mb-3">
-                        <i class="fas fa-database text-2xl text-red-600 mr-3"></i>
-                        <h3 class="text-xl font-semibold">Database Management Solutions</h3>
-                    </div>
-                    <p class="text-gray-600 mb-4">SQL • Oracle ERP • Database Design</p>
-                    <p class="text-gray-700 mb-4">
-                        Developed and maintained database solutions for student information systems,
-                        ensuring data integrity and optimized query performance.
-                    </p>
-                    <div class="flex items-center text-sm">
-                        <span class="badge-outline px-2 py-1 text-xs font-medium rounded mr-2">SQL</span>
-                        <span class="badge-outline px-2 py-1 text-xs font-medium rounded">Database Design</span>
-                    </div>
-                </div>
-            </div>
+					<div class="card p-6 shadow-sm">
+						<div class="flex items-center mb-3">
+							<i class="fas fa-users text-2xl text-green-600 mr-3"></i>
+							<h3 class="text-lg font-semibold">Member</h3>
+						</div>
+						<p class="text-gray-600 mb-4">BASIS Students' Chapter</p>
+						<p class="text-gray-700">
+							Active participation in professional development activities and
+							technology-focused initiatives.
+						</p>
+					</div>
 
-           
-        </div>
-    </section>
+					<div class="card p-6 shadow-sm">
+						<div class="flex items-center mb-3">
+							<i class="fas fa-heart text-2xl text-red-600 mr-3"></i>
+							<h3 class="text-lg font-semibold">Volunteer</h3>
+						</div>
+						<p class="text-gray-600 mb-4">Blood Plus</p>
+						<p class="text-gray-700">
+							Organized and participated in 4+ blood donation drives,
+							contributing to community health initiatives.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- Education & Certifications -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold" data-aos="zoom-in">Education &amp;
-                Certifications</h2>
-            <div class="max-w-4xl mx-auto">
-                <div class="grid lg:grid-cols-2 gap-8">
-                    <!-- Education -->
-                    <div class="card p-6 shadow-sm" data-aos="zoom-in-right" data-aos-delay="100">
-                        <div class="flex items-center mb-4">
-                            <i class="fas fa-graduation-cap text-2xl text-blue-600 mr-3"></i>
-                            <h3 class="text-xl font-semibold">Education</h3>
-                        </div>
-                        <div class="space-y-4">
-                            <div>
-                                <h4 class="font-medium">B.Sc. in Computer Science and Engineering</h4>
-                                <p class="text-gray-600">Gono Bishwabidyalay • 2018-2022 • GPA: 3.34</p>
-                            </div>
-                            <hr class="border-gray-200">
-                            <div>
-                                <h4 class="font-medium">Higher Secondary Certificate (HSC)</h4>
-                                <p class="text-gray-600">MEH Arif College • 2017 • GPA: 4.50</p>
-                            </div>
-                            <hr class="border-gray-200">
-                            <div>
-                                <h4 class="font-medium">Secondary School Certificate (SSC)</h4>
-                                <p class="text-gray-600">Baidgaon High School • 2015 • GPA: 4.86</p>
-                            </div>
-                        </div>
-                    </div>
+		<!-- Recommendations Section -->
+		<section id="recommendations" class="py-16">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold">
+					Recommendations
+				</h2>
+				<div class="max-w-4xl mx-auto">
+					<div class="grid md:grid-cols-2 gap-6">
+						<!-- Recommendation 1 -->
+						<div class="card p-6 shadow-sm">
+							<div class="flex items-start space-x-4">
+								<div class="flex-shrink-0">
+									<i class="fas fa-quote-left text-3xl text-blue-600"></i>
+								</div>
+								<div>
+									<p class="text-gray-700 text-lg mb-4">
+										"Bashir was quick to learn ERP data operations and
+										demonstrated great attention to detail during his
+										internship."
+									</p>
+									<div class="flex items-center">
+										<div>
+											<p class="font-semibold text-gray-800">Indican Islam</p>
+											<p class="text-gray-600">
+												Lead Production Planning, DBL Group
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 
-                    <!-- Certifications -->
-                    <div class="card p-6 shadow-sm" data-aos="zoom-in-left" data-aos-delay="200">
-                        <div class="flex items-center mb-4">
-                            <i class="fas fa-certificate text-2xl text-green-600 mr-3"></i>
-                            <h3 class="text-xl font-semibold">Certifications (2024)</h3>
-                        </div>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <i class="fas fa-award text-yellow-500 mt-1 mr-3"></i>
-                                <span>Excel Basics for Data Analysis</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-award text-yellow-500 mt-1 mr-3"></i>
-                                <span>Programming in Python</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-award text-yellow-500 mt-1 mr-3"></i>
-                                <span>Technical Support Fundamentals</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-award text-yellow-500 mt-1 mr-3"></i>
-                                <span>Foundations of Cybersecurity</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+						<!-- Recommendation 2 -->
+						<div class="card p-6 shadow-sm">
+							<div class="flex items-start space-x-4">
+								<div class="flex-shrink-0">
+									<i class="fas fa-quote-left text-3xl text-blue-600"></i>
+								</div>
+								<div>
+									<p class="text-gray-700 text-lg mb-4">
+										"He is highly proactive and supportive when it comes to
+										technical issues and system maintenance."
+									</p>
+									<div class="flex items-center">
+										<div>
+											<p class="font-semibold text-gray-800">Supervisor</p>
+											<p class="text-gray-600">
+												Unicom Education Consultant Services Ltd.
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- Currently Learning Section -->
-    <section id="learning" class="py-16">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold" data-aos="zoom-in">Currently Learning</h2>
-            <p class="text-center text-lg text-gray-600 max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">
-                I'm always eager to expand my skillset and am continuously exploring the AI world. Here are some of the
-                technologies and concepts I'm currently focused on.
-            </p>
-            <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
-                <!-- Learning Item 1 -->
-                <div class="card p-6 shadow-sm" data-aos="zoom-in-up" data-aos-delay="200">
-                    <div class="text-4xl text-blue-600 mb-3">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold">AIoT</h3>
-                </div>
-                <!-- Learning Item 2 -->
-                <div class="card p-6 shadow-sm" data-aos="zoom-in-up" data-aos-delay="300">
-                    <div class="text-4xl text-blue-600 mb-3">
-                        <i class="fab fa-python"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold">Advanced Python</h3>
-                </div>
-                <!-- Learning Item 3 -->
-                <div class="card p-6 shadow-sm" data-aos="zoom-in-up" data-aos-delay="400">
-                    <div class="text-4xl text-blue-600 mb-3">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold">Machine Learning</h3>
-                </div>
-                <!-- Learning Item 4 -->
-                <div class="card p-6 shadow-sm" data-aos="zoom-in-up" data-aos-delay="500">
-                    <div class="text-4xl text-blue-600 mb-3">
-                        <i class="fas fa-sitemap"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold">Data Structures & Algorithms</h3>
-                </div>
-                <!-- Learning Item 5 -->
-                <div class="card p-6 shadow-sm" data-aos="zoom-in-up" data-aos-delay="600">
-                    <div class="text-4xl text-blue-600 mb-3">
-                        <i class="fas fa-language"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold">English Proficiency</h3>
-                </div>
-                <!-- Learning Item 6 -->
-                <div class="card p-6 shadow-sm" data-aos="zoom-in-up" data-aos-delay="700">
-                    <div class="text-4xl text-blue-600 mb-3">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold">AI Exploration</h3>
-                </div>
-            </div>
-        </div>
-    </section>
+		<!-- Contact Section -->
+		<section id="contact" class="py-16 bg-gray-50">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold">
+					Get In Touch
+				</h2>
+				<div class="max-w-4xl mx-auto grid lg:grid-cols-2 gap-8">
+					<!-- Contact Information -->
+					<div class="card p-6 shadow-sm">
+						<h3 class="text-xl font-semibold text-center mb-2">
+							Contact Information
+						</h3>
+						<p class="text-gray-600 text-center mb-6">
+							Let's connect and discuss opportunities
+						</p>
+						<div class="space-y-4">
+							<div class="flex items-center space-x-3">
+								<div class="flex-shrink-0">
+									<i class="fas fa-phone text-xl text-blue-600"></i>
+								</div>
+								<div>
+									<p class="font-medium">Phone</p>
+									<a
+										href="tel:+8801793761605"
+										class="text-gray-600 hover:text-blue-600 transition-colors"
+									>
+										+880 1793 761605
+									</a>
+								</div>
+							</div>
 
-    <!-- Activities & Volunteering -->
-    <section class="py-16">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold" data-aos="zoom-in">Activities &amp;
-                Volunteering</h2>
-            <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-6">
-                <div class="card p-6 shadow-sm" data-aos="zoom-in-right" data-aos-delay="100">
-                    <div class="flex items-center mb-3">
-                        <i class="fas fa-user-tie text-2xl text-blue-600 mr-3"></i>
-                        <h3 class="text-lg font-semibold">Executive Member</h3>
-                    </div>
-                    <p class="text-gray-600 mb-4">GBPC</p>
-                    <p class="text-gray-700">
-                        Delivered comprehensive training sessions on Excel, Python, HTML/CSS to students and
-                        professionals.
-                    </p>
-                </div>
+							<div class="flex items-center space-x-3">
+								<div class="flex-shrink-0">
+									<i class="fas fa-envelope text-xl text-blue-600"></i>
+								</div>
+								<div>
+									<p class="font-medium">Email</p>
+									<a
+										href="mailto:babashir8811@gmail.com"
+										class="text-gray-600 hover:text-blue-600 transition-colors"
+									>
+										babashir8811@gmail.com
+									</a>
+								</div>
+							</div>
 
-                <div class="card p-6 shadow-sm" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="flex items-center mb-3">
-                        <i class="fas fa-users text-2xl text-green-600 mr-3"></i>
-                        <h3 class="text-lg font-semibold">Member</h3>
-                    </div>
-                    <p class="text-gray-600 mb-4">BASIS Students' Chapter</p>
-                    <p class="text-gray-700">
-                        Active participation in professional development activities and technology-focused initiatives.
-                    </p>
-                </div>
+							<div class="flex items-center space-x-3">
+								<div class="flex-shrink-0">
+									<i class="fas fa-map-marker-alt text-xl text-blue-600"></i>
+								</div>
+								<div>
+									<p class="font-medium">Present Address</p>
+									<p class="text-gray-600">
+										Dhanmondi, Jigatola, Road 4/A, House 13/9, Dhaka
+									</p>
+								</div>
+							</div>
 
-                <div class="card p-6 shadow-sm" data-aos="zoom-in-left" data-aos-delay="300">
-                    <div class="flex items-center mb-3">
-                        <i class="fas fa-heart text-2xl text-red-600 mr-3"></i>
-                        <h3 class="text-lg font-semibold">Volunteer</h3>
-                    </div>
-                    <p class="text-gray-600 mb-4">Blood Plus</p>
-                    <p class="text-gray-700">
-                        Organized and participated in 4+ blood donation drives, contributing to community health
-                        initiatives.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+							<div class="flex items-center space-x-3">
+								<div class="flex-shrink-0">
+									<i class="fas fa-home text-xl text-blue-600"></i>
+								</div>
+								<div>
+									<p class="font-medium">Permanent Address</p>
+									<p class="text-gray-600">
+										Koltasuti, BKSP, Zirani, Savar, Dhaka
+									</p>
+								</div>
+							</div>
 
-    <!-- Recommendations Section -->
-    <section class="py-16">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold" data-aos="zoom-in">Recommendations</h2>
-            <div class="max-w-4xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <!-- Recommendation 1 -->
-                    <div class="card p-6 shadow-sm" data-aos="zoom-in-right" data-aos-delay="100">
-                        <div class="flex items-start space-x-4">
-                            <div class="flex-shrink-0">
-                                <i class="fas fa-quote-left text-3xl text-blue-600"></i>
-                            </div>
-                            <div>
-                                <p class="text-gray-700 text-lg mb-4">"Bashir was quick to learn ERP data operations and
-                                    demonstrated great attention to detail during his internship."</p>
-                                <div class="flex items-center">
-                                    <div>
-                                        <p class="font-semibold text-gray-800">Indican Islam</p>
-                                        <p class="text-gray-600">Lead Production Planning, DBL Group</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+							<div class="flex items-center space-x-3">
+								<div class="flex-shrink-0">
+									<i class="fab fa-linkedin text-xl text-blue-600"></i>
+								</div>
+								<div>
+									<p class="font-medium">LinkedIn</p>
+									<a
+										href="https://www.linkedin.com/in/bashir-6923131b0"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="text-gray-600 hover:text-blue-600 transition-colors"
+									>
+										www.linkedin.com/in/bashir-6923131b0
+									</a>
+								</div>
+							</div>
 
-                    <!-- Recommendation 2 -->
-                    <div class="card p-6 shadow-sm" data-aos="zoom-in-left" data-aos-delay="200">
-                        <div class="flex items-start space-x-4">
-                            <div class="flex-shrink-0">
-                                <i class="fas fa-quote-left text-3xl text-blue-600"></i>
-                            </div>
-                            <div>
-                                <p class="text-gray-700 text-lg mb-4">"He is highly proactive and supportive when it
-                                    comes to technical issues and system maintenance."</p>
-                                <div class="flex items-center">
-                                    <div>
-                                        <p class="font-semibold text-gray-800">Supervisor</p>
-                                        <p class="text-gray-600">Unicom Education Consultant Services Ltd.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+							<div class="flex items-center space-x-3">
+								<div class="flex-shrink-0">
+									<i class="fab fa-github text-xl text-blue-600"></i>
+								</div>
+								<div>
+									<p class="font-medium">GitHub</p>
+									<a
+										href="https://github.com/bashir-CSE"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="text-gray-600 hover:text-blue-600 transition-colors"
+									>
+										github.com/bashir-CSE
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold" data-aos="zoom-in">Get In Touch</h2>
-            <div class="max-w-4xl mx-auto grid lg:grid-cols-2 gap-8">
-                <!-- Contact Information -->
-                <div class="card p-6 shadow-sm" data-aos="zoom-in-right" data-aos-delay="100">
-                    <h3 class="text-xl font-semibold text-center mb-2">Contact Information</h3>
-                    <p class="text-gray-600 text-center mb-6">
-                        Let's connect and discuss opportunities
-                    </p>
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-3">
-                            <div class="flex-shrink-0">
-                                <i class="fas fa-phone text-xl text-blue-600"></i>
-                            </div>
-                            <div>
-                                <p class="font-medium">Phone</p>
-                                <a href="tel:+8801793761605"
-                                    class="text-gray-600 hover:text-blue-600 transition-colors">
-                                    +880 1793 761605
-                                </a>
-                            </div>
-                        </div>
+					<!-- Contact Form -->
+					<div class="card p-6 shadow-sm">
+						<h3 class="text-xl font-semibold mb-4">Send Me a Message</h3>
+						<form id="contact-form" class="space-y-4">
+							<div>
+								<label for="name" class="block text-sm font-medium mb-1"
+									>Name *</label
+								>
+								<input
+									type="text"
+									id="name"
+									name="name"
+									required
+									class="form-input"
+								/>
+							</div>
+							<div>
+								<label for="email" class="block text-sm font-medium mb-1"
+									>Email *</label
+								>
+								<input
+									type="email"
+									id="email"
+									name="email"
+									required
+									class="form-input"
+									pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+									title="Please enter a valid email address"
+								/>
+							</div>
+							<div>
+								<label for="subject" class="block text-sm font-medium mb-1"
+									>Subject *</label
+								>
+								<input
+									type="text"
+									id="subject"
+									name="subject"
+									required
+									class="form-input"
+								/>
+							</div>
+							<div>
+								<label for="message" class="block text-sm font-medium mb-1"
+									>Message *</label
+								>
+								<textarea
+									id="message"
+									name="message"
+									rows="4"
+									required
+									class="form-input resize-none"
+								></textarea>
+							</div>
+							<button
+								type="submit"
+								id="submit-btn"
+								class="btn-primary w-full px-6 py-3 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors"
+							>
+								<span id="btn-text">
+									<i class="fas fa-paper-plane mr-2"></i>Send Message
+								</span>
+								<span id="btn-loading" class="hidden">
+									<span class="spinner inline-block mr-2"></span>Sending...
+								</span>
+							</button>
+						</form>
+						<div id="form-message" class="mt-4 hidden"></div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-                        <div class="flex items-center space-x-3">
-                            <div class="flex-shrink-0">
-                                <i class="fas fa-envelope text-xl text-blue-600"></i>
-                            </div>
-                            <div>
-                                <p class="font-medium">Email</p>
-                                <a href="mailto:babashir8811@gmail.com"
-                                    class="text-gray-600 hover:text-blue-600 transition-colors">
-                                    babashir8811@gmail.com
-                                </a>
-                            </div>
-                        </div>
+		<!-- Footer -->
+		<footer class="text-gray-600 body-font border-t bg-white">
+			<div
+				class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col"
+			>
+				<p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:py-2 sm:mt-0 mt-4">
+					© 2024 MD Bashir Ahmed —
+					<a
+						href="https://github.com/bashir-CSE"
+						class="text-gray-600 ml-1"
+						rel="noopener noreferrer"
+						target="_blank"
+						>@bashir-CSE</a
+					>
+				</p>
+				<span
+					class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start"
+				>
+					<a
+						href="https://github.com/bashir-CSE"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="text-gray-500 hover:text-gray-900 transition-colors"
+					>
+						<i class="fab fa-github text-xl"></i>
+					</a>
+					<a
+						href="https://www.linkedin.com/in/bashir-6923131b0"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="ml-3 text-gray-500 hover:text-gray-900 transition-colors"
+					>
+						<i class="fab fa-linkedin text-xl"></i>
+					</a>
+				</span>
+			</div>
+		</footer>
 
-                        <div class="flex items-center space-x-3">
-                            <div class="flex-shrink-0">
-                                <i class="fas fa-map-marker-alt text-xl text-blue-600"></i>
-                            </div>
-                            <div>
-                                <p class="font-medium">Present Address</p>
-                                <p class="text-gray-600">Dhanmondi, Jigatola, Road 4/A, House 13/9, Dhaka</p>
-                            </div>
-                        </div>
+		<!-- Floating Contact Button -->
+		<a href="#contact" title="Contact Me" class="floating-contact-btn">
+			<i class="fas fa-envelope"></i>
+		</a>
 
-                        <div class="flex items-center space-x-3">
-                            <div class="flex-shrink-0">
-                                <i class="fas fa-home text-xl text-blue-600"></i>
-                            </div>
-                            <div>
-                                <p class="font-medium">Permanent Address</p>
-                                <p class="text-gray-600">Koltasuti, BKSP, Zirani, Savar, Dhaka</p>
-                            </div>
-                        </div>
+		<!-- Scroll to Top Button -->
+		<button id="scrollTopBtn" title="Go to top" class="scroll-top-btn">
+			<i class="fas fa-arrow-up"></i>
+		</button>
 
-                        <div class="flex items-center space-x-3">
-                            <div class="flex-shrink-0">
-                                <i class="fab fa-linkedin text-xl text-blue-600"></i>
-                            </div>
-                            <div>
-                                <p class="font-medium">LinkedIn</p>
-                                <a href="https://www.linkedin.com/in/bashir-6923131b0" target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="text-gray-600 hover:text-blue-600 transition-colors">
-                                    www.linkedin.com/in/bashir-6923131b0
-                                </a>
-                            </div>
-                        </div>
+		<!-- JavaScript -->
+		<!-- JavaScript Libraries -->
+		<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+		<script src="https://unpkg.com/typeit@8.8.3/dist/index.umd.js"></script>
+		<script src="https://unpkg.com/scrollreveal"></script>
+		<script src="https://unpkg.com/headroom.js"></script>
 
-                        <div class="flex items-center space-x-3">
-                            <div class="flex-shrink-0">
-                                <i class="fab fa-github text-xl text-blue-600"></i>
-                            </div>
-                            <div>
-                                <p class="font-medium">GitHub</p>
-                                <a href="https://github.com/bashir-CSE" target="_blank" rel="noopener noreferrer"
-                                    class="text-gray-600 hover:text-blue-600 transition-colors">
-                                    github.com/bashir-CSE
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Form -->
-                <div class="card p-6 shadow-sm" data-aos="zoom-in-left" data-aos-delay="200">
-                    <h3 class="text-xl font-semibold mb-4">Send Me a Message</h3>
-                    <form id="contact-form" class="space-y-4">
-                        <div>
-                            <label for="name" class="block text-sm font-medium mb-1">Name *</label>
-                            <input type="text" id="name" name="name" required class="form-input">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium mb-1">Email *</label>
-                            <input type="email" id="email" name="email" required class="form-input"
-                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                                title="Please enter a valid email address">
-                        </div>
-                        <div>
-                            <label for="subject" class="block text-sm font-medium mb-1">Subject *</label>
-                            <input type="text" id="subject" name="subject" required class="form-input">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium mb-1">Message *</label>
-                            <textarea id="message" name="message" rows="4" required
-                                class="form-input resize-none"></textarea>
-                        </div>
-                        <button type="submit" id="submit-btn"
-                            class="btn-primary w-full px-6 py-3 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors">
-                            <span id="btn-text">
-                                <i class="fas fa-paper-plane mr-2"></i>Send Message
-                            </span>
-                            <span id="btn-loading" class="hidden">
-                                <span class="spinner inline-block mr-2"></span>Sending...
-                            </span>
-                        </button>
-                    </form>
-                    <div id="form-message" class="mt-4 hidden"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="text-gray-600 body-font border-t bg-white">
-        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-            <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:py-2 sm:mt-0 mt-4">
-                © 2024 MD Bashir Ahmed —
-                <a href="https://github.com/bashir-CSE" class="text-gray-600 ml-1" rel="noopener noreferrer"
-                    target="_blank">@bashir-CSE</a>
-            </p>
-            <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-                <a href="https://github.com/bashir-CSE" target="_blank" rel="noopener noreferrer"
-                    class="text-gray-500 hover:text-gray-900 transition-colors">
-                    <i class="fab fa-github text-xl"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/bashir-6923131b0" target="_blank" rel="noopener noreferrer"
-                    class="ml-3 text-gray-500 hover:text-gray-900 transition-colors">
-                    <i class="fab fa-linkedin text-xl"></i>
-                </a>
-            </span>
-        </div>
-    </footer>
-
-    <!-- Floating Contact Button -->
-    <a href="#contact" title="Contact Me" class="floating-contact-btn">
-        <i class="fas fa-envelope"></i>
-    </a>
-
-    <!-- Scroll to Top Button -->
-    <button id="scrollTopBtn" title="Go to top" class="scroll-top-btn">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <!-- JavaScript -->
-    <!-- JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <!-- Custom JavaScript -->
-    <script src="js/main.js"></script>
-
-    <script>
-        // Initialize Particles.js
-        particlesJS.load('particles-js', 'particles.json', function() {
-            console.log('callback - particles.js config loaded');
-        });
-
-        // Initialize Animate On Scroll (AOS)
-        AOS.init({
-            delay: 100,
-            duration: 500,
-        });
-    </script>
-</body>
-
+		<!-- Custom JavaScript -->
+		<script src="js/main.js"></script>
+	</body>
 </html>
