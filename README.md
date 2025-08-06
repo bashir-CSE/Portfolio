@@ -14,14 +14,16 @@ This repository contains the source code for my personal portfolio website. It's
 ![Portfolio Screenshot](https://via.placeholder.com/900x450.png?text=Add+A+Screenshot+Of+Your+Site+Here)
 *A screenshot of the portfolio website's hero section.*
 
+> Note: Legacy references to “Process Automation Scripts” and “Database Management Solutions” have been removed from the site content to better reflect current focus projects.
+
 ## ✨ Features
 
--   **Dynamic Hero Section:** Features an engaging background powered by `particles.js` and a captivating animated typing effect using `TypeIt` to introduce my professional profile.
--   **Interactive Skill Visualizations:** Skill bars and percentage counters dynamically animate into view as the user scrolls, providing an engaging representation of my proficiencies.
--   **Seamless Navigation:** Includes a sticky header that intelligently hides on scroll down and reappears on scroll up (powered by `Headroom.js`), active link highlighting, and a convenient "Back to Top" button for enhanced user experience.
--   **Engaging User Interface:** Incorporates subtle fade-in animations on scroll using `ScrollReveal.js` and a preloader to ensure a smooth and polished page load experience.
--   **Integrated Contact Form:** A fully functional contact form powered by `EmailJS` allows visitors to send direct messages.
--   **Modern & Responsive Design:** Crafted with Tailwind CSS and custom SCSS for a clean, contemporary aesthetic and full responsiveness across all devices.
+-   **Dynamic Hero Section:** Features an engaging background powered by `particles.js` and a typing effect using `Typed.js` (shuffled phrases) to introduce my professional profile.
+-   **Interactive & Accessible Skill Visualizations:** Skill bars and percentage counters animate into view with ARIA updates (role="progressbar", aria-valuenow/min/max).
+-   **Seamless Navigation:** Sticky header with `Headroom.js`, active link highlighting, smooth scrolling, and a "Back to Top" button.
+-   **Engaging UI:** Subtle fade-in animations via `ScrollReveal.js` and a preloader for a smooth load experience.
+-   **Integrated Contact Form:** Fully functional form powered by `EmailJS`.
+-   **Modern & Responsive Design:** Tailwind CSS + custom CSS tokens with WCAG AA-compliant buttons and focus-visible styles.
 
 ## 🛠️ Tech Stack
 
@@ -32,7 +34,7 @@ This repository contains the source code for my personal portfolio website. It's
 ## 📚 Libraries Used
 
 -   `particles.js`: For creating the interactive and dynamic background in the hero section.
--   `TypeIt`: Powers the engaging and customizable typing animation for text display.
+-   `Typed.js`: Powers the typing animation for text display.
 -   `ScrollReveal.js`: Facilitates smooth and subtle fade-in animations for elements as they enter the viewport.
 -   `EmailJS`: Enables direct email sending from the contact form without server-side code.
 -   `Headroom.js`: Manages the intelligent sticky header behavior, hiding and showing it based on scroll direction.
@@ -56,6 +58,12 @@ To set up and run this project on your local machine, you will need a live serve
     -   Use a VS Code extension like **Live Server**.
     -   Right-click `index.html` and select "Open with Live Server". This is crucial for `particles.js` to correctly load its `particles.json` configuration file.
 
+## 🧭 Accessibility
+
+-   Buttons use centralized CSS custom properties with WCAG AA contrast and clear focus-visible rings.
+-   Skill bars update ARIA attributes during animation (role="progressbar", aria-valuenow/min/max) and honor `prefers-reduced-motion`.
+-   Page scroll progress bar exposes aria-valuenow/min/max for assistive tech.
+
 ## ⚙️ Configuration
 
 The contact form functionality relies on EmailJS for sending messages.
@@ -77,6 +85,15 @@ Feel free to connect with me through the following channels:
 
 Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/bashir-CSE/Portfolio/issues) if you want to contribute.
 
-## 📄 License
+## 📝 Changelog
+
+-   2025-08-06
+    -   Replaced TypeIt with Typed.js (shuffled phrases) in hero.
+    -   Standardized button system with centralized tokens; ensured WCAG AA contrast and focus-visible rings.
+    -   Implemented accessible skill bars with ARIA attributes and reduced-motion support.
+    -   Removed legacy project references: “Process Automation Scripts” and “Database Management Solutions”.
+    -   Synced content with updated resume; corrected experience dates and roles.
+
+## � License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for more details.

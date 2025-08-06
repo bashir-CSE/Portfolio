@@ -1,47 +1,87 @@
 :root {
-  /* Base Colors */
+  /* Typography */
   --font-size: 14px;
+
+  /* Base Colors (WCAG AA compliant pairs) */
   --background: #ffffff;
-  --foreground: oklch(0.145 0 0);
+  --foreground: #0b1320;
+
   --card: #ffffff;
-  --card-foreground: oklch(0.145 0 0);
-  --primary: #030213;
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.95 0.0058 264.53);
-  --secondary-foreground: #030213;
+  --card-foreground: #0b1320;
+
+  /* Button tokens (centralized) */
+  --btn-bg: #1f2937;           /* Gray-800 */
+  --btn-fg: #ffffff;           /* White */
+  --btn-hover-bg: #111827;     /* Gray-900 */
+  --btn-active-bg: #0b1220;    /* Near-black */
+  --btn-disabled-bg: #9ca3af;  /* Gray-400 */
+  --btn-disabled-fg: #1f2937;  /* Gray-800 */
+  --btn-outline-fg: #0b1320;   /* Foreground */
+  --btn-outline-border: #334155; /* Slate-700 */
+  --btn-outline-hover-bg: #e5e7eb; /* Gray-200 */
+
+  /* Legacy aliases retained for compatibility */
+  --primary: var(--btn-bg);
+  --primary-foreground: var(--btn-fg);
+
+  --secondary: #eef2ff;            /* Indigo-50 */
+  --secondary-foreground: #111827; /* Gray-900 */
+
   --muted: #ececf0;
   --muted-foreground: #717182;
   --accent: #e9ebef;
-  --accent-foreground: #030213;
-  --border: rgba(0, 0, 0, 0.1);
+  --accent-foreground: #0b1320;
+  --border: rgba(0, 0, 0, 0.12);
+
   /* UI Elements */
   --radius: 0.625rem;
-  --shadow-sm: 0 1px 2px oklch(0.145 0 0 / 0.05);
-  --shadow-md: 0 4px 6px oklch(0.145 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px oklch(0.145 0 0 / 0.1);
-  --shadow-btn: 0 5px 15px oklch(0.145 0 0 / 0.3);
+  --shadow-sm: 0 1px 2px rgba(17, 24, 39, 0.06);
+  --shadow-md: 0 4px 6px rgba(17, 24, 39, 0.1);
+  --shadow-lg: 0 10px 15px rgba(17, 24, 39, 0.15);
+  --shadow-btn: 0 5px 15px rgba(17, 24, 39, 0.25);
+
   /* Gradients */
   --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
   --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+
   /* Skill Levels */
-  --skill-bar-bg: var(--muted);
-  --skill-bar-fill: var(--primary);
+  --skill-bar-bg: #e5e7eb;         /* Gray-200 */
+  --skill-bar-fill: #2563eb;       /* Blue-600 */
+  --skill-bar-fill-dark: #60a5fa;  /* Blue-400 */
+
   /* Transitions */
-  --transition-base: all 0.3s ease;
+  --transition-base: all 0.2s ease;
   --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(1 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(1 0 0);
-  --border: rgba(255, 255, 255, 0.1);
-  --shadow-sm: 0 1px 2px oklch(0.145 0 0 / 0.5);
-  --shadow-md: 0 4px 6px oklch(0.145 0 0 / 0.7);
-  --shadow-lg: 0 10px 15px oklch(0.145 0 0 / 0.7);
-  --shadow-btn: 0 5px 15px oklch(0.145 0 0 / 0.6);
+  --background: #0b1320;
+  --foreground: #f9fafb;
+
+  --card: #111827;
+  --card-foreground: #f3f4f6;
+
+  --border: rgba(255, 255, 255, 0.12);
+
+  /* Buttons dark theme */
+  --btn-bg: #2563eb;           /* Blue-600 */
+  --btn-fg: #ffffff;           /* White */
+  --btn-hover-bg: #1d4ed8;     /* Blue-700 */
+  --btn-active-bg: #1e40af;    /* Blue-800 */
+  --btn-disabled-bg: #374151;  /* Gray-700 */
+  --btn-disabled-fg: #9ca3af;  /* Gray-400 */
+  --btn-outline-fg: #e5e7eb;   /* Gray-200 */
+  --btn-outline-border: #64748b; /* Slate-500 */
+  --btn-outline-hover-bg: rgba(255, 255, 255, 0.06);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.6);
+
+  /* Skills */
+  --skill-bar-bg: #1f2937;        /* Gray-800 */
+  --skill-bar-fill: var(--skill-bar-fill-dark);
 }
 
 body {
@@ -82,17 +122,87 @@ body {
   transform: scale(1.05);
 }
 
-.btn-primary {
-  background-color: var(--primary);
-  color: var(--primary-foreground);
+/* Button System (WCAG AA compliant) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
   border-radius: var(--radius);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  border: 1px solid transparent;
+  transition: var(--transition-base);
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+
+/* Primary */
+.btn-primary {
+  background-color: var(--btn-bg);
+  color: var(--btn-fg);
+  border-color: var(--btn-bg);
+  box-shadow: var(--shadow-sm);
 }
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-btn);
+  background-color: var(--btn-hover-bg);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+.btn-primary:active {
+  background-color: var(--btn-active-bg);
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+.btn-primary:disabled {
+  background-color: var(--btn-disabled-bg);
+  color: var(--btn-disabled-fg);
+  border-color: var(--btn-disabled-bg);
+}
+
+/* Outline */
+.btn-outline {
+  background-color: transparent;
+  color: var(--btn-outline-fg);
+  border-color: var(--btn-outline-border);
+  box-shadow: var(--shadow-sm);
+}
+.btn-outline:hover {
+  background-color: var(--btn-outline-hover-bg);
+  transform: translateY(-1px);
+}
+.btn-outline:active {
+  transform: translateY(0);
+}
+.btn-outline:disabled {
+  color: var(--btn-disabled-fg);
+  border-color: var(--btn-disabled-bg);
+}
+
+/* Link-style button */
+.btn-link {
+  background: transparent;
+  color: #2563eb; /* Blue-600 */
+  border-color: transparent;
+  text-decoration: underline;
+}
+.btn-link:hover {
+  color: #1d4ed8; /* Blue-700 */
+}
+
+/* Focus ring for all buttons */
+.btn:focus-visible,
+.btn-primary:focus-visible,
+.btn-outline:focus-visible,
+.btn-link:focus-visible {
+  outline: 3px solid #93c5fd; /* Blue-300 */
+  outline-offset: 2px;
+  border-radius: var(--radius);
 }
 
 .btn-outline {
@@ -231,34 +341,33 @@ textarea:focus-visible {
   transition: width 0.3s ease;
 }
 
-/* Active nav link style (used by JS) */
-.active-nav-link {
-  color: #2563eb; /* Tailwind blue-600 */
-  position: relative;
+/* Accessible Skill Bars */
+.skill-item {
+  padding: 0.25rem 0;
 }
-.active-nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 100%;
-  height: 2px;
-  background: #2563eb;
-  border-radius: 2px;
-}
-
-/* Skill bars */
 .skill-bar {
-  height: 8px;
-  background: var(--skill-bar-bg);
-  border-radius: var(--radius);
+  width: 100%;
+  height: 10px;
+  background-color: var(--skill-bar-bg);
+  border-radius: 9999px;
   overflow: hidden;
+  position: relative;
 }
 .skill-bar-fill {
   width: 0;
   height: 100%;
-  background: var(--skill-bar-fill);
+  background-color: var(--skill-bar-fill);
+  border-radius: 9999px;
   transition: width 1.5s ease;
+}
+.skill-percentage {
+  min-width: 2ch;
+  text-align: right;
+}
+@media (prefers-reduced-motion: reduce) {
+  .skill-bar-fill {
+    transition: none;
+  }
 }
 
 /* Scroll to Top Button */
@@ -269,8 +378,7 @@ textarea:focus-visible {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  background-color: #2563eb;
-  /* Corresponds to Tailwind's bg-blue-600 */
+  background-color: #2563eb; /* Blue-600 */
   color: white;
   border: none;
   cursor: pointer;
@@ -347,14 +455,4 @@ textarea:focus-visible {
 .floating-contact-btn:hover {
   transform: scale(1.1);
   background-color: #1d4ed8; /* Tailwind's blue-700 */
-}
-
-/* Respect reduced motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
-  }
 }

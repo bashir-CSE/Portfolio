@@ -20,9 +20,11 @@ const PortfolioApp = {
 		},
 		typing: {
 			strings: [
-				"A Detail-Oriented Information Technology Professional.",
-				"Specializing in Data Analysis and System Automation.",
-				"Transforming Data into Actionable Insights.",
+				"IT Operations",
+				"Data Analysis",
+				"Process Automation",
+				"ERP",
+				"Power BI & Advanced Excel"
 			],
 			speed: 40,
 			deleteSpeed: 20,
@@ -39,10 +41,8 @@ const PortfolioApp = {
 	init() {
 		this.cacheDOMElements();
 		this.initEmailJS();
-		// Initialize typing with multiple fallback strategies
-		this.initTyping();
-		// Add a delayed initialization as a backup
-		setTimeout(() => this.initTyping(), 1000);
+		// Initialize Typed.js typing effect
+		this.initTypedJS();
 		this.initEventListeners();
 		this.initParticles();
 		this.initScrollReveal();
@@ -231,39 +231,39 @@ const PortfolioApp = {
 		};
 	},
 
-	initTyping() {
-		// Check if TypeIt is available and initialize it
-		if (typeof TypeIt !== "undefined") {
-			new TypeIt("#typed-text", this.config.typing).go();
-		} else {
-			// If TypeIt is not available, try to load it and retry initialization
-			console.warn("TypeIt library not loaded, attempting to load it...");
-			this.loadTypeItLibrary();
-		}
-	},
-
-	loadTypeItLibrary() {
-		// Check if script is already being loaded
-		if (document.querySelector('script[src*="typeit"]')) {
-			// If script is already loading, wait and retry
-			setTimeout(() => this.initTyping(), 100);
+	// Initialize Typed.js with shuffled phrases
+	initTypedJS() {
+		// Require the UMD global `Typed` provided by typed.js
+		if (typeof Typed === "undefined") {
+			console.error("Typed.js is not loaded.");
 			return;
 		}
-
-		// Create and load the TypeIt script
-		const script = document.createElement('script');
-		script.src = 'https://unpkg.com/typeit@8.8.3/dist/index.umd.js';
-		script.async = true;
-		script.onload = () => {
-			console.log("TypeIt library loaded successfully");
-			// Retry initialization after a short delay to ensure library is ready
-			setTimeout(() => this.initTyping(), 100);
-		};
-		script.onerror = () => {
-			console.error("Failed to load TypeIt library");
-		};
-		document.head.appendChild(script);
+		// Ensure the target element exists (index.html uses #typed5 inside #typed-text)
+		const target = document.querySelector("#typed5") || document.querySelector("#typed-text");
+		if (!target) return;
+		// Configure phrases requested by user
+		const phrases = [
+			"IT Operations",
+			"Data Analysis",
+			"Process Automation",
+			"ERP",
+			"Power BI & Advanced Excel",
+		];
+		// eslint-disable-next-line no-undef
+		new Typed(target, {
+			strings: phrases,
+			typeSpeed: 40,
+			backSpeed: 20,
+			cursorChar: "_",
+			shuffle: true,
+			smartBackspace: false,
+			backDelay: 1500,
+			startDelay: 500,
+			loop: true,
+		});
 	},
+
+	// Deprecated TypeIt fallback removed since we use Typed.js CDN in index.html
 
 	initParticles() {
 		// Initialize Particles.js
@@ -285,7 +285,7 @@ const PortfolioApp = {
 			distance: "60px",
 			duration: 1000,
 			delay: 200,
-			reset: false, // animate once for performance
+			reset: true, // animate once for performance
 		});
 
 		// Common reveal for section titles
@@ -305,14 +305,30 @@ const PortfolioApp = {
 			distance: "30px",
 			interval: 150,
 			afterReveal: (el) => {
-				const bar = el.querySelector(".skill-bar-fill");
+				const barFill = el.querySelector(".skill-bar-fill");
 				const percentage = el.querySelector(".skill-percentage");
-				if (bar && percentage) {
+				if (barFill && percentage) {
 					const goal = parseInt(percentage.dataset.goal, 10);
-					// The CSS transition for the bar width is handled in styles.css
-					bar.style.width = bar.dataset.width;
-					// We animate the percentage number
-					this.animateCountUp(percentage, goal);
+
+					// Ensure parent progress container has ARIA role and attributes for accessibility
+					const progressContainer = el.querySelector(".skill-bar");
+					if (progressContainer) {
+						progressContainer.setAttribute("role", "progressbar");
+						progressContainer.setAttribute("aria-valuemin", "0");
+						progressContainer.setAttribute("aria-valuemax", "100");
+						progressContainer.setAttribute("aria-valuenow", "0");
+						// Optional label for SR: use preceding skill name text
+						const skillName = el.querySelector(".font-medium");
+						if (skillName) {
+							progressContainer.setAttribute("aria-label", skillName.textContent.trim());
+						}
+					}
+
+					// Kick off the width transition
+					barFill.style.width = barFill.dataset.width;
+
+					// Animate the percentage number and sync aria-valuenow
+					this.animateCountUp(percentage, goal, progressContainer);
 				}
 			},
 		});
@@ -335,7 +351,7 @@ const PortfolioApp = {
 		sr.reveal("#contact .card:nth-of-type(2)", { origin: "right" });
 	},
 
-	animateCountUp(el, goal) {
+	animateCountUp(el, goal, ariaTarget = null) {
 		let start = 0;
 		const duration = 1500; // Corresponds to the CSS transition duration
 		const startTime = performance.now();
@@ -346,6 +362,9 @@ const PortfolioApp = {
 			const currentVal = Math.floor(progress * goal);
 
 			el.textContent = `${currentVal}%`;
+			if (ariaTarget) {
+				ariaTarget.setAttribute("aria-valuenow", String(currentVal));
+			}
 
 			if (progress < 1) {
 				requestAnimationFrame(step);
