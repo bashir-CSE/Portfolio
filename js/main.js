@@ -39,7 +39,10 @@ const PortfolioApp = {
 	init() {
 		this.cacheDOMElements();
 		this.initEmailJS();
+		// Initialize typing with multiple fallback strategies
 		this.initTyping();
+		// Add a delayed initialization as a backup
+		setTimeout(() => this.initTyping(), 1000);
 		this.initEventListeners();
 		this.initParticles();
 		this.initScrollReveal();
@@ -77,6 +80,13 @@ const PortfolioApp = {
 		this.elements.mobileMenuBtn.addEventListener("click", () =>
 			this.toggleMobileMenu()
 		);
+		// Ensure initial ARIA state
+		if (this.elements.mobileMenu) {
+			this.elements.mobileMenu.setAttribute("aria-hidden", "true");
+		}
+		if (this.elements.mobileMenuBtn) {
+			this.elements.mobileMenuBtn.setAttribute("aria-expanded", "false");
+		}
 		this.elements.mobileNavLinks.forEach((link) => {
 			link.addEventListener("click", () => this.closeMobileMenu());
 		});
@@ -97,6 +107,8 @@ const PortfolioApp = {
 		const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
 
 		this.elements.progressBar.style.width = `${scrollPercent}%`;
+		// Update ARIA for accessibility
+		this.elements.progressBar.setAttribute("aria-valuenow", String(Math.round(scrollPercent)));
 
 		let currentSection = "";
 		this.elements.sections.forEach((section) => {
@@ -111,25 +123,35 @@ const PortfolioApp = {
 			...this.elements.mobileNavLinks,
 		];
 		allLinks.forEach((link) => {
-			link.classList.toggle(
-				"active-nav-link",
-				link.getAttribute("href") === `#${currentSection}`
-			);
+			const isActive = link.getAttribute("href") === `#${currentSection}`;
+			link.classList.toggle("active-nav-link", isActive);
+			if (isActive) {
+				link.setAttribute("aria-current", "page");
+			} else {
+				link.removeAttribute("aria-current");
+			}
 		});
 
 		this.elements.scrollTopBtn.classList.toggle("visible", scrollTop > 300);
 	},
 
 	toggleMobileMenu() {
+		const isNowActive = !this.elements.mobileMenu.classList.contains("active");
 		this.elements.mobileMenu.classList.toggle("active");
 		this.elements.menuIcon.classList.toggle("hidden");
 		this.elements.closeIcon.classList.toggle("hidden");
+		// ARIA state updates
+		this.elements.mobileMenuBtn.setAttribute("aria-expanded", String(isNowActive));
+		this.elements.mobileMenu.setAttribute("aria-hidden", String(!isNowActive));
 	},
 
 	closeMobileMenu() {
 		this.elements.mobileMenu.classList.remove("active");
 		this.elements.menuIcon.classList.remove("hidden");
 		this.elements.closeIcon.classList.add("hidden");
+		// ARIA state updates
+		this.elements.mobileMenuBtn.setAttribute("aria-expanded", "false");
+		this.elements.mobileMenu.setAttribute("aria-hidden", "true");
 	},
 
 	handleSmoothScroll(e) {
@@ -210,9 +232,37 @@ const PortfolioApp = {
 	},
 
 	initTyping() {
+		// Check if TypeIt is available and initialize it
 		if (typeof TypeIt !== "undefined") {
 			new TypeIt("#typed-text", this.config.typing).go();
+		} else {
+			// If TypeIt is not available, try to load it and retry initialization
+			console.warn("TypeIt library not loaded, attempting to load it...");
+			this.loadTypeItLibrary();
 		}
+	},
+
+	loadTypeItLibrary() {
+		// Check if script is already being loaded
+		if (document.querySelector('script[src*="typeit"]')) {
+			// If script is already loading, wait and retry
+			setTimeout(() => this.initTyping(), 100);
+			return;
+		}
+
+		// Create and load the TypeIt script
+		const script = document.createElement('script');
+		script.src = 'https://unpkg.com/typeit@8.8.3/dist/index.umd.js';
+		script.async = true;
+		script.onload = () => {
+			console.log("TypeIt library loaded successfully");
+			// Retry initialization after a short delay to ensure library is ready
+			setTimeout(() => this.initTyping(), 100);
+		};
+		script.onerror = () => {
+			console.error("Failed to load TypeIt library");
+		};
+		document.head.appendChild(script);
 	},
 
 	initParticles() {
@@ -235,7 +285,7 @@ const PortfolioApp = {
 			distance: "60px",
 			duration: 1000,
 			delay: 200,
-			reset: true, // reveal elements on every scroll
+			reset: false, // animate once for performance
 		});
 
 		// Common reveal for section titles
