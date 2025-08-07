@@ -17,6 +17,9 @@
 		<!-- EmailJS -->
 		<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
+		<!-- GLightbox CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css" />
+
 		<!-- Custom CSS -->
 		<link rel="stylesheet" href="css/styles.css" />
 	</head>
@@ -81,7 +84,7 @@
 							href="https://www.linkedin.com/in/bashir-6923131b0"
 							target="_blank"
 							rel="noopener noreferrer"
-							class="social-icon text-gray-600 hover:text-blue-600 transition-colors"
+							class="social-icon text-blue-600 hover:text-blue-800 transition-colors"
 						>
 							<i class="fab fa-linkedin text-xl"></i>
 							<span class="sr-only">LinkedIn Profile</span>
@@ -90,7 +93,7 @@
 							href="https://github.com/bashir-CSE"
 							target="_blank"
 							rel="noopener noreferrer"
-							class="social-icon text-gray-600 hover:text-blue-600 transition-colors"
+							class="social-icon text-blue-600 hover:text-blue-800 transition-colors"
 						>
 							<i class="fab fa-github text-xl"></i>
 							<span class="sr-only">GitHub Profile</span>
@@ -100,7 +103,7 @@
 					<!-- Mobile Menu Button -->
 <button
 						id="mobile-menu-btn"
-						class="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors"
+						class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100 transition-colors"
 						aria-controls="mobile-menu"
 						aria-expanded="false"
 						aria-label="Toggle navigation menu"
@@ -148,7 +151,7 @@
 								href="https://www.linkedin.com/in/bashir-6923131b0"
 								target="_blank"
 								rel="noopener noreferrer"
-								class="social-icon text-gray-600 hover:text-blue-600 transition-colors"
+								class="social-icon text-blue-600 hover:text-blue-800 transition-colors"
 							>
 								<i class="fab fa-linkedin text-xl"></i>
 							</a>
@@ -156,7 +159,7 @@
 								href="https://github.com/bashir-CSE"
 								target="_blank"
 								rel="noopener noreferrer"
-								class="social-icon text-gray-600 hover:text-blue-600 transition-colors"
+								class="social-icon text-blue-600 hover:text-blue-800 transition-colors"
 							>
 								<i class="fab fa-github text-xl"></i>
 							</a>
@@ -169,7 +172,7 @@
 		<!-- Hero Section -->
 		<section
 			id="home"
-			class="py-16 lg:py-24 h-[50vh] lg:h-[100vh] relative overflow-hidden bg-gray-900"
+			class="py-16 lg:py-24 relative overflow-hidden bg-gray-900"
 		>
 			<div id="particles-js" class="absolute inset-0"></div>
 			<div
@@ -181,13 +184,13 @@
 							MD Bashir Ahmed
 						</h1>
 						<p class="text-white/80 mb-2">Dhanmondi, Jigatola, Dhaka, Bangladesh</p>
-						<div class="flex gap-4 justify-center text-white/90 text-sm mb-6">
+						<div class="hero-contact-info flex gap-4 justify-center text-white/90 text-sm mb-6">
 							<a href="tel:+8801793761605" class="hover:underline"><i class="fas fa-phone mr-1"></i> +880 1793 761605</a>
-							<span>|</span>
+							<span class="separator">|</span>
 							<a href="mailto:babashir8811@gmail.com" class="hover:underline"><i class="fas fa-envelope mr-1"></i> babashir8811@gmail.com</a>
-							<span>|</span>
+							<span class="separator">|</span>
 							<a href="https://www.linkedin.com/in/bashir-6923131b0" target="_blank" rel="noopener" class="hover:underline"><i class="fab fa-linkedin mr-1"></i> LinkedIn</a>
-							<span>|</span>
+							<span class="separator">|</span>
 							<a href="https://github.com/bashir-CSE" target="_blank" rel="noopener" class="hover:underline"><i class="fab fa-github mr-1"></i> GitHub</a>
 						</div>
 						<p
@@ -429,49 +432,91 @@
 				<h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold">
 					Projects
 				</h2>
-				<div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
-					<div class="card p-6 shadow-sm">
-						<div class="flex items-center mb-3">
-							<i class="fas fa-piggy-bank text-2xl text-blue-600 mr-3"></i>
-							<h3 class="text-xl font-semibold">Student Fee Manager — Chrome Extension</h3>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<div class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+						<div class="relative h-48 overflow-hidden">
+							<a href="my image/P-1.png" class="glightbox" data-gallery="projects" data-title="Student Fee Manager">
+								<img src="my image/P-1.png"
+									 alt="Student Fee Manager"
+									 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110 project-image">
+							</a>
+							<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+								<h3 class="text-white text-xl font-bold">Student Fee Manager</h3>
+							</div>
 						</div>
-						<p class="text-gray-600 mb-4">JavaScript • Chrome APIs • Automation</p>
-						<p class="text-gray-700 mb-4">
-							A lightweight Chrome extension that automates student fee management workflows, reducing manual work and processing time by up to 95%.
-						</p>
-						<ul class="list-disc list-inside text-sm text-gray-600 mb-4">
-							<li>Automated fee calculation, reminders, and update flows</li>
-							<li>Integrated with existing web portals using content scripts</li>
-							<li>Reduced repetitive data entry and improved accuracy</li>
-						</ul>
-						<div class="flex items-center text-sm">
-							<span class="badge-outline px-2 py-1 text-xs font-medium rounded mr-2">Chrome Extension</span>
-							<span class="badge-outline px-2 py-1 text-xs font-medium rounded mr-2">Automation</span>
-							<span class="badge-outline px-2 py-1 text-xs font-medium rounded">JavaScript</span>
+						<div class="p-4">
+							<p class="text-gray-600 mb-4 line-clamp-2">JavaScript • Chrome APIs • Automation</p>
+							<p class="text-gray-700 text-sm">A lightweight Chrome extension that automates student fee management workflows, reducing manual work and processing time by up to 95%.</p>
 						</div>
 					</div>
-
-					<div class="card p-6 shadow-sm">
-						<div class="flex items-center mb-3">
-							<i class="fas fa-clipboard-check text-2xl text-green-600 mr-3"></i>
-							<h3 class="text-xl font-semibold">Automated Requisition & Attendance System</h3>
+					<div class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+						<div class="relative h-48 overflow-hidden">
+							<a href="my image/P-2.png" class="glightbox" data-gallery="projects" data-title="Project Alpha">
+								<img src="my image/P-2.png"
+									 alt="Project Alpha"
+									 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110 project-image">
+							</a>
+							<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+								<h3 class="text-white text-xl font-bold">Project Alpha</h3>
+							</div>
 						</div>
-						<p class="text-gray-600 mb-4">Web App • Google Apps Script • Sheets</p>
-						<p class="text-gray-700 mb-4">
-							Web-based solution to streamline classroom supply requisitions and employee attendance tracking, significantly enhancing operational efficiency and reducing manual workload.
-						</p>
-						<ul class="list-disc list-inside text-sm text-gray-600 mb-4">
-							<li>Automated end-to-end requisition approval and tracking</li>
-							<li>Attendance logging with validation and centralized reporting</li>
-							<li>Reduced manual processes and improved data reliability</li>
-						</ul>
-						<div class="flex items-center text-sm">
-							<span class="badge-outline px-2 py-1 text-xs font-medium rounded mr-2">Apps Script</span>
-							<span class="badge-outline px-2 py-1 text-xs font-medium rounded mr-2">Google Sheets</span>
-							<span class="badge-outline px-2 py-1 text-xs font-medium rounded">Web Automation</span>
+						<div class="p-4">
+							<p class="text-gray-600 mb-4 line-clamp-2">Web Development • UI/UX • React</p>
+							<p class="text-gray-700 text-sm">A modern web application with responsive design and interactive user interface built with React and Tailwind CSS.</p>
 						</div>
 					</div>
-
+					<div class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+						<div class="relative h-48 overflow-hidden">
+							<a href="my image/P-3.png" class="glightbox" data-gallery="projects" data-title="Data Analytics Dashboard">
+								<img src="my image/P-3.png"
+									 alt="Data Analytics Dashboard"
+									 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110 project-image">
+							</a>
+							<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+								<h3 class="text-white text-xl font-bold">Data Analytics Dashboard</h3>
+							</div>
+						</div>
+						<div class="p-4">
+							<p class="text-gray-600 mb-4 line-clamp-2">Data Visualization • Power BI • Analytics</p>
+							<p class="text-gray-700 text-sm">Interactive dashboard for business intelligence and data analytics with real-time updates and customizable reports.</p>
+						</div>
+					</div>
+					<div class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+						<div class="relative h-48 overflow-hidden">
+							<a href="my image/P-4.png" class="glightbox" data-gallery="projects" data-title="NLC Performance Report">
+								<img src="my image/P-4.png"
+									 alt="NLC Performance Report"
+									 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110 project-image">
+							</a>
+							<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+								<h3 class="text-white text-xl font-bold">NLC Performance Report</h3>
+							</div>
+						</div>
+						<div class="p-4">
+							<p class="text-gray-600 mb-4 line-clamp-2">Reporting • Excel • Automation</p>
+							<p class="text-gray-700 text-sm">Automated performance reporting system with advanced Excel formulas and VBA macros for data analysis.</p>
+						</div>
+					</div>
+					<div class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+						<div class="relative h-48 overflow-hidden">
+							<a href="my image/P-5.png" class="glightbox" data-gallery="projects" data-title="Modern Dashboard UI">
+								<img src="my image/P-5.png"
+									 alt="Modern Dashboard UI"
+									 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110 project-image">
+							</a>
+							<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+								<h3 class="text-white text-xl font-bold">Modern Dashboard UI</h3>
+							</div>
+						</div>
+						<div class="p-4">
+							<p class="text-gray-600 mb-4 line-clamp-2">UI Design • Dashboard • Web App</p>
+							<p class="text-gray-700 text-sm">A responsive admin dashboard with interactive charts, user management, and dark mode support built with modern web technologies.</p>
+						</div>
+					</div>
+				</div>
+      
+						
+					</div>
 				</div>
 			</div>
 		</section>
@@ -908,7 +953,7 @@
 						href="https://github.com/bashir-CSE"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="text-gray-500 hover:text-gray-900 transition-colors"
+						class="text-gray-700 hover:text-blue-600 transition-colors"
 					>
 						<i class="fab fa-github text-xl"></i>
 					</a>
@@ -916,7 +961,7 @@
 						href="https://www.linkedin.com/in/bashir-6923131b0"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="ml-3 text-gray-500 hover:text-gray-900 transition-colors"
+						class="ml-3 text-gray-700 hover:text-blue-600 transition-colors"
 					>
 						<i class="fab fa-linkedin text-xl"></i>
 					</a>
@@ -941,6 +986,8 @@
 		<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 		<script src="https://unpkg.com/scrollreveal"></script>
 		<script src="https://unpkg.com/headroom.js"></script>
+		<!-- GLightbox JS -->
+		<script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js"></script>
 	
 		<!-- Custom JavaScript -->
 		<script src="js/main.js"></script>

@@ -2,6 +2,17 @@
 :root {
 	/* Base Colors */
 	--font-size: 14px;
+
+	/* Fluid type scale for cross-device responsiveness */
+	--step--2: clamp(0.7rem, 0.65rem + 0.2vw, 0.78rem);
+	--step--1: clamp(0.8rem, 0.75rem + 0.3vw, 0.9rem);
+	--step-0: clamp(0.95rem, 0.85rem + 0.4vw, 1rem);
+	--step-1: clamp(1.1rem, 0.95rem + 0.6vw, 1.25rem);
+	--step-2: clamp(1.35rem, 1.1rem + 1vw, 1.5rem);
+	--step-3: clamp(1.6rem, 1.2rem + 1.4vw, 1.9rem);
+	--step-4: clamp(2rem, 1.6rem + 2.2vw, 2.5rem);
+	--step-5: clamp(2.6rem, 2rem + 3.2vw, 3.25rem);
+
 	--background: #ffffff;
 	--foreground: oklch(0.145 0 0);
 	--card: #ffffff;
@@ -346,5 +357,90 @@ textarea:focus-visible {
 	&:hover {
 		transform: scale(1.1);
 		background-color: #1d4ed8; /* Tailwind's blue-700 */
+	}
+}
+
+// Hero Section
+#home {
+	height: auto;
+	min-height: 80vh;
+
+	@media (min-width: 1024px) {
+		// lg breakpoint
+		min-height: 100vh;
+	}
+
+	h1 {
+		font-size: var(--step-4);
+	}
+
+	.typed-text-container {
+		font-size: var(--step-1);
+	}
+}
+
+.hero-contact-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+
+	.separator {
+		display: none;
+	}
+
+	@media (min-width: 768px) {
+		// md breakpoint
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1rem;
+
+		.separator {
+			display: inline;
+		}
+	}
+}
+
+// Skill Bar
+.skill-bar {
+	background-color: var(--skill-bar-bg);
+	border-radius: var(--radius);
+	height: 8px;
+	overflow: hidden;
+}
+
+.skill-bar-fill {
+	width: 0;
+	height: 100%;
+	background: var(--gradient-1);
+	border-radius: var(--radius);
+	transition: width 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+// Project image lightbox indicator
+.project-image {
+	cursor: pointer;
+	position: relative;
+	
+	&::after {
+		content: "";
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		width: 30px;
+		height: 30px;
+		background: rgba(255, 255, 255, 0.7);
+		border-radius: 50%;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2'%3E%3Cpath d='M15 3h6v6M9 21H3v-6M21 3l-8 8M3 21l8-8'/%3E%3C/svg%3E");
+		background-size: 60% 60%;
+		background-repeat: no-repeat;
+		background-position: center;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+	
+	&:hover::after {
+		opacity: 1;
 	}
 }

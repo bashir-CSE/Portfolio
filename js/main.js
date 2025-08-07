@@ -26,8 +26,9 @@ const PortfolioApp = {
 				"ERP",
 				"Power BI & Advanced Excel"
 			],
-			speed: 40,
-			deleteSpeed: 20,
+			speed: 80,
+			backSpeed: 30,
+			deleteSpeed: 40,
 			deleteDelay: 1500,
 			startDelay: 500,
 			loop: true,
@@ -47,6 +48,7 @@ const PortfolioApp = {
 		this.initParticles();
 		this.initScrollReveal();
 		this.initHeadroom();
+		this.initGLightbox();
 	},
 
 	cacheDOMElements() {
@@ -353,7 +355,7 @@ const PortfolioApp = {
 
 	animateCountUp(el, goal, ariaTarget = null) {
 		let start = 0;
-		const duration = 1500; // Corresponds to the CSS transition duration
+		const duration = 2000; // Corresponds to the CSS transition duration
 		const startTime = performance.now();
 
 		const step = (currentTime) => {
@@ -386,4 +388,54 @@ const PortfolioApp = {
 			headroom.init();
 		}
 	},
+
+	initGLightbox() {
+		// Wait a bit to ensure DOM is fully ready
+		setTimeout(() => {
+			// Check if GLightbox is loaded
+			if (typeof GLightbox === "undefined") {
+				console.error('GLightbox is not loaded. Please check if the script is included.');
+				// Try to load it dynamically
+				const script = document.createElement('script');
+				script.src = 'https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js';
+				script.onload = () => {
+					console.log('GLightbox loaded dynamically');
+					this.initializeGLightbox();
+				};
+				document.head.appendChild(script);
+			} else {
+				this.initializeGLightbox();
+			}
+		}, 100);
+	},
+
+	initializeGLightbox() {
+		try {
+			// Prefer anchors with class .glightbox; fallback to [data-glightbox]
+			const selector = '.glightbox, [data-glightbox]';
+			const nodes = document.querySelectorAll(selector);
+			console.log('Initializing GLightbox on nodes:', nodes.length);
+			if (nodes.length === 0) {
+				console.warn('No elements found for GLightbox initialization.');
+				return;
+			}
+	
+			GLightbox({
+				selector,
+				touchNavigation: true,
+				loop: true,
+				autoplayVideos: false,
+				closeOnOutsideClick: true,
+				zoomable: true
+			});
+	
+			// Visual cue
+			nodes.forEach(n => n.style.cursor = 'pointer');
+	
+			console.log('GLightbox initialized successfully');
+		} catch (error) {
+			console.error('Error initializing GLightbox:', error);
+		}
+	},
+
 };

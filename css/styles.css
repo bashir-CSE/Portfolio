@@ -1,87 +1,56 @@
 :root {
-  /* Typography */
+  /* Base Colors */
   --font-size: 14px;
-
-  /* Base Colors (WCAG AA compliant pairs) */
+  /* Fluid type scale for cross-device responsiveness */
+  --step--2: clamp(0.7rem, 0.65rem + 0.2vw, 0.78rem);
+  --step--1: clamp(0.8rem, 0.75rem + 0.3vw, 0.9rem);
+  --step-0: clamp(0.95rem, 0.85rem + 0.4vw, 1rem);
+  --step-1: clamp(1.1rem, 0.95rem + 0.6vw, 1.25rem);
+  --step-2: clamp(1.35rem, 1.1rem + 1vw, 1.5rem);
+  --step-3: clamp(1.6rem, 1.2rem + 1.4vw, 1.9rem);
+  --step-4: clamp(2rem, 1.6rem + 2.2vw, 2.5rem);
+  --step-5: clamp(2.6rem, 2rem + 3.2vw, 3.25rem);
   --background: #ffffff;
-  --foreground: #0b1320;
-
+  --foreground: oklch(0.145 0 0);
   --card: #ffffff;
-  --card-foreground: #0b1320;
-
-  /* Button tokens (centralized) */
-  --btn-bg: #1f2937;           /* Gray-800 */
-  --btn-fg: #ffffff;           /* White */
-  --btn-hover-bg: #111827;     /* Gray-900 */
-  --btn-active-bg: #0b1220;    /* Near-black */
-  --btn-disabled-bg: #9ca3af;  /* Gray-400 */
-  --btn-disabled-fg: #1f2937;  /* Gray-800 */
-  --btn-outline-fg: #0b1320;   /* Foreground */
-  --btn-outline-border: #334155; /* Slate-700 */
-  --btn-outline-hover-bg: #e5e7eb; /* Gray-200 */
-
-  /* Legacy aliases retained for compatibility */
-  --primary: var(--btn-bg);
-  --primary-foreground: var(--btn-fg);
-
-  --secondary: #eef2ff;            /* Indigo-50 */
-  --secondary-foreground: #111827; /* Gray-900 */
-
+  --card-foreground: oklch(0.145 0 0);
+  --primary: #030213;
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0.0058 264.53);
+  --secondary-foreground: #030213;
   --muted: #ececf0;
   --muted-foreground: #717182;
   --accent: #e9ebef;
-  --accent-foreground: #0b1320;
-  --border: rgba(0, 0, 0, 0.12);
-
+  --accent-foreground: #030213;
+  --border: rgba(0, 0, 0, 0.1);
   /* UI Elements */
   --radius: 0.625rem;
-  --shadow-sm: 0 1px 2px rgba(17, 24, 39, 0.06);
-  --shadow-md: 0 4px 6px rgba(17, 24, 39, 0.1);
-  --shadow-lg: 0 10px 15px rgba(17, 24, 39, 0.15);
-  --shadow-btn: 0 5px 15px rgba(17, 24, 39, 0.25);
-
+  --shadow-sm: 0 1px 2px oklch(0.145 0 0 / 0.05);
+  --shadow-md: 0 4px 6px oklch(0.145 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px oklch(0.145 0 0 / 0.1);
+  --shadow-btn: 0 5px 15px oklch(0.145 0 0 / 0.3);
   /* Gradients */
   --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
   --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-
   /* Skill Levels */
-  --skill-bar-bg: #e5e7eb;         /* Gray-200 */
-  --skill-bar-fill: #2563eb;       /* Blue-600 */
-  --skill-bar-fill-dark: #60a5fa;  /* Blue-400 */
-
+  --skill-bar-bg: var(--muted);
+  --skill-bar-fill: var(--primary);
   /* Transitions */
-  --transition-base: all 0.2s ease;
+  --transition-base: all 0.3s ease;
   --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dark {
-  --background: #0b1320;
-  --foreground: #f9fafb;
-
-  --card: #111827;
-  --card-foreground: #f3f4f6;
-
-  --border: rgba(255, 255, 255, 0.12);
-
-  /* Buttons dark theme */
-  --btn-bg: #2563eb;           /* Blue-600 */
-  --btn-fg: #ffffff;           /* White */
-  --btn-hover-bg: #1d4ed8;     /* Blue-700 */
-  --btn-active-bg: #1e40af;    /* Blue-800 */
-  --btn-disabled-bg: #374151;  /* Gray-700 */
-  --btn-disabled-fg: #9ca3af;  /* Gray-400 */
-  --btn-outline-fg: #e5e7eb;   /* Gray-200 */
-  --btn-outline-border: #64748b; /* Slate-500 */
-  --btn-outline-hover-bg: rgba(255, 255, 255, 0.06);
-
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.55);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.6);
-
-  /* Skills */
-  --skill-bar-bg: #1f2937;        /* Gray-800 */
-  --skill-bar-fill: var(--skill-bar-fill-dark);
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(1 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(1 0 0);
+  --border: rgba(255, 255, 255, 0.1);
+  --shadow-sm: 0 1px 2px oklch(0.145 0 0 / 0.5);
+  --shadow-md: 0 4px 6px oklch(0.145 0 0 / 0.7);
+  --shadow-lg: 0 10px 15px oklch(0.145 0 0 / 0.7);
+  --shadow-btn: 0 5px 15px oklch(0.145 0 0 / 0.6);
 }
 
 body {
@@ -122,87 +91,17 @@ body {
   transform: scale(1.05);
 }
 
-/* Button System (WCAG AA compliant) */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.25rem;
-  font-weight: 600;
-  border-radius: var(--radius);
-  border: 1px solid transparent;
-  transition: var(--transition-base);
-  cursor: pointer;
-  user-select: none;
-}
-
-.btn:disabled {
-  cursor: not-allowed;
-  opacity: 0.9;
-}
-
-/* Primary */
 .btn-primary {
-  background-color: var(--btn-bg);
-  color: var(--btn-fg);
-  border-color: var(--btn-bg);
-  box-shadow: var(--shadow-sm);
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 .btn-primary:hover {
-  background-color: var(--btn-hover-bg);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
-}
-.btn-primary:active {
-  background-color: var(--btn-active-bg);
-  transform: translateY(0);
-  box-shadow: var(--shadow-sm);
-}
-.btn-primary:disabled {
-  background-color: var(--btn-disabled-bg);
-  color: var(--btn-disabled-fg);
-  border-color: var(--btn-disabled-bg);
-}
-
-/* Outline */
-.btn-outline {
-  background-color: transparent;
-  color: var(--btn-outline-fg);
-  border-color: var(--btn-outline-border);
-  box-shadow: var(--shadow-sm);
-}
-.btn-outline:hover {
-  background-color: var(--btn-outline-hover-bg);
-  transform: translateY(-1px);
-}
-.btn-outline:active {
-  transform: translateY(0);
-}
-.btn-outline:disabled {
-  color: var(--btn-disabled-fg);
-  border-color: var(--btn-disabled-bg);
-}
-
-/* Link-style button */
-.btn-link {
-  background: transparent;
-  color: #2563eb; /* Blue-600 */
-  border-color: transparent;
-  text-decoration: underline;
-}
-.btn-link:hover {
-  color: #1d4ed8; /* Blue-700 */
-}
-
-/* Focus ring for all buttons */
-.btn:focus-visible,
-.btn-primary:focus-visible,
-.btn-outline:focus-visible,
-.btn-link:focus-visible {
-  outline: 3px solid #93c5fd; /* Blue-300 */
-  outline-offset: 2px;
-  border-radius: var(--radius);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-btn);
 }
 
 .btn-outline {
@@ -341,35 +240,6 @@ textarea:focus-visible {
   transition: width 0.3s ease;
 }
 
-/* Accessible Skill Bars */
-.skill-item {
-  padding: 0.25rem 0;
-}
-.skill-bar {
-  width: 100%;
-  height: 10px;
-  background-color: var(--skill-bar-bg);
-  border-radius: 9999px;
-  overflow: hidden;
-  position: relative;
-}
-.skill-bar-fill {
-  width: 0;
-  height: 100%;
-  background-color: var(--skill-bar-fill);
-  border-radius: 9999px;
-  transition: width 1.5s ease;
-}
-.skill-percentage {
-  min-width: 2ch;
-  text-align: right;
-}
-@media (prefers-reduced-motion: reduce) {
-  .skill-bar-fill {
-    transition: none;
-  }
-}
-
 /* Scroll to Top Button */
 .scroll-top-btn {
   position: fixed;
@@ -378,7 +248,8 @@ textarea:focus-visible {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  background-color: #2563eb; /* Blue-600 */
+  background-color: #2563eb;
+  /* Corresponds to Tailwind's bg-blue-600 */
   color: white;
   border: none;
   cursor: pointer;
@@ -455,4 +326,56 @@ textarea:focus-visible {
 .floating-contact-btn:hover {
   transform: scale(1.1);
   background-color: #1d4ed8; /* Tailwind's blue-700 */
+}
+
+#home {
+  height: auto;
+  min-height: 80vh;
+}
+@media (min-width: 1024px) {
+  #home {
+    min-height: 100vh;
+  }
+}
+#home h1 {
+  font-size: var(--step-4);
+}
+#home .typed-text-container {
+  font-size: var(--step-1);
+}
+
+.hero-contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.hero-contact-info .separator {
+  display: none;
+}
+@media (min-width: 768px) {
+  .hero-contact-info {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .hero-contact-info .separator {
+    display: inline;
+  }
+}
+
+.skill-bar {
+  background-color: var(--skill-bar-bg);
+  border-radius: var(--radius);
+  height: 8px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  width: 0;
+  height: 100%;
+  background: var(--gradient-1);
+  border-radius: var(--radius);
+  transition: width 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
