@@ -337,7 +337,31 @@ const PortfolioApp = {
 
 		// Sections with multiple cards that can have a staggered effect
 		sr.reveal("#experience .card", { interval: 200 });
-		sr.reveal("#projects .card", { interval: 200 });
+		// Projects: stronger animation, staggered, once for performance
+		sr.reveal("#projects .project-card", {
+			interval: 120,
+			distance: "40px",
+			origin: "bottom",
+			scale: 0.96,
+			opacity: 0,
+			duration: 900,
+			easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+			reset: false,
+			viewFactor: 0.15
+		});
+		// Add a slight inner stagger for the image to create parallax-like feel
+		sr.reveal("#projects .project-card img", {
+			delay: 150,
+			interval: 120,
+			distance: "30px",
+			origin: "bottom",
+			scale: 1.0,
+			opacity: 0,
+			duration: 700,
+			easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+			reset: false,
+			viewFactor: 0.2
+		});
 		sr.reveal("#activities .card", { interval: 200 });
 		sr.reveal("#recommendations .card", { interval: 200 });
 
@@ -430,7 +454,9 @@ const PortfolioApp = {
 				loop: true,
 				autoplayVideos: false,
 				closeOnOutsideClick: true,
-				zoomable: true
+				zoomable: true,
+				// Global description position for all slides (can be top | bottom | left | right)
+				descPosition: 'bottom'
 			});
 	
 			nodes.forEach(n => n.style.cursor = 'zoom-in');
