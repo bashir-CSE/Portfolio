@@ -392,10 +392,13 @@ const PortfolioApp = {
 	initGLightbox() {
 		// Wait a bit to ensure DOM is fully ready
 		setTimeout(() => {
-			// Check if GLightbox is loaded
+			const anchors = document.querySelectorAll('.glightbox');
+			const dataAttrEls = document.querySelectorAll('[data-glightbox]');
+			console.log('GLightbox candidates => anchors:', anchors.length, 'data-glightbox:', dataAttrEls.length);
+
+			// Load GLightbox if missing
 			if (typeof GLightbox === "undefined") {
-				console.error('GLightbox is not loaded. Please check if the script is included.');
-				// Try to load it dynamically
+				console.warn('GLightbox not found. Loading from CDN...');
 				const script = document.createElement('script');
 				script.src = 'https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js';
 				script.onload = () => {
@@ -403,20 +406,21 @@ const PortfolioApp = {
 					this.initializeGLightbox();
 				};
 				document.head.appendChild(script);
-			} else {
-				this.initializeGLightbox();
+				return;
 			}
+
+			this.initializeGLightbox();
 		}, 100);
 	},
 
 	initializeGLightbox() {
 		try {
-			// Prefer anchors with class .glightbox; fallback to [data-glightbox]
-			const selector = '.glightbox, [data-glightbox]';
+			// Use anchors with .glightbox (we wrapped images in anchors)
+			const selector = '.glightbox';
 			const nodes = document.querySelectorAll(selector);
-			console.log('Initializing GLightbox on nodes:', nodes.length);
+			console.log('Initializing GLightbox on anchors:', nodes.length);
 			if (nodes.length === 0) {
-				console.warn('No elements found for GLightbox initialization.');
+				console.warn('No anchors found for GLightbox initialization.');
 				return;
 			}
 	
@@ -429,8 +433,7 @@ const PortfolioApp = {
 				zoomable: true
 			});
 	
-			// Visual cue
-			nodes.forEach(n => n.style.cursor = 'pointer');
+			nodes.forEach(n => n.style.cursor = 'zoom-in');
 	
 			console.log('GLightbox initialized successfully');
 		} catch (error) {
