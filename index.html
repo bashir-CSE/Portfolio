@@ -21,7 +21,7 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css" />
 
 		<!-- Custom CSS -->
-		<link rel="stylesheet" href="css/styles.css" />
+		<link rel="stylesheet" href="styles.css" />
 	</head>
 
 	<body class="min-h-screen">
@@ -152,6 +152,7 @@
 								target="_blank"
 								rel="noopener noreferrer"
 								class="social-icon text-blue-600 hover:text-blue-800 transition-colors"
+								aria-label="LinkedIn Profile"
 							>
 								<i class="fab fa-linkedin text-xl"></i>
 							</a>
@@ -160,6 +161,7 @@
 								target="_blank"
 								rel="noopener noreferrer"
 								class="social-icon text-blue-600 hover:text-blue-800 transition-colors"
+								aria-label="GitHub Profile"
 							>
 								<i class="fab fa-github text-xl"></i>
 							</a>
@@ -172,7 +174,7 @@
 		<!-- Hero Section -->
 		<section
 			id="home"
-			class="py-12 sm:py-16 lg:py-24 relative overflow-hidden bg-gray-900"
+			class="py-12 sm:py-16 lg:py-24 relative overflow-hidden bg-gray-900 "
 		>
 			<div id="particles-js" class="absolute inset-0"></div>
 			<div
@@ -395,32 +397,6 @@
 							</ul>
 						</div>
 
-						<!-- Assistant Admin Position -->
-						<div class="card p-6 shadow-sm">
-							<div class="flex flex-col mb-4">
-								<h3 class="text-xl font-semibold flex items-center">
-									<i class="fas fa-building text-blue-600 mr-2"></i>Assistant Admin
-								</h3>
-								<p class="text-lg text-gray-600">Corus Knit Composite Ltd.</p>
-								<div class="flex items-center text-sm text-gray-500 mt-1">
-									<i class="fas fa-map-marker-alt mr-1"></i>
-									<span>Gazipur</span>
-									<span class="mx-2">|</span>
-									<i class="fas fa-calendar-alt mr-1"></i>
-									<span>Apr 2023 – May 2023</span>
-								</div>
-							</div>
-							<ul class="space-y-2 text-gray-600">
-								<li>
-									<i class="fas fa-check text-green-500 mr-2"></i>Assisted HR and admin functions using Excel and digital tools
-								</li>
-								<li>
-									<i class="fas fa-check text-green-500 mr-2"></i>Supported shift planning and document control
-								</li>
-							</ul>
-						</div>
-
-						
 					</div>
 				</div>
 			</div>
@@ -444,6 +420,7 @@
 						<div class="p-4">
 							<p class="text-gray-600 mb-4 line-clamp-2">JavaScript • Chrome APIs • Automation</p>
 							<p class="text-gray-700 text-sm">A lightweight Chrome extension that automates student fee management workflows, reducing manual work and processing time by up to 95%.</p>
+							<a href="#" class="btn-primary mt-4 text-center">View Project</a>
 						</div>
 					</div>
 					<div class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -457,6 +434,7 @@
 						<div class="p-4">
 							<p class="text-gray-600 mb-4 line-clamp-2">Web Development • UI/UX • React</p>
 							<p class="text-gray-700 text-sm">A modern web application with responsive design and interactive user interface built with React and Tailwind CSS.</p>
+							<a href="#" class="btn-primary mt-4 text-center">View Project</a>
 						</div>
 					</div>
 					<div class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -470,6 +448,7 @@
 						<div class="p-4">
 							<p class="text-gray-600 mb-4 line-clamp-2">Data Visualization • Power BI • Analytics</p>
 							<p class="text-gray-700 text-sm">Interactive dashboard for business intelligence and data analytics with real-time updates and customizable reports.</p>
+							<a href="#" class="btn-primary mt-4 text-center">View Project</a>
 						</div>
 					</div>
 					<div class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -483,6 +462,7 @@
 						<div class="p-4">
 							<p class="text-gray-600 mb-4 line-clamp-2">Reporting • Excel • Automation</p>
 							<p class="text-gray-700 text-sm">Automated performance reporting system with advanced Excel formulas and VBA macros for data analysis.</p>
+							<a href="#" class="btn-primary mt-4 text-center">View Project</a>
 						</div>
 					</div>
 					<div class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -496,6 +476,7 @@
 						<div class="p-4">
 							<p class="text-gray-600 mb-4 line-clamp-2">UI Design • Dashboard • Web App</p>
 							<p class="text-gray-700 text-sm">A responsive admin dashboard with interactive charts, user management, and dark mode support built with modern web technologies.</p>
+							<a href="#" class="btn-primary mt-4 text-center">View Project</a>
 						</div>
 					</div>
 				</div>
@@ -955,12 +936,12 @@
 		</footer>
 
 		<!-- Floating Contact Button -->
-		<a href="#contact" title="Contact Me" class="floating-contact-btn">
+		<a href="#contact" title="Contact Me" class="floating-contact-btn" aria-label="Contact Me">
 			<i class="fas fa-envelope"></i>
 		</a>
 
 		<!-- Scroll to Top Button -->
-		<button id="scrollTopBtn" title="Go to top" class="scroll-top-btn">
+		<button id="scrollTopBtn" title="Go to top" class="scroll-top-btn" aria-label="Go to top">
 			<i class="fas fa-arrow-up"></i>
 		</button>
 
@@ -975,6 +956,6 @@
 		<script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js"></script>
 	
 		<!-- Custom JavaScript -->
-		<script src="js/main.js"></script>
+		<script type="module" src="js/main.js"></script>
 	</body>
 </html>
