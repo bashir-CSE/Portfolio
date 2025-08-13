@@ -36,6 +36,7 @@ const PortfolioApp = {
 		initHeadroom();
 		initGLightbox();
 		this.setActiveNavLink(); // Set active link on load
+		this.animateSkillBars(); // Initialize skill bar animations
 	},
 
 	cacheDOMElements() {
@@ -147,6 +148,46 @@ const PortfolioApp = {
 
 		this.elements.animateOnScrollElements.forEach((el) => {
 			observer.observe(el);
+		});
+	},
+
+	animateSkillBars() {
+		const skillObserver = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						const skillItem = entry.target;
+						const skillBar = skillItem.querySelector('.skill-bar-fill');
+						const percentage = skillItem.querySelector('.skill-percentage');
+						const goal = parseInt(percentage.getAttribute('data-goal'));
+						
+						// Animate skill bar width
+						setTimeout(() => {
+							skillBar.style.width = skillBar.getAttribute('data-width');
+							skillBar.classList.add('filled');
+						}, 200);
+						
+						// Animate percentage counting
+						let current = 0;
+						const increment = goal / 50; // Adjust speed of counting
+						const timer = setInterval(() => {
+							current += increment;
+							if (current >= goal) {
+								current = goal;
+								clearInterval(timer);
+							}
+							percentage.textContent = Math.round(current) + '%';
+						}, 20);
+						
+						skillObserver.unobserve(skillItem);
+					}
+				});
+			},
+			{ threshold: 0.5 }
+		);
+
+		this.elements.skillItems.forEach((item) => {
+			skillObserver.observe(item);
 		});
 	},
 };

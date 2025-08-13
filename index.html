@@ -123,7 +123,7 @@
 					</div>
 				</div>
 				<div class="md:w-1/2 flex justify-end animate-fadeIn" style="animation-delay: 0.3s;">
-					<div class="relative hero-image-container">
+					<div class="relative hero-image-container interactive-element">
 						<div
 							class="w-64 h-64 md:w-80 md:h-80 bg-blue-500 rounded-full opacity-10 absolute -top-6 -left-6">
 						</div>
@@ -131,7 +131,8 @@
 							class="w-64 h-64 md:w-80 md:h-80 bg-indigo-500 rounded-full opacity-10 absolute -bottom-6 -right-6">
 						</div>
 						<img src="my image/img-1.jpg" alt="Photo de profil"
-							class="relative w-96 h-96 md:w-96 md:h-96 object-cover rounded-full border-4 border-white shadow-xl">
+							class="relative w-96 h-96 md:w-96 md:h-96 object-cover rounded-full border-4 border-white shadow-xl"
+							loading="lazy">
 					</div>
 				</div>
 			</div>
@@ -139,11 +140,16 @@
 	</section>
 
 	<!-- Technical Skills Section -->
-	<section id="skills" class="py-16">
-		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-			<h2 class="text-3xl lg:text-4xl text-center mb-12 font-bold">
-				Technical Skills
-			</h2>
+	<section id="skills" class="py-16 relative overflow-hidden">
+		<div class="absolute inset-0 bg-gradient-to-br from-blue-50/20 to-teal-50/20"></div>
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+			<div class="section-divider mb-12">
+				<div class="divider-line"></div>
+				<h2 class="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
+					Technical Skills
+				</h2>
+				<div class="divider-line"></div>
+			</div>
 			<div class=" mx-auto grid md:grid gap-6 sm:gap-8 px-4 sm:px-6">
 				<div class="skill-item">
 					<div class="flex justify-between mb-1">
@@ -329,13 +335,22 @@
 			</h2>
 			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 px-3 sm:px-4">
 				<div
-					class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 animate-on-scroll">
+					class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 animate-on-scroll scroll-reveal">
 					<a href="my image/P-1.png" class="block relative group glightbox" data-gallery="projects"
 						data-title="Student Fee Manager Chrome Extension"
 						data-description="The Student Fee Manager is a powerful Chrome extension designed to automate the tedious process of updating student fee records. It intelligently identifies unpaid fee entries, opens them, fills in the details based on your saved template, and submits the form, saving you significant time and reducing manual errors.">
-						<img src="my image/P-1.png" alt="Student Fee Manager"
-							class="w-full h-44 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110 project-image"
-							loading="lazy" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+						<div class="project-image-container">
+							<img src="my image/P-1.png" alt="Student Fee Manager"
+								class="w-full h-44 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110 project-image"
+								loading="lazy" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+							<div class="project-overlay">
+								<div class="project-stats">
+									<span class="stat-item"><i class="fas fa-star"></i> 4.8</span>
+									<span class="stat-item"><i class="fas fa-code"></i> JS</span>
+									<span class="stat-item"><i class="fas fa-download"></i> 500+</span>
+								</div>
+							</div>
+						</div>
 						<div
 							class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 pointer-events-none">
 						</div>
@@ -353,13 +368,22 @@
 					</div>
 				</div>
 				<div
-					class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 animate-on-scroll">
+					class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 animate-on-scroll scroll-reveal">
 					<a href="my image/P-2.png" class="block relative group glightbox" data-gallery="projects"
 						data-title="Employee Attendance Management System"
 						data-description="A comprehensive web-based employee attendance management system built with Google Apps Script and modern web technologies. This system provides secure user authentication, location-based attendance tracking, and comprehensive attendance history management.">
-						<img src="my image/P-2.png" alt="Employee Attendance Management System"
-							class="w-full h-44 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110 project-image"
-							loading="lazy" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+						<div class="project-image-container">
+							<img src="my image/P-2.png" alt="Employee Attendance Management System"
+								class="w-full h-44 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110 project-image"
+								loading="lazy" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+							<div class="project-overlay">
+								<div class="project-stats">
+									<span class="stat-item"><i class="fas fa-star"></i> 4.9</span>
+									<span class="stat-item"><i class="fas fa-users"></i> 200+</span>
+									<span class="stat-item"><i class="fas fa-check"></i> 99%</span>
+								</div>
+							</div>
+						</div>
 						<div
 							class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 pointer-events-none">
 						</div>
@@ -377,13 +401,22 @@
 					</div>
 				</div>
 				<div
-					class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 animate-on-scroll">
+					class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 animate-on-scroll scroll-reveal">
 					<a href="my image/P-3.png" class="block relative group glightbox" data-gallery="projects"
 						data-title="ALOHA Bangladesh - Automatic Requisition System"
 						data-description="This project is a web-based automatic requisition system for ALOHA Bangladesh, designed to streamline the process of requesting classroom supplies. It's built using Google Apps Script and a web front-end, allowing branches to submit requisitions easily. The system automatically generates a PDF of the requisition, saves it to a designated Google Drive folder, and logs the details in a Google Sheet.">
-						<img src="my image/P-3.png" alt="ALOHA Bangladesh - Automatic Requisition System"
-							class="w-full h-44 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110 project-image"
-							loading="lazy" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+						<div class="project-image-container">
+							<img src="my image/P-3.png" alt="ALOHA Bangladesh - Automatic Requisition System"
+								class="w-full h-44 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110 project-image"
+								loading="lazy" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+							<div class="project-overlay">
+								<div class="project-stats">
+									<span class="stat-item"><i class="fas fa-star"></i> 5.0</span>
+									<span class="stat-item"><i class="fas fa-file-pdf"></i> PDF</span>
+									<span class="stat-item"><i class="fas fa-sync"></i> Auto</span>
+								</div>
+							</div>
+						</div>
 						<div
 							class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 pointer-events-none">
 						</div>
@@ -403,13 +436,22 @@
 				</div>
 
 				<div
-					class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 animate-on-scroll">
+					class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 animate-on-scroll scroll-reveal">
 					<a href="my image/P-5.png" class="block relative group glightbox" data-gallery="projects"
 						data-title="QR Code Generator and Management"
 						data-description="This repository contains a Google Apps Script for managing QR codes in a Google Sheets document. The script enables users to generate QR codes for each student's certificate details, clear the generated QR codes, and export the data (columns A to I) as a PDF.">
-						<img src="my image/P-5.png" alt="QR Code Generator and Management"
-							class="w-full h-44 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110 project-image"
-							loading="lazy" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+						<div class="project-image-container">
+							<img src="my image/P-5.png" alt="QR Code Generator and Management"
+								class="w-full h-44 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110 project-image"
+								loading="lazy" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+							<div class="project-overlay">
+								<div class="project-stats">
+									<span class="stat-item"><i class="fas fa-qrcode"></i> QR</span>
+									<span class="stat-item"><i class="fas fa-file-excel"></i> Sheets</span>
+									<span class="stat-item"><i class="fas fa-download"></i> Export</span>
+								</div>
+							</div>
+						</div>
 						<div
 							class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 pointer-events-none">
 						</div>
@@ -428,12 +470,21 @@
 					</div>
 				</div>
 				<div
-					class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 animate-on-scroll">
+					class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 animate-on-scroll scroll-reveal">
 					<a href="my image/P-4.png" class="block relative group glightbox" data-gallery="projects"
 						data-title="NLC Performance Report">
-						<img src="my image/P-4.png" alt="NLC Performance Report"
-							class="w-full h-44 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110 project-image"
-							loading="lazy" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+						<div class="project-image-container">
+							<img src="my image/P-4.png" alt="NLC Performance Report"
+								class="w-full h-44 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110 project-image"
+								loading="lazy" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+							<div class="project-overlay">
+								<div class="project-stats">
+									<span class="stat-item"><i class="fas fa-chart-line"></i> Excel</span>
+									<span class="stat-item"><i class="fas fa-code"></i> VBA</span>
+									<span class="stat-item"><i class="fas fa-robot"></i> Auto</span>
+								</div>
+							</div>
+						</div>
 						<div
 							class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 pointer-events-none">
 						</div>
