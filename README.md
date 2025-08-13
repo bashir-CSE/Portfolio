@@ -39,39 +39,7 @@ This repository contains the source code for my personal portfolio website. It's
 -   `EmailJS`: Enables direct email sending from the contact form without server-side code.
 -   `Headroom.js`: Manages the intelligent sticky header behavior, hiding and showing it based on scroll direction.
 
-## 🚀 How to Run Locally
 
-To set up and run this project on your local machine, you will need a live server environment and an SCSS compiler.
-
-1.  **Clone the repository:**
-    ```sh
-    git clone https://github.com/bashir-CSE/Portfolio.git
-    ```
-2.  **Navigate to the project directory:**
-    ```sh
-    cd Portfolio
-    ```
-3.  **Compile SCSS:**
-    -   For VS Code users, the **Live Sass Compiler** extension is recommended (configured in `.vscode/settings.json`).
-    -   Click "Watch Sass" in the VS Code status bar to automatically compile `scss/styles.scss` to `css/styles.min.css`.
-4.  **Run with a Live Server:**
-    -   Use a VS Code extension like **Live Server**.
-    -   Right-click `index.html` and select "Open with Live Server". This is crucial for `particles.js` to correctly load its `particles.json` configuration file.
-
-## 🧭 Accessibility
-
--   Buttons use centralized CSS custom properties with WCAG AA contrast and clear focus-visible rings.
--   Skill bars update ARIA attributes during animation (role="progressbar", aria-valuenow/min/max) and honor `prefers-reduced-motion`.
--   Page scroll progress bar exposes aria-valuenow/min/max for assistive tech.
-
-## ⚙️ Configuration
-
-The contact form functionality relies on EmailJS for sending messages.
-
-1.  Create a `.env` file in the root directory of the project (this file is ignored by Git for security).
-2.  Copy the contents from `.env.example` into your newly created `.env` file.
-3.  Replace the placeholder values with your actual EmailJS `Public Key`, `Service ID`, and `Template ID`.
-4.  **Important Security Note:** Configure the allowed domains in your EmailJS dashboard to only accept requests from your live website URL to prevent unauthorized usage.
 
 ## 📫 Contact
 
@@ -81,19 +49,3 @@ Feel free to connect with me through the following channels:
 -   **GitHub:** [@bashir-CSE](https://github.com/bashir-CSE)
 -   **Email:** [babashir8811@gmail.com](mailto:babashir8811@gmail.com)
 
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/bashir-CSE/Portfolio/issues) if you want to contribute.
-
-## 📝 Changelog
-
--   2025-08-06
-    -   Replaced TypeIt with Typed.js (shuffled phrases) in hero.
-    -   Standardized button system with centralized tokens; ensured WCAG AA contrast and focus-visible rings.
-    -   Implemented accessible skill bars with ARIA attributes and reduced-motion support.
-    -   Removed legacy project references: “Process Automation Scripts” and “Database Management Solutions”.
-    -   Synced content with updated resume; corrected experience dates and roles.
-
-## � License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for more details.
