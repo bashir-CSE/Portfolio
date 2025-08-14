@@ -19,6 +19,6 @@ export const initTyping = () => {
 		startDelay: 500,
 		loop: true,
 		showCursor: true,
-		cursorChar: "|",
+		cursorChar: " ...",
 	});
 };
