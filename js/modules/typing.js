@@ -11,14 +11,36 @@ export const initTyping = () => {
 		"Power BI & Advanced Excel",
 	];
 
+	// Initialize Typed.js with improved configuration
 	new Typed(target, {
 		strings: phrases,
-		typeSpeed: 50,
-		backSpeed: 25,
-		backDelay: 2000,
-		startDelay: 500,
+		typeSpeed: 60,
+		backSpeed: 30,
+		backDelay: 2500,
+		startDelay: 800,
 		loop: true,
+		loopCount: Infinity,
 		showCursor: true,
-		cursorChar: " ...",
+		cursorChar: "|",
+		autoInsertCss: true,
+		bindInputFocusEvents: false,
+		contentType: 'html',
+		// Add error handling
+		onComplete: () => {
+			console.log('Typing animation completed one cycle');
+		},
+		onStop: () => {
+			console.log('Typing animation stopped');
+		},
+		onStart: () => {
+			console.log('Typing animation started');
+		},
+		onDestroy: () => {
+			console.log('Typing animation destroyed');
+		}
 	});
+
+	// Debug information
+	console.log('Typed.js initialized with target:', target);
+	console.log('Phrases array:', phrases);
 };

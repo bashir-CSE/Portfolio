@@ -7,28 +7,17 @@ import { initGLightbox } from './modules/lightbox.js';
 
 window.addEventListener("load", () => {
 	const preloader = document.getElementById("preloader");
+	console.log('Page loaded, preloader element:', preloader);
+	
 	if (preloader) {
-		// Ensure all critical resources are loaded
-		const checkResourcesLoaded = () => {
-			const images = document.querySelectorAll('img[loading="lazy"]');
-			const scripts = document.querySelectorAll('script[src]');
-			let allLoaded = true;
-			
-			images.forEach(img => {
-				if (!img.complete) allLoaded = false;
-			});
-			
-			if (allLoaded) {
-				preloader.classList.add("hidden");
-				PortfolioApp.init();
-			} else {
-				setTimeout(checkResourcesLoaded, 100);
-			}
-		};
-		
-		// Start checking after a minimum delay
-		setTimeout(checkResourcesLoaded, 500);
+		// Simple timeout to hide preloader and initialize app
+		setTimeout(() => {
+			console.log('Hiding preloader and initializing app');
+			preloader.classList.add("hidden");
+			PortfolioApp.init();
+		}, 1000); // 1 second delay to ensure everything is ready
 	} else {
+		console.log('No preloader found, initializing app directly');
 		PortfolioApp.init();
 	}
 });
