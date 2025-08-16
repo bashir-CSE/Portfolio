@@ -8,9 +8,29 @@ import { initGLightbox } from './modules/lightbox.js';
 window.addEventListener("load", () => {
 	const preloader = document.getElementById("preloader");
 	if (preloader) {
-		preloader.classList.add("hidden");
+		// Ensure all critical resources are loaded
+		const checkResourcesLoaded = () => {
+			const images = document.querySelectorAll('img[loading="lazy"]');
+			const scripts = document.querySelectorAll('script[src]');
+			let allLoaded = true;
+			
+			images.forEach(img => {
+				if (!img.complete) allLoaded = false;
+			});
+			
+			if (allLoaded) {
+				preloader.classList.add("hidden");
+				PortfolioApp.init();
+			} else {
+				setTimeout(checkResourcesLoaded, 100);
+			}
+		};
+		
+		// Start checking after a minimum delay
+		setTimeout(checkResourcesLoaded, 500);
+	} else {
+		PortfolioApp.init();
 	}
-	PortfolioApp.init();
 });
 
 const PortfolioApp = {
@@ -179,6 +199,8 @@ const PortfolioApp = {
 							percentage.textContent = Math.round(current) + '%';
 						}, 20);
 						
+						// Mark as animated to prevent re-triggering
+						skillItem.dataset.animated = 'true';
 						skillObserver.unobserve(skillItem);
 					}
 				});
@@ -187,7 +209,10 @@ const PortfolioApp = {
 		);
 
 		this.elements.skillItems.forEach((item) => {
-			skillObserver.observe(item);
+			// Only animate if not already animated
+			if (!item.dataset.animated) {
+				skillObserver.observe(item);
+			}
 		});
 	},
 };

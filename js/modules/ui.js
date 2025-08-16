@@ -1,6 +1,8 @@
 export function toggleMobileMenu(elements) {
   const isNowActive = !elements.mobileMenu.classList.contains("active");
   elements.mobileMenu.classList.toggle("active");
+  elements.mobileMenuBtn.classList.toggle("active");
+  
   if (isNowActive) {
     elements.menuIcon.classList.add("hidden");
     elements.closeIcon.classList.remove("hidden");
@@ -14,6 +16,7 @@ export function toggleMobileMenu(elements) {
 
 export function closeMobileMenu(elements) {
   elements.mobileMenu.classList.remove("active");
+  elements.mobileMenuBtn.classList.remove("active");
   elements.menuIcon.classList.remove("hidden");
   elements.closeIcon.classList.add("hidden");
   elements.mobileMenuBtn.setAttribute("aria-expanded", "false");

@@ -77,32 +77,6 @@ export function initScrollReveal() {
   sr.reveal("h2", { delay: 200, origin: "top" });
   sr.reveal("#home h1", { origin: "left", delay: 400 });
   sr.reveal("#home .flex-col", { origin: "bottom", delay: 600 });
-  sr.reveal("#about .card:nth-of-type(1)", { origin: "left", delay: 300 });
-  sr.reveal("#about .card:nth-of-type(2)", { origin: "right", delay: 400 });
-  sr.reveal(".skill-item", {
-    distance: "30px",
-    interval: 150,
-    afterReveal: (el) => {
-      const barFill = el.querySelector(".skill-bar-fill");
-      const percentage = el.querySelector(".skill-percentage");
-      if (barFill && percentage) {
-        const goal = parseInt(percentage.dataset.goal, 10);
-        const progressContainer = el.querySelector(".skill-bar");
-        if (progressContainer) {
-          progressContainer.setAttribute("role", "progressbar");
-          progressContainer.setAttribute("aria-valuemin", "0");
-          progressContainer.setAttribute("aria-valuemax", "100");
-          progressContainer.setAttribute("aria-valuenow", "0");
-          const skillName = el.querySelector(".font-medium");
-          if (skillName) {
-            progressContainer.setAttribute("aria-label", skillName.textContent.trim());
-          }
-        }
-        barFill.style.width = barFill.dataset.width;
-        animateCountUp(percentage, goal, progressContainer);
-      }
-    },
-  });
   sr.reveal("#experience .card", { interval: 200 });
   sr.reveal("#projects .project-card", {
     interval: 200,
@@ -112,18 +86,23 @@ export function initScrollReveal() {
     easing: "ease-in-out",
   });
   sr.reveal("#activities .card", { interval: 200 });
-  sr.reveal("#recommendations .card", { interval: 200 });
   sr.reveal("#education .card:nth-of-type(1)", { origin: "left" });
   sr.reveal("#education .card:nth-of-type(2)", { origin: "right" });
-  sr.reveal("#learning .card", { interval: 150, scale: 0.9 });
   sr.reveal("#contact .card:nth-of-type(1)", { origin: "left" });
   sr.reveal("#contact .card:nth-of-type(2)", { origin: "right" });
+  
+  // Simplified skill animation to avoid conflicts
+  sr.reveal(".skill-item", {
+    distance: "30px",
+    interval: 150,
+  });
 }
 
 function animateCountUp(el, goal, ariaTarget = null) {
   let start = 0;
   const duration = 2000;
   const startTime = performance.now();
+  let animationId = null;
 
   const step = (currentTime) => {
     const elapsedTime = currentTime - startTime;
@@ -136,8 +115,16 @@ function animateCountUp(el, goal, ariaTarget = null) {
     }
 
     if (progress < 1) {
-      requestAnimationFrame(step);
+      animationId = requestAnimationFrame(step);
     }
   };
-  requestAnimationFrame(step);
+  
+  animationId = requestAnimationFrame(step);
+  
+  // Cleanup function to cancel animation if element is removed
+  return () => {
+    if (animationId) {
+      cancelAnimationFrame(animationId);
+    }
+  };
 }
