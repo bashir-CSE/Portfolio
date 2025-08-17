@@ -51,6 +51,8 @@ const PortfolioApp = {
 	cacheDOMElements() {
 		this.elements = {
 			progressBar: document.getElementById("progress-bar"),
+			// inner element used for GPU-accelerated progress updates
+			progressBarInner: document.querySelector('.progress-bar .progress-bar-inner') || document.querySelector('.progress-bar-inner'),
 			mobileMenuBtn: document.getElementById("mobile-menu-btn"),
 			mobileMenu: document.getElementById("mobile-menu"),
 			menuIcon: document.getElementById("menu-icon"),

@@ -3,20 +3,22 @@ export const initTyping = () => {
 	if (!target) return;
 
 	const phrases = [
-		"IT Support",
-		"Data Analysis",
-		"Process Automation",
-		"ERP & MIS",
-		"Data Visualization",
-		"Power BI & Advanced Excel",
-	];
+    "IT Support",
+    "Data Analysis",
+    "Process Automation",
+    "ERP Implementation",
+    "Data Visualization",
+    "MIS Reporting",
+    "Power BI",
+    "Advanced Excel",
+  ];
 
 	// Initialize Typed.js with improved configuration
 	new Typed(target, {
 		strings: phrases,
-		typeSpeed: 60,
+		typeSpeed: 30,
 		backSpeed: 30,
-		backDelay: 2500,
+		backDelay: 2100,
 		startDelay: 800,
 		loop: true,
 		loopCount: Infinity,

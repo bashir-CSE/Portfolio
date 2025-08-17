@@ -3,8 +3,15 @@ function handleScroll(elements) {
   const docHeight = document.body.scrollHeight - window.innerHeight;
   const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
 
-  elements.progressBar.style.width = `${scrollPercent}%`;
-  elements.progressBar.setAttribute("aria-valuenow", String(Math.round(scrollPercent)));
+  // Update progress bar using GPU-accelerated transform when available
+  if (elements.progressBarInner) {
+    const scale = Math.max(0, Math.min(1, scrollPercent / 100));
+    elements.progressBarInner.style.transform = `scaleX(${scale})`;
+    elements.progressBar.setAttribute("aria-valuenow", String(Math.round(scrollPercent)));
+  } else if (elements.progressBar) {
+    elements.progressBar.style.width = `${scrollPercent}%`;
+    elements.progressBar.setAttribute("aria-valuenow", String(Math.round(scrollPercent)));
+  }
 
   let currentSection = "";
   elements.sections.forEach((section) => {
@@ -44,7 +51,8 @@ function throttle(func, limit) {
 }
 
 export function initScroll(elements) {
-  const throttledScroll = throttle(() => handleScroll(elements), 100);
+  // Use a slightly tighter throttle for smoother updates
+  const throttledScroll = throttle(() => handleScroll(elements), 50);
   window.addEventListener("scroll", throttledScroll);
 }
 
