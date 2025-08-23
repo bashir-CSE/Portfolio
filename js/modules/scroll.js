@@ -68,43 +68,6 @@ export function scrollToTop() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-export function initScrollReveal() {
-  if (typeof ScrollReveal === "undefined") {
-    console.error("ScrollReveal is not loaded.");
-    return;
-  }
-
-  const sr = ScrollReveal({
-    origin: "bottom",
-    distance: "60px",
-    duration: 1000,
-    delay: 200,
-    reset: true,
-  });
-
-  sr.reveal("h2", { delay: 200, origin: "top" });
-  sr.reveal("#home h1", { origin: "left", delay: 400 });
-  sr.reveal("#home .flex-col", { origin: "bottom", delay: 600 });
-  sr.reveal("#experience .card", { interval: 200 });
-  sr.reveal("#projects .project-card", {
-    interval: 200,
-    distance: "40px",
-    origin: "bottom",
-    scale: 0.9,
-    easing: "ease-in-out",
-  });
-  sr.reveal("#activities .card", { interval: 200 });
-  sr.reveal("#education .card:nth-of-type(1)", { origin: "left" });
-  sr.reveal("#education .card:nth-of-type(2)", { origin: "right" });
-  sr.reveal("#contact .card:nth-of-type(1)", { origin: "left" });
-  sr.reveal("#contact .card:nth-of-type(2)", { origin: "right" });
-  
-  // Simplified skill animation to avoid conflicts
-  sr.reveal(".skill-item", {
-    distance: "30px",
-    interval: 150,
-  });
-}
 
 function animateCountUp(el, goal, ariaTarget = null) {
   let start = 0;

@@ -1,0 +1,27 @@
+[
+  {
+    "image": "my-image/P-1.png",
+    "title": "Student Fee Manager Chrome Extension",
+    "description": "A powerful Chrome extension designed to automate student fee record updates. The extension intelligently identifies unpaid fee entries, fills in details automatically, and streamlines the entire process, significantly reducing manual work and errors."
+  },
+  {
+    "image": "my-image/P-2.png",
+    "title": "Employee Attendance Management System",
+    "description": "A comprehensive web-based employee attendance management system built with Google Apps Script. Features secure authentication, location-based tracking, and detailed attendance analytics."
+  },
+  {
+    "image": "my-image/P-3.png",
+    "title": "Automatic Requisition System",
+    "description": "A streamlined requisition system for ALOHA Bangladesh that automates the process of requesting and managing classroom supplies. Features PDF generation and Google Drive integration."
+  },
+  {
+    "image": "my-image/P-4.png",
+    "title": "NLC Performance Report",
+    "description": "Advanced Excel-based performance reporting system with VBA automation for comprehensive data analysis and visualization."
+  },
+  {
+    "image": "my-image/P-5.png",
+    "title": "QR Code Generator and Management",
+    "description": "Automated QR code generation system for student certificates with Google Sheets integration."
+  }
+]

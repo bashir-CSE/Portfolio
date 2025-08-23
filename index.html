@@ -33,6 +33,14 @@
 
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="styles.css" />
+	<link rel="stylesheet" href="css/modern-projects.css" />
+	<link rel="stylesheet" href="css/animations.css" />
+	<link rel="stylesheet" href="css/project-cards.css" />
+	<!-- GLightbox CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 	<!-- Main JavaScript -->
 	<script type="module" src="js/main.js"></script>
@@ -224,47 +232,121 @@
 	</section>
 
 	<!-- Experience Section -->
-	<section id="experience" class="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50">
-		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-			<h2 class="section-title text-center mb-16">Professional Journey</h2>
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-				<!-- Ayesha Abed Foundation -->
-				<div class="experience-card bg-white rounded-lg shadow-lg p-6 flex flex-col">
-					<h3 class="text-xl font-bold mb-2">Assistant/Associate Officer, MIS</h3>
-					<p class="text-gray-600 mb-4">Ayesha Abed Foundation</p>
-					<p class="text-sm text-gray-500 mb-4">Sep 2025 - Present | Manikganj</p>
-					<ul class="text-gray-700 space-y-2 text-sm flex-grow">
-						<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Create a time and action calendar for all center production.</li>
-						<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Prepare product-wise, purpose-wise, and delivery date-wise daily production reports.</li>
-						<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Generate section wise loading report and performance analytics.</li>
-						<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Manage reports on billing, projections, and status tracking.</li>
-					</ul>
-				</div>
+	<section id="experience" class="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
+		<!-- Background Elements -->
+		<div class="absolute inset-0">
+			<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.1),transparent_50%)]"></div>
+			<div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(139,92,246,0.1),transparent_50%)]"></div>
+			<div class="absolute w-96 h-96 -top-48 -right-48 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+			<div class="absolute w-96 h-96 -bottom-48 -left-48 bg-violet-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+		</div>
 
-				<!-- Aloha Bangladesh -->
-				<div class="experience-card bg-white rounded-lg shadow-lg p-6 flex flex-col">
-					<h3 class="text-xl font-bold mb-2">Officer — IT Operations</h3>
-					<p class="text-gray-600 mb-4">Aloha Bangladesh</p>
-					<p class="text-sm text-gray-500 mb-4">Nov 2024 - Aug 2025 | Dhaka</p>
-					<ul class="text-gray-700 space-y-2 text-sm flex-grow">
-						<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Manage and monitor Student Database Management (SDM) systems</li>
-						<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Build dashboards using Power BI and Advanced Excel</li>
-						<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Automate processes with Google Apps Script</li>
-						<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Provide IT support and staff training</li>
-					</ul>
+		<!-- Content Container -->
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+			<!-- Section Header -->
+			<div class="text-center mb-16">
+				<div class="flex justify-center mb-6">
+					<span class="animate-bounce px-6 py-3 bg-gradient-to-r from-blue-600 to-violet-600 text-white rounded-full shadow-lg inline-flex items-center">
+						<i class="fas fa-briefcase mr-2"></i>
+						Professional Journey
+					</span>
 				</div>
+				<h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
+					Professional Journey
+				</h2>
+				<p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
+					A chronological overview of my professional career, highlighting key roles, responsibilities, and achievements in the IT and data analysis fields.
+				</p>
+			</div>
 
-				<!-- DB Trims, DBL Group -->
-				<div class="experience-card bg-white rounded-lg shadow-lg p-6 flex flex-col">
-					<h3 class="text-xl font-bold mb-2">Intern — ERP & Production Planning</h3>
-					<p class="text-gray-600 mb-4">DB Trims, DBL Group</p>
-					<p class="text-sm text-gray-500 mb-4">Apr 2024 - Jul 2024 | Gazipur</p>
-					<ul class="text-gray-700 space-y-2 text-sm flex-grow">
-						<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Supported Oracle ERP data management and tracking</li>
-						<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Prepared analytical reports with Excel and Power Query</li>
-						<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Documented workflows and optimized processes</li>
-						<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Contributed to ERP system optimization</li>
-					</ul>
+			<!-- Experience Timeline -->
+			<div class="max-w-4xl mx-auto">
+				<div class="relative">
+					<!-- Timeline Line -->
+					<div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-400 to-violet-500"></div>
+
+					<!-- Timeline Items -->
+					<div class="space-y-12">
+						<!-- Experience Item 1 -->
+						<div class="flex md:items-center md:justify-between flex-col md:flex-row">
+							<div class="order-1 w-full md:w-5/12"></div>
+							<div class="z-20 justify-center flex items-center order-1 bg-blue-100 shadow-xl w-12 h-12 rounded-full">
+								<i class="fas fa-building text-xl text-blue-600"></i>
+							</div>
+							<div class="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4">
+								<h3 class="mb-2 font-bold text-blue-600 text-xl">Assistant/Associate Officer, MIS</h3>
+								<p class="text-sm text-gray-600 mb-1">Ayesha Abed Foundation</p>
+								<p class="text-xs text-gray-500 mb-3">Sep 2025 - Present | Manikganj</p>
+								<ul class="text-sm text-gray-700 space-y-1">
+									<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Time and action calendar creation</li>
+									<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Daily production reporting</li>
+									<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Performance analytics generation</li>
+									<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Billing and status tracking</li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- Experience Item 2 -->
+						<div class="flex md:items-center md:justify-between flex-col md:flex-row">
+							<div class="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4">
+								<h3 class="mb-2 font-bold text-green-600 text-xl">Officer — IT Operations</h3>
+								<p class="text-sm text-gray-600 mb-1">Aloha Bangladesh</p>
+								<p class="text-xs text-gray-500 mb-3">Nov 2024 - Aug 2025 | Dhaka</p>
+								<ul class="text-sm text-gray-700 space-y-1">
+									<li><i class="fas fa-check-circle text-green-500 mr-2"></i>SDM system management</li>
+									<li><i class="fas fa-check-circle text-green-500 mr-2"></i>Power BI dashboard development</li>
+									<li><i class="fas fa-check-circle text-green-500 mr-2"></i>Process automation</li>
+									<li><i class="fas fa-check-circle text-green-500 mr-2"></i>IT support and training</li>
+								</ul>
+							</div>
+							<div class="z-20 justify-center flex items-center order-1 bg-green-100 shadow-xl w-12 h-12 rounded-full">
+								<i class="fas fa-laptop-code text-xl text-green-600"></i>
+							</div>
+							<div class="order-1 w-full md:w-5/12"></div>
+						</div>
+
+						<!-- Experience Item 3 -->
+						<div class="flex md:items-center md:justify-between flex-col md:flex-row">
+							<div class="order-1 w-full md:w-5/12"></div>
+							<div class="z-20 justify-center flex items-center order-1 bg-purple-100 shadow-xl w-12 h-12 rounded-full">
+								<i class="fas fa-cogs text-xl text-purple-600"></i>
+							</div>
+							<div class="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4">
+								<h3 class="mb-2 font-bold text-purple-600 text-xl">Intern — ERP & Production Planning</h3>
+								<p class="text-sm text-gray-600 mb-1">DB Trims, DBL Group</p>
+								<p class="text-xs text-gray-500 mb-3">Apr 2024 - Jul 2024 | Gazipur</p>
+								<ul class="text-sm text-gray-700 space-y-1">
+									<li><i class="fas fa-check-circle text-purple-500 mr-2"></i>Oracle ERP support</li>
+									<li><i class="fas fa-check-circle text-purple-500 mr-2"></i>Excel reporting</li>
+									<li><i class="fas fa-check-circle text-purple-500 mr-2"></i>Workflow documentation</li>
+									<li><i class="fas fa-check-circle text-purple-500 mr-2"></i>System optimization</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Skills Highlight -->
+			<div class="mt-20 max-w-4xl mx-auto">
+				<h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Core Competencies</h3>
+				<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+					<div class="bg-white rounded-lg p-4 text-center shadow-md hover:shadow-lg transition-shadow">
+						<i class="fas fa-chart-line text-2xl text-blue-500 mb-2"></i>
+						<p class="text-sm font-medium">Data Analysis</p>
+					</div>
+					<div class="bg-white rounded-lg p-4 text-center shadow-md hover:shadow-lg transition-shadow">
+						<i class="fas fa-database text-2xl text-green-500 mb-2"></i>
+						<p class="text-sm font-medium">Database Mgmt</p>
+					</div>
+					<div class="bg-white rounded-lg p-4 text-center shadow-md hover:shadow-lg transition-shadow">
+						<i class="fas fa-robot text-2xl text-purple-500 mb-2"></i>
+						<p class="text-sm font-medium">Automation</p>
+					</div>
+					<div class="bg-white rounded-lg p-4 text-center shadow-md hover:shadow-lg transition-shadow">
+						<i class="fas fa-cogs text-2xl text-orange-500 mb-2"></i>
+						<p class="text-sm font-medium">ERP Systems</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -272,313 +354,202 @@
 
 	<!-- Projects Section -->
 	<section id="projects" class="py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
+		<!-- Background Elements -->
 		<div class="absolute inset-0">
-			<div
-				class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.1),transparent_50%)]">
-			</div>
-			<div
-				class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(139,92,246,0.1),transparent_50%)]">
-			</div>
-			<div
-				class="absolute w-96 h-96 -top-48 -right-48 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob">
-			</div>
-			<div
-				class="absolute w-96 h-96 -bottom-48 -left-48 bg-violet-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000">
-			</div>
+			<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.1),transparent_50%)]"></div>
+			<div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(139,92,246,0.1),transparent_50%)]"></div>
+			<div class="absolute w-96 h-96 -top-48 -right-48 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+			<div class="absolute w-96 h-96 -bottom-48 -left-48 bg-violet-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
 		</div>
+
+		<!-- Content Container -->
 		<div class="container mx-auto px-4 relative">
+			<!-- Section Header -->
 			<div class="text-center mb-16">
-				<span
-					class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-600 mb-4 hover:bg-blue-200 transition-colors">
-					<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-					</svg>
-					Browse My Projects
-				</span>
-				<h2 class="section-title mb-4">Featured Projects</h2>
+				<div class="flex justify-center mb-6">
+					<span class="animate-bounce px-6 py-3 bg-gradient-to-r from-blue-600 to-violet-600 text-white rounded-full shadow-lg inline-flex items-center">
+						<i class="fas fa-code mr-2"></i>
+						Featured Work
+					</span>
+				</div>
+				<h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
+					My Latest Projects
+				</h2>
 				<p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-					Explore my latest projects showcasing expertise in automation, data analysis, and web development.
-					Each project represents a unique challenge solved with innovative solutions.
+					Discover my portfolio of innovative solutions in automation, data analysis, and web development.
+					Each project showcases practical problem-solving and technical expertise.
 				</p>
 			</div>
-			<div class="projects-grid">
-				<div class="project-card">
-					<div class="project-image-container">
-						<a href="my-image/P-1.png" class="glightbox" data-gallery="projects"
-							data-title="Student Fee Manager Chrome Extension"
-							data-description="A powerful Chrome extension designed to automate student fee record updates. The extension intelligently identifies unpaid fee entries, fills in details automatically, and streamlines the entire process, significantly reducing manual work and errors.">
-							<img src="my-image/P-1.png" alt="Student Fee Manager Chrome Extension" class="project-image" loading="lazy">
-							<div class="project-overlay">
-								<div class="project-stats">
-									<span class="stat-item">
-										<i class="fas fa-star"></i>
-										<span>4.8</span>
-									</span>
-									<span class="stat-item">
-										<i class="fas fa-code"></i>
-										<span>JS</span>
-									</span>
-									<span class="stat-item">
-										<i class="fas fa-download"></i>
-										<span>500+</span>
-									</span>
-								</div>
-								<div class="project-tech">
-									<span class="tech-tag">JavaScript</span>
-									<span class="tech-tag">Chrome API</span>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="project-content">
-						<h3 class="project-title">Student Fee Manager Chrome Extension</h3>
-						<p class="project-description">A powerful Chrome extension designed to automate student fee
-							record updates, saving significant time and reducing manual errors.</p>
-					</div>
-				</div>
 
-				<div class="project-card">
-					<div class="project-image-container">
-						<a href="my-image/P-2.png" class="glightbox" data-gallery="projects"
-							data-title="Employee Attendance Management System"
-							data-description="A comprehensive web-based employee attendance management system built with Google Apps Script. Features secure authentication, location-based tracking, and detailed attendance analytics.">
-							<img src="my-image/P-2.png" alt="Employee Attendance Management System" class="project-image" loading="lazy">
-							<div class="project-overlay">
-								<div class="project-stats">
-									<span class="stat-item">
-										<i class="fas fa-star"></i>
-										<span>4.9</span>
-									</span>
-									<span class="stat-item">
-										<i class="fas fa-users"></i>
-										<span>200+</span>
-									</span>
-									<span class="stat-item">
-										<i class="fas fa-check"></i>
-										<span>99%</span>
-									</span>
-								</div>
-								<div class="project-tech">
-									<span class="tech-tag">Apps Script</span>
-									<span class="tech-tag">HTML/CSS</span>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="project-content">
-						<h3 class="project-title">Employee Attendance Management System</h3>
-						<p class="project-description">A web-based system for tracking employee attendance with location verification and comprehensive reporting features.</p>
-					</div>
-				</div>
-
-				<div class="project-card">
-					<div class="project-image-container">
-						<a href="my-image/P-3.png" class="glightbox" data-gallery="projects"
-							data-title="ALOHA Bangladesh - Automatic Requisition System"
-							data-description="A streamlined requisition system for ALOHA Bangladesh that automates the process of requesting and managing classroom supplies. Features PDF generation and Google Drive integration.">
-							<img src="my-image/P-3.png" alt="Automatic Requisition System" class="project-image" loading="lazy">
-							<div class="project-overlay">
-								<div class="project-stats">
-									<span class="stat-item">
-										<i class="fas fa-star"></i>
-										<span>5.0</span>
-									</span>
-									<span class="stat-item">
-										<i class="fas fa-file-pdf"></i>
-										<span>PDF</span>
-									</span>
-									<span class="stat-item">
-										<i class="fas fa-sync"></i>
-										<span>Auto</span>
-									</span>
-								</div>
-								<div class="project-tech">
-									<span class="tech-tag">Apps Script</span>
-									<span class="tech-tag">PDF Gen</span>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="project-content">
-						<h3 class="project-title">Automatic Requisition System</h3>
-						<p class="project-description">An automated system for managing classroom supply requisitions with PDF generation and Google Drive integration.</p>
-					</div>
-				</div>
-
-				<div class="project-card">
-					<div class="project-image-container">
-						<a href="my-image/P-4.png" class="glightbox" data-gallery="projects"
-							data-title="NLC Performance Report"
-							data-description="Advanced Excel-based performance reporting system with VBA automation for comprehensive data analysis and visualization.">
-							<img src="my-image/P-4.png" alt="NLC Performance Report" class="project-image" loading="lazy">
-							<div class="project-overlay">
-								<div class="project-stats">
-									<span class="stat-item">
-										<i class="fas fa-chart-line"></i>
-										<span>Excel</span>
-									</span>
-									<span class="stat-item">
-										<i class="fas fa-code"></i>
-										<span>VBA</span>
-									</span>
-									<span class="stat-item">
-										<i class="fas fa-robot"></i>
-										<span>Auto</span>
-									</span>
-								</div>
-								<div class="project-tech">
-									<span class="tech-tag">Excel</span>
-									<span class="tech-tag">VBA</span>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="project-content">
-						<h3 class="project-title">NLC Performance Report</h3>
-						<p class="project-description">Advanced Excel-based reporting system with VBA automation for comprehensive performance analysis.</p>
-					</div>
-				</div>
-
-				<div class="project-card">
-					<div class="project-image-container">
-						<a href="my-image/P-5.png" class="glightbox" data-gallery="projects"
-							data-title="QR Code Generator and Management"
-							data-description="A Google Apps Script solution for managing QR codes in Google Sheets. Generate QR codes for student certificates, handle data management, and export to PDF with ease.">
-							<img src="my-image/P-5.png" alt="QR Code Generator" class="project-image" loading="lazy">
-							<div class="project-overlay">
-								<div class="project-stats">
-									<span class="stat-item">
-										<i class="fas fa-qrcode"></i>
-										<span>QR</span>
-									</span>
-									<span class="stat-item">
-										<i class="fas fa-file-excel"></i>
-										<span>Sheets</span>
-									</span>
-									<span class="stat-item">
-										<i class="fas fa-download"></i>
-										<span>Export</span>
-									</span>
-								</div>
-								<div class="project-tech">
-									<span class="tech-tag">Apps Script</span>
-									<span class="tech-tag">Sheets</span>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="project-content">
-						<h3 class="project-title">QR Code Generator and Management</h3>
-						<p class="project-description">Automated QR code generation system for student certificates with Google Sheets integration.</p>
-					</div>
-				</div>
+			<!-- Project Grid -->
+			<div id="projects-container" class="projects-grid">
+				<!-- Projects will be loaded here dynamically -->
 			</div>
 
-			
+			<!-- Project Load More Button -->
+			<div class="text-center mt-12">
+				<a href="https://github.com/bashir-CSE" target="_blank" rel="noopener noreferrer" 
+					class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-violet-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+					<i class="fab fa-github mr-2"></i>
+					View More on GitHub
+					<i class="fas fa-arrow-right ml-2"></i>
+				</a>
+			</div>
 		</div>
 	</section>
 
 	<!-- Education & Certifications -->
-	<section id="education" class="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
-		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-			<h2 class="text-3xl sm:text-4xl lg:text-5xl text-center mb-12 font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
-				Education & Certifications
-			</h2>
-			<div class="mx-auto max-w-6xl">
-				<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-					<!-- Education -->
-					<div class="education-card transform hover:scale-105 transition-transform duration-300">
-						<div class="education-header mb-6">
-							<i class="fas fa-graduation-cap text-3xl text-primary mb-4"></i>
-							<h3 class="text-2xl font-bold text-gray-800 mb-2">Educational Journey</h3>
+	<section id="education" class="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
+		<!-- Background Elements -->
+		<div class="absolute inset-0">
+			<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.1),transparent_50%)]"></div>
+			<div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(139,92,246,0.1),transparent_50%)]"></div>
+			<div class="absolute w-96 h-96 -top-48 -right-48 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+			<div class="absolute w-96 h-96 -bottom-48 -left-48 bg-violet-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+		</div>
+
+		<!-- Content Container -->
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+			<!-- Section Header -->
+			<div class="text-center mb-16">
+				<div class="flex justify-center mb-6">
+					<span class="animate-bounce px-6 py-3 bg-gradient-to-r from-blue-600 to-violet-600 text-white rounded-full shadow-lg inline-flex items-center">
+						<i class="fas fa-graduation-cap mr-2"></i>
+						Academic Background
+					</span>
+				</div>
+				<h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
+					Education & Certifications
+				</h2>
+				<p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
+					A showcase of my academic journey and professional certifications that have shaped my expertise in IT and data science.
+				</p>
+			</div>
+
+			<!-- Education Timeline -->
+			<div class="max-w-4xl mx-auto mb-20">
+				<h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Educational Journey</h3>
+				<div class="relative">
+					<!-- Timeline Line -->
+					<div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-400 to-violet-500"></div>
+
+					<!-- Timeline Items -->
+					<div class="space-y-12">
+						<!-- Education Item 1 -->
+						<div class="flex md:items-center md:justify-between flex-col md:flex-row">
+							<div class="order-1 w-full md:w-5/12"></div>
+							<div class="z-20 flex items-center order-1 bg-blue-100 shadow-xl w-8 h-8 rounded-full">
+								<h1 class="mx-auto font-semibold text-lg text-blue-600">1</h1>
+							</div>
+							<div class="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4">
+								<h3 class="mb-3 font-bold text-blue-600 text-xl">B.Sc. in Computer Science and Engineering</h3>
+								<p class="text-sm text-gray-600">Gono Bishwabidyalay</p>
+								<p class="text-sm text-gray-500">2018 - 2022</p>
+								<div class="mt-2">
+									<span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">GPA: 3.34</span>
+								</div>
+							</div>
 						</div>
-						<div class="space-y-6">
-							<div class="timeline-item">
-								<div class="timeline-dot"></div>
-								<div class="degree">B.Sc. in Computer Science and Engineering</div>
-								<div class="institution">
-									<i class="fas fa-university text-primary mr-2"></i>
-									Gono Bishwabidyalay • 2018-2022
-								</div>
-								<div class="gpa">
-									<i class="fas fa-award text-primary mr-1"></i>
-									GPA: 3.34
+
+						<!-- Education Item 2 -->
+						<div class="flex md:items-center md:justify-between flex-col md:flex-row">
+							<div class="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4">
+								<h3 class="mb-3 font-bold text-blue-600 text-xl">Higher Secondary Certificate (HSC)</h3>
+								<p class="text-sm text-gray-600">MEH Arif College</p>
+								<p class="text-sm text-gray-500">2017</p>
+								<div class="mt-2">
+									<span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">GPA: 4.50</span>
 								</div>
 							</div>
-							<div class="timeline-item">
-								<div class="timeline-dot"></div>
-								<div class="degree">Higher Secondary Certificate (HSC)</div>
-								<div class="institution">
-									<i class="fas fa-school text-primary mr-2"></i>
-									MEH Arif College • 2017
-								</div>
-								<div class="gpa">
-									<i class="fas fa-award text-primary mr-1"></i>
-									GPA: 4.50
-								</div>
+							<div class="z-20 flex items-center order-1 bg-blue-100 shadow-xl w-8 h-8 rounded-full">
+								<h1 class="mx-auto font-semibold text-lg text-blue-600">2</h1>
 							</div>
-							<div class="timeline-item">
-								<div class="timeline-dot"></div>
-								<div class="degree">Secondary School Certificate (SSC)</div>
-								<div class="institution">
-									<i class="fas fa-school text-primary mr-2"></i>
-									Baidgaon High School • 2015
-								</div>
-								<div class="gpa">
-									<i class="fas fa-award text-primary mr-1"></i>
-									GPA: 4.86
+							<div class="order-1 w-full md:w-5/12"></div>
+						</div>
+
+						<!-- Education Item 3 -->
+						<div class="flex md:items-center md:justify-between flex-col md:flex-row">
+							<div class="order-1 w-full md:w-5/12"></div>
+							<div class="z-20 flex items-center order-1 bg-blue-100 shadow-xl w-8 h-8 rounded-full">
+								<h1 class="mx-auto font-semibold text-lg text-blue-600">3</h1>
+							</div>
+							<div class="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4">
+								<h3 class="mb-3 font-bold text-blue-600 text-xl">Secondary School Certificate (SSC)</h3>
+								<p class="text-sm text-gray-600">Baidgaon High School</p>
+								<p class="text-sm text-gray-500">2015</p>
+								<div class="mt-2">
+									<span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">GPA: 4.86</span>
 								</div>
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
 
-					<!-- Certifications -->
-					<div class="certification-card transform hover:scale-105 transition-transform duration-300">
-						<div class="cert-header">
-							<div class="cert-icon">
-								<i class="fas fa-certificate"></i>
+			<!-- Certifications Grid -->
+			<div class="max-w-6xl mx-auto">
+				<h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Professional Certifications</h3>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+					<!-- Certification Card 1 -->
+					<div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+						<div class="bg-gradient-to-r from-blue-500 to-blue-600 p-6 text-white">
+							<div class="flex items-center justify-center w-16 h-16 mx-auto bg-white/20 rounded-full mb-4">
+								<i class="fas fa-table text-2xl"></i>
 							</div>
-							<div>
-								<h3 class="text-2xl font-bold text-gray-800">Professional Certifications</h3>
-								<p class="text-gray-600 mt-1">2024 Achievements</p>
+							<h4 class="text-xl font-bold text-center">Excel Basics for Data Analysis</h4>
+						</div>
+						<div class="p-6">
+							<p class="text-gray-600 text-sm text-center">Data Analytics Fundamentals</p>
+							<div class="mt-4 flex items-center justify-center">
+								<span class="text-xs text-blue-600 font-medium">Issued 2024</span>
 							</div>
 						</div>
-						<div class="cert-grid mt-8 grid gap-4">
-							<div class="cert-item">
-								<div class="cert-icon-small">
-									<i class="fas fa-table text-primary"></i>
-								</div>
-								<div class="cert-content">
-									<h4 class="font-semibold">Excel Basics for Data Analysis</h4>
-									<p class="text-sm text-gray-600">Data Analytics Fundamentals</p>
-								</div>
+					</div>
+
+					<!-- Certification Card 2 -->
+					<div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+						<div class="bg-gradient-to-r from-green-500 to-green-600 p-6 text-white">
+							<div class="flex items-center justify-center w-16 h-16 mx-auto bg-white/20 rounded-full mb-4">
+								<i class="fab fa-python text-2xl"></i>
 							</div>
-							<div class="cert-item">
-								<div class="cert-icon-small">
-									<i class="fab fa-python text-primary"></i>
-								</div>
-								<div class="cert-content">
-									<h4 class="font-semibold">Programming in Python</h4>
-									<p class="text-sm text-gray-600">Advanced Programming Skills</p>
-								</div>
+							<h4 class="text-xl font-bold text-center">Programming in Python</h4>
+						</div>
+						<div class="p-6">
+							<p class="text-gray-600 text-sm text-center">Advanced Programming Skills</p>
+							<div class="mt-4 flex items-center justify-center">
+								<span class="text-xs text-green-600 font-medium">Issued 2024</span>
 							</div>
-							<div class="cert-item">
-								<div class="cert-icon-small">
-									<i class="fas fa-headset text-primary"></i>
-								</div>
-								<div class="cert-content">
-									<h4 class="font-semibold">Technical Support Fundamentals</h4>
-									<p class="text-sm text-gray-600">IT Support Expertise</p>
-								</div>
+						</div>
+					</div>
+
+					<!-- Certification Card 3 -->
+					<div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+						<div class="bg-gradient-to-r from-purple-500 to-purple-600 p-6 text-white">
+							<div class="flex items-center justify-center w-16 h-16 mx-auto bg-white/20 rounded-full mb-4">
+								<i class="fas fa-headset text-2xl"></i>
 							</div>
-							<div class="cert-item">
-								<div class="cert-icon-small">
-									<i class="fas fa-shield-alt text-primary"></i>
-								</div>
-								<div class="cert-content">
-									<h4 class="font-semibold">Foundations of Cybersecurity</h4>
-									<p class="text-sm text-gray-600">Security Best Practices</p>
-								</div>
+							<h4 class="text-xl font-bold text-center">Technical Support Fundamentals</h4>
+						</div>
+						<div class="p-6">
+							<p class="text-gray-600 text-sm text-center">IT Support Expertise</p>
+							<div class="mt-4 flex items-center justify-center">
+								<span class="text-xs text-purple-600 font-medium">Issued 2024</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Certification Card 4 -->
+					<div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+						<div class="bg-gradient-to-r from-red-500 to-red-600 p-6 text-white">
+							<div class="flex items-center justify-center w-16 h-16 mx-auto bg-white/20 rounded-full mb-4">
+								<i class="fas fa-shield-alt text-2xl"></i>
+							</div>
+							<h4 class="text-xl font-bold text-center">Foundations of Cybersecurity</h4>
+						</div>
+						<div class="p-6">
+							<p class="text-gray-600 text-sm text-center">Security Best Practices</p>
+							<div class="mt-4 flex items-center justify-center">
+								<span class="text-xs text-red-600 font-medium">Issued 2024</span>
 							</div>
 						</div>
 					</div>
@@ -588,202 +559,287 @@
 	</section>
 
 	<!-- Activities & Volunteering -->
-	<section id="activities" class="py-16 sm:py-20 bg-gradient-to-br from-muted via-white to-muted">
-		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-			<h2 class="text-3xl sm:text-4xl lg:text-5xl text-center mb-12 font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-green-600">
-				Activities & Volunteering
-			</h2>
-			<div class="mx-auto max-w-6xl grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-				<div class="activity-card group">
-					<div class="activity-icon-wrapper bg-gradient-to-br from-blue-500 to-blue-700">
-						<i class="fas fa-user-tie text-3xl"></i>
-					</div>
-					<div class="activity-content">
-						<h3 class="activity-title group-hover:text-blue-600">Executive Member</h3>
-						<div class="activity-organization">
-							<span class="org-badge bg-blue-100 text-blue-700">GBPC</span>
+	<section id="activities" class="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
+		<!-- Background Elements -->
+		<div class="absolute inset-0">
+			<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.1),transparent_50%)]"></div>
+			<div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(139,92,246,0.1),transparent_50%)]"></div>
+			<div class="absolute w-96 h-96 -top-48 -right-48 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+			<div class="absolute w-96 h-96 -bottom-48 -left-48 bg-violet-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+		</div>
+
+		<!-- Content Container -->
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+			<!-- Section Header -->
+			<div class="text-center mb-16">
+				<div class="flex justify-center mb-6">
+					<span class="animate-bounce px-6 py-3 bg-gradient-to-r from-blue-600 to-violet-600 text-white rounded-full shadow-lg inline-flex items-center">
+						<i class="fas fa-hands-helping mr-2"></i>
+						Community Engagement
+					</span>
+				</div>
+				<h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
+					Activities & Volunteering
+				</h2>
+				<p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
+					Explore my journey in community engagement, leadership, and social responsibility through various initiatives and volunteer work.
+				</p>
+			</div>
+
+			<!-- Activities Grid -->
+			<div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+				<!-- Activity Card 1 -->
+				<div class="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+					<div class="bg-gradient-to-r from-blue-500 to-blue-600 p-8 text-white text-center">
+						<div class="flex items-center justify-center w-20 h-20 mx-auto bg-white/20 rounded-full mb-4">
+							<i class="fas fa-user-tie text-3xl"></i>
 						</div>
-						<ul class="activity-list">
-							<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Conducted training sessions in Excel</li>
-							<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Python programming workshops</li>
-							<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Web development tutorials</li>
+						<h3 class="text-2xl font-bold mb-2">Executive Member</h3>
+						<p class="text-blue-100">Greater Bangladesh Programmers' Club</p>
+					</div>
+					<div class="p-6">
+						<ul class="space-y-3">
+							<li class="flex items-start">
+								<i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+								<span class="text-gray-700">Excel & Python Training Sessions</span>
+							</li>
+							<li class="flex items-start">
+								<i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+								<span class="text-gray-700">Web Development Workshops</span>
+							</li>
+							<li class="flex items-start">
+								<i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+								<span class="text-gray-700">Technical Skill Development Programs</span>
+							</li>
 						</ul>
 					</div>
 				</div>
 
-				<div class="activity-card group">
-					<div class="activity-icon-wrapper bg-gradient-to-br from-green-500 to-green-700">
-						<i class="fas fa-users text-3xl"></i>
-					</div>
-					<div class="activity-content">
-						<h3 class="activity-title group-hover:text-green-600">Member</h3>
-						<div class="activity-organization">
-							<span class="org-badge bg-green-100 text-green-700">BASIS Students' Chapter</span>
+				<!-- Activity Card 2 -->
+				<div class="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+					<div class="bg-gradient-to-r from-green-500 to-green-600 p-8 text-white text-center">
+						<div class="flex items-center justify-center w-20 h-20 mx-auto bg-white/20 rounded-full mb-4">
+							<i class="fas fa-users text-3xl"></i>
 						</div>
-						<ul class="activity-list">
-							<li><i class="fas fa-check-circle text-green-500 mr-2"></i>Professional development programs</li>
-							<li><i class="fas fa-check-circle text-green-500 mr-2"></i>Tech industry networking</li>
-							<li><i class="fas fa-check-circle text-green-500 mr-2"></i>Innovation workshops</li>
+						<h3 class="text-2xl font-bold mb-2">Member</h3>
+						<p class="text-green-100">BASIS Students' Chapter</p>
+					</div>
+					<div class="p-6">
+						<ul class="space-y-3">
+							<li class="flex items-start">
+								<i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+								<span class="text-gray-700">Professional Development Programs</span>
+							</li>
+							<li class="flex items-start">
+								<i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+								<span class="text-gray-700">Tech Industry Networking Events</span>
+							</li>
+							<li class="flex items-start">
+								<i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+								<span class="text-gray-700">Innovation & Entrepreneurship Workshops</span>
+							</li>
 						</ul>
 					</div>
 				</div>
 
-				<div class="activity-card group">
-					<div class="activity-icon-wrapper bg-gradient-to-br from-red-500 to-red-700">
-						<i class="fas fa-heart text-3xl"></i>
-					</div>
-					<div class="activity-content">
-						<h3 class="activity-title group-hover:text-red-600">Volunteer</h3>
-						<div class="activity-organization">
-							<span class="org-badge bg-red-100 text-red-700">Blood Plus</span>
+				<!-- Activity Card 3 -->
+				<div class="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+					<div class="bg-gradient-to-r from-red-500 to-red-600 p-8 text-white text-center">
+						<div class="flex items-center justify-center w-20 h-20 mx-auto bg-white/20 rounded-full mb-4">
+							<i class="fas fa-heart text-3xl"></i>
 						</div>
-						<ul class="activity-list">
-							<li><i class="fas fa-check-circle text-red-500 mr-2"></i>Organized 4+ blood donation drives</li>
-							<li><i class="fas fa-check-circle text-red-500 mr-2"></i>Community health outreach</li>
-							<li><i class="fas fa-check-circle text-red-500 mr-2"></i>Emergency response coordination</li>
+						<h3 class="text-2xl font-bold mb-2">Volunteer</h3>
+						<p class="text-red-100">Blood Plus</p>
+					</div>
+					<div class="p-6">
+						<ul class="space-y-3">
+							<li class="flex items-start">
+								<i class="fas fa-check-circle text-red-500 mt-1 mr-3"></i>
+								<span class="text-gray-700">Organized 4+ Blood Donation Drives</span>
+							</li>
+							<li class="flex items-start">
+								<i class="fas fa-check-circle text-red-500 mt-1 mr-3"></i>
+								<span class="text-gray-700">Community Health Outreach Programs</span>
+							</li>
+							<li class="flex items-start">
+								<i class="fas fa-check-circle text-red-500 mt-1 mr-3"></i>
+								<span class="text-gray-700">Emergency Response Coordination</span>
+							</li>
 						</ul>
 					</div>
+				</div>
+			</div>
+
+			<!-- Stats Section -->
+			<div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+				<div class="text-center p-6 bg-white rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105">
+					<div class="text-4xl font-bold text-blue-600 mb-2">4+</div>
+					<div class="text-gray-600">Blood Drives Organized</div>
+				</div>
+				<div class="text-center p-6 bg-white rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105">
+					<div class="text-4xl font-bold text-green-600 mb-2">50+</div>
+					<div class="text-gray-600">Workshops Conducted</div>
+				</div>
+				<div class="text-center p-6 bg-white rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105">
+					<div class="text-4xl font-bold text-purple-600 mb-2">1000+</div>
+					<div class="text-gray-600">People Impacted</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
 	<!-- Contact Section -->
-	<section id="contact" class="py-16 sm:py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50">
-		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-			<h2 class="text-3xl sm:text-4xl lg:text-5xl text-center mb-12 font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-violet-600">
-				Get In Touch
-			</h2>
-			<div class="mx-auto max-w-6xl grid lg:grid-cols-2 gap-8 lg:gap-12">
+	<section id="contact" class="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
+		<!-- Background Elements -->
+		<div class="absolute inset-0">
+			<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.1),transparent_50%)]"></div>
+			<div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(139,92,246,0.1),transparent_50%)]"></div>
+			<div class="absolute w-96 h-96 -top-48 -right-48 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+			<div class="absolute w-96 h-96 -bottom-48 -left-48 bg-violet-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+		</div>
+
+		<!-- Content Container -->
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+			<!-- Section Header -->
+			<div class="text-center mb-16">
+				<div class="flex justify-center mb-6">
+					<span class="animate-bounce px-6 py-3 bg-gradient-to-r from-blue-600 to-violet-600 text-white rounded-full shadow-lg inline-flex items-center">
+						<i class="fas fa-paper-plane mr-2"></i>
+						Let's Connect
+					</span>
+				</div>
+				<h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
+					Get In Touch
+				</h2>
+				<p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
+					I'm always interested in hearing about new opportunities and projects. Whether you have a question or just want to say hi, feel free to reach out!
+				</p>
+			</div>
+
+			<!-- Contact Grid -->
+			<div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
 				<!-- Contact Information -->
-				<div class="contact-info-card group">
-					<div class="contact-header mb-8">
-						<div class="contact-icon-wrapper">
-							<i class="fas fa-comments text-3xl text-white"></i>
-						</div>
-						<h3 class="text-2xl font-bold text-gray-800 mt-4">Contact Information</h3>
-						<p class="text-gray-600 mt-2">Let's connect and discuss opportunities</p>
+				<div class="bg-white rounded-2xl shadow-xl p-8 transform transition-all duration-300 hover:shadow-2xl">
+					<div class="text-center mb-8">
+						<h3 class="text-2xl font-bold text-gray-800 mb-2">Contact Information</h3>
+						<p class="text-gray-600">Let's connect and discuss opportunities</p>
 					</div>
 
-					<div class="contact-links space-y-6">
-						<a href="tel:+8801793761605" class="contact-link-item group/item">
-							<div class="contact-link-icon">
-								<i class="fas fa-phone"></i>
+					<div class="space-y-6">
+						<div class="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+							<div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+								<i class="fas fa-phone text-blue-600"></i>
 							</div>
-							<div class="contact-link-content">
-								<span class="contact-link-label">Phone</span>
-								<span class="contact-link-value group-hover/item:text-blue-600">+880 1793 761605</span>
-							</div>
-						</a>
-
-						<a href="mailto:babashir8811@gmail.com" class="contact-link-item group/item">
-							<div class="contact-link-icon">
-								<i class="fas fa-envelope"></i>
-							</div>
-							<div class="contact-link-content">
-								<span class="contact-link-label">Email</span>
-								<span class="contact-link-value group-hover/item:text-blue-600">babashir8811@gmail.com</span>
-							</div>
-						</a>
-
-						<div class="contact-link-item">
-							<div class="contact-link-icon">
-								<i class="fas fa-map-marker-alt"></i>
-							</div>
-							<div class="contact-link-content">
-								<span class="contact-link-label">Present Address</span>
-								<span class="contact-link-value">Dhanmondi, Jigatola, Road 4/A, House 13/9, Dhaka</span>
+							<div class="ml-4">
+								<h4 class="text-sm font-semibold text-gray-700">Phone</h4>
+								<a href="tel:+8801793761605" class="text-blue-600 hover:underline">+880 1793 761605</a>
 							</div>
 						</div>
 
-						<div class="contact-link-item">
-							<div class="contact-link-icon">
-								<i class="fas fa-home"></i>
+						<div class="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+							<div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+								<i class="fas fa-envelope text-blue-600"></i>
 							</div>
-							<div class="contact-link-content">
-								<span class="contact-link-label">Permanent Address</span>
-								<span class="contact-link-value">Koltasuti, BKSP, Zirani, Savar, Dhaka</span>
+							<div class="ml-4">
+								<h4 class="text-sm font-semibold text-gray-700">Email</h4>
+								<a href="mailto:babashir8811@gmail.com" class="text-blue-600 hover:underline">babashir8811@gmail.com</a>
 							</div>
 						</div>
 
-						<a href="https://www.linkedin.com/in/bashir-6923131b0" target="_blank" rel="noopener noreferrer" class="contact-link-item group/item">
-							<div class="contact-link-icon">
-								<i class="fab fa-linkedin"></i>
+						<div class="flex items-start p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+							<div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+								<i class="fas fa-map-marker-alt text-blue-600"></i>
 							</div>
-							<div class="contact-link-content">
-								<span class="contact-link-label">LinkedIn</span>
-								<span class="contact-link-value group-hover/item:text-blue-600">linkedin.com/in/bashir-6923131b0</span>
+							<div class="ml-4">
+								<h4 class="text-sm font-semibold text-gray-700">Present Address</h4>
+								<p class="text-gray-600">Dhanmondi, Jigatola, Road 4/A, House 13/9, Dhaka</p>
 							</div>
-						</a>
+						</div>
 
-						<a href="https://github.com/bashir-CSE" target="_blank" rel="noopener noreferrer" class="contact-link-item group/item">
-							<div class="contact-link-icon">
-								<i class="fab fa-github"></i>
+						<div class="flex items-start p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+							<div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+								<i class="fas fa-home text-blue-600"></i>
 							</div>
-							<div class="contact-link-content">
-								<span class="contact-link-label">GitHub</span>
-								<span class="contact-link-value group-hover/item:text-blue-600">github.com/bashir-CSE</span>
+							<div class="ml-4">
+								<h4 class="text-sm font-semibold text-gray-700">Permanent Address</h4>
+								<p class="text-gray-600">Koltasuti, BKSP, Zirani, Savar, Dhaka</p>
 							</div>
-						</a>
+						</div>
+
+						<div class="flex space-x-4 pt-4">
+							<a href="https://www.linkedin.com/in/bashir-6923131b0" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+								<i class="fab fa-linkedin mr-2"></i>
+								LinkedIn
+							</a>
+							<a href="https://github.com/bashir-CSE" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center p-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors">
+								<i class="fab fa-github mr-2"></i>
+								GitHub
+							</a>
+						</div>
 					</div>
 				</div>
 
 				<!-- Contact Form -->
-				<div class="contact-form-card group">
-					<div class="contact-form-header mb-8">
-						<div class="contact-icon-wrapper">
-							<i class="fas fa-paper-plane text-3xl text-white"></i>
-						</div>
-						<h3 class="text-2xl font-bold text-gray-800 mt-4">Send Me a Message</h3>
-						<p class="text-gray-600 mt-2">I'll get back to you as soon as possible</p>
+				<div class="bg-white rounded-2xl shadow-xl p-8 transform transition-all duration-300 hover:shadow-2xl">
+					<div class="text-center mb-8">
+						<h3 class="text-2xl font-bold text-gray-800 mb-2">Send Me a Message</h3>
+						<p class="text-gray-600">I'll get back to you as soon as possible</p>
 					</div>
 
 					<form id="contact-form" class="space-y-6">
-						<div class="form-group">
-							<label for="name" class="form-label">Name</label>
-							<div class="form-input-wrapper">
-								<i class="fas fa-user form-input-icon"></i>
+						<div>
+							<label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+							<div class="relative">
+								<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+									<i class="fas fa-user text-gray-400"></i>
+								</div>
 								<input type="text" id="name" name="name" required
-									class="form-input pl-10"
+									class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 									placeholder="Your full name"
 								/>
 							</div>
 						</div>
 
-						<div class="form-group">
-							<label for="email" class="form-label">Email</label>
-							<div class="form-input-wrapper">
-								<i class="fas fa-envelope form-input-icon"></i>
+						<div>
+							<label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+							<div class="relative">
+								<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+									<i class="fas fa-envelope text-gray-400"></i>
+								</div>
 								<input type="email" id="email" name="email" required
-									class="form-input pl-10"
+									class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 									placeholder="your.email@example.com"
 								/>
 							</div>
 						</div>
 
-						<div class="form-group">
-							<label for="subject" class="form-label">Subject</label>
-							<div class="form-input-wrapper">
-								<i class="fas fa-bookmark form-input-icon"></i>
+						<div>
+							<label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+							<div class="relative">
+								<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+									<i class="fas fa-bookmark text-gray-400"></i>
+								</div>
 								<input type="text" id="subject" name="subject" required
-									class="form-input pl-10"
+									class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 									placeholder="What is this about?"
 								/>
 							</div>
 						</div>
 
-						<div class="form-group">
-							<label for="message" class="form-label">Message</label>
-							<div class="form-input-wrapper">
-								<i class="fas fa-comment form-input-icon"></i>
+						<div>
+							<label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+							<div class="relative">
+								<div class="absolute top-3 left-3 pointer-events-none">
+									<i class="fas fa-comment text-gray-400"></i>
+								</div>
 								<textarea id="message" name="message" rows="4" required
-									class="form-input pl-10 resize-none"
+									class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none"
 									placeholder="Your message here..."></textarea>
 							</div>
 						</div>
 
 						<button type="submit" id="submit-btn"
-							class="btn-primary w-full px-6 py-3 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors">
+							class="w-full bg-gradient-to-r from-blue-600 to-violet-600 text-white font-medium py-3 px-4 rounded-lg hover:from-blue-700 hover:to-violet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 transform hover:scale-105">
 							<span id="btn-text">
 								<i class="fas fa-paper-plane mr-2"></i>Send Message
 							</span>
@@ -827,11 +883,10 @@
 
 	<!-- JavaScript -->
 	<!-- JavaScript Libraries -->
-	<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 	<!-- Typed.js (replaces TypeIt) -->
 	<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-	<script src="https://unpkg.com/scrollreveal"></script>
-	<script src="https://unpkg.com/headroom.js"></script>
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 	<!-- GLightbox JS -->
 	<script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js"></script>
 

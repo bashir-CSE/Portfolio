@@ -1,0 +1,167 @@
+/* Project Stats */
+.project-stats {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+}
+
+.project-card:hover .project-stats {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.stat-item i {
+    color: #60A5FA;
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover i {
+    transform: scale(1.2);
+}
+
+/* Project Technologies */
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+}
+
+.project-card:hover .project-tech {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tech-tag {
+    background: rgba(96, 165, 250, 0.2);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.025em;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tech-tag:hover {
+    background: rgba(96, 165, 250, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* GLightbox Custom Styles */
+.glightbox-container {
+    backdrop-filter: blur(10px);
+}
+
+.gslide-description {
+    background: linear-gradient(
+        to top,
+        rgba(17, 24, 39, 0.95),
+        rgba(17, 24, 39, 0.8)
+    ) !important;
+}
+
+.gslide-title {
+    color: white !important;
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.gslide-desc {
+    color: #D1D5DB !important;
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+}
+
+/* Loading Animation */
+.projects-loading {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(59, 130, 246, 0.2);
+    border-radius: 50%;
+    border-top-color: #3B82F6;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ScrollReveal Custom Animations */
+.sr-project-card {
+    visibility: hidden;
+}
+
+/* Enhanced Hover Effects */
+.project-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 1.25rem;
+    background: linear-gradient(
+        45deg,
+        rgba(59, 130, 246, 0.1),
+        rgba(139, 92, 246, 0.1)
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.project-card:hover::after {
+    opacity: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .project-card {
+        transform: none !important;
+    }
+    
+    .project-overlay {
+        opacity: 1;
+        background: linear-gradient(
+            to top,
+            rgba(17, 24, 39, 0.8),
+            rgba(17, 24, 39, 0.4)
+        );
+    }
+    
+    .project-stats,
+    .project-tech {
+        opacity: 1;
+        transform: none;
+    }
+}

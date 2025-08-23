@@ -3078,3 +3078,46 @@ html {
     padding: 0.375rem 0.75rem;
   }
 }
+
+/* Responsive Timeline Styles */
+@media (max-width: 767px) {
+  /* Hide the timeline line on mobile */
+  #experience .relative > .absolute,
+  #education .relative > .absolute {
+    display: none;
+  }
+
+  /* Center the timeline items and remove the side-by-side layout */
+  #experience .flex.md\:items-center,
+  #education .flex.md\:items-center {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Remove the empty spacer divs */
+  #experience .w-full.md\:w-5\/12:empty,
+  #education .w-full.md\:w-5\/12:empty {
+    display: none;
+  }
+
+  /* Ensure content cards take full width */
+  #experience .order-1.bg-white,
+  #education .order-1.bg-white {
+    width: 100%;
+    max-width: 400px; /* Optional: constrain width for readability */
+    order: 2; /* Ensure card is after the icon */
+    margin-top: 1rem;
+  }
+
+  /* Style the icon/dot container */
+  #experience .z-20,
+  #education .z-20 {
+    order: 1; /* Ensure icon is before the card */
+  }
+
+  /* Adjust spacing between timeline items */
+  #experience .space-y-12,
+  #education .space-y-12 {
+    space-y: 3rem; /* Adjust vertical spacing */
+  }
+}

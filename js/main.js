@@ -1,9 +1,9 @@
 import { initEmailJS, handleContactFormSubmit } from './modules/email.js';
 import { initTyping } from './modules/typing.js';
-import { initParticles } from './modules/particles.js';
-import { initScroll, handleSmoothScroll, scrollToTop, initScrollReveal } from './modules/scroll.js';
+import { initScroll, handleSmoothScroll, scrollToTop } from './modules/scroll.js';
 import { toggleMobileMenu, closeMobileMenu, initHeadroom } from './modules/ui.js';
 import { initGLightbox } from './modules/lightbox.js';
+import { initializeProjects } from './modules/projects.js';
 
 window.addEventListener("load", () => {
 	const preloader = document.getElementById("preloader");
@@ -40,10 +40,9 @@ const PortfolioApp = {
 		initEmailJS(this.config.emailjs);
 		initTyping();
 		this.initEventListeners();
-		initParticles();
-		initScrollReveal();
 		initHeadroom();
 		initGLightbox();
+		initializeProjects(); // Initialize projects from JSON
 		this.setActiveNavLink(); // Set active link on load
 		this.animateSkillBars(); // Initialize skill bar animations
 	},
@@ -145,11 +144,9 @@ const PortfolioApp = {
 	handleScrollAnimations() {
 		const observer = new IntersectionObserver(
 			(entries) => {
-				entries.forEach((entry, index) => {
+				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
-						setTimeout(() => {
-							entry.target.classList.add("is-visible");
-						}, index * 150); // Staggered delay
+						entry.target.classList.add("animate__animated", "animate__fadeInUp");
 						observer.unobserve(entry.target);
 					}
 				});
@@ -157,7 +154,7 @@ const PortfolioApp = {
 			{ threshold: 0.1 }
 		);
 
-		this.elements.animateOnScrollElements.forEach((el) => {
+		this.elements.sections.forEach((el) => {
 			observer.observe(el);
 		});
 	},
