@@ -69,31 +69,6 @@
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-/* GLightbox Custom Styles */
-.glightbox-container {
-    backdrop-filter: blur(10px);
-}
-
-.gslide-description {
-    background: linear-gradient(
-        to top,
-        rgba(17, 24, 39, 0.95),
-        rgba(17, 24, 39, 0.8)
-    ) !important;
-}
-
-.gslide-title {
-    color: white !important;
-    font-size: 1.5rem !important;
-    font-weight: 600 !important;
-    margin-bottom: 0.5rem !important;
-}
-
-.gslide-desc {
-    color: #D1D5DB !important;
-    font-size: 1rem !important;
-    line-height: 1.6 !important;
-}
 
 /* Loading Animation */
 .projects-loading {
@@ -117,10 +92,7 @@
     }
 }
 
-/* ScrollReveal Custom Animations */
-.sr-project-card {
-    visibility: hidden;
-}
+
 
 /* Enhanced Hover Effects */
 .project-card::after {

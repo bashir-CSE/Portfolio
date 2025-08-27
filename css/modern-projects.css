@@ -8,31 +8,6 @@
     margin: 0 auto;
 }
 
-/* GLightbox Custom Styles */
-.glightbox-container {
-    background: rgba(0, 0, 0, 0.9) !important;
-}
-
-.gslide-image img {
-    border-radius: 0.5rem;
-}
-
-.gslide-description {
-    background: transparent !important;
-}
-
-.gslide-title {
-    margin-bottom: 0.5rem;
-    color: white !important;
-    font-size: 1.25rem !important;
-    font-weight: 600 !important;
-}
-
-.gslide-desc {
-    color: #cbd5e1 !important;
-    font-size: 0.875rem !important;
-    line-height: 1.5 !important;
-}
 
 /* Loading Animation */
 .projects-loading {

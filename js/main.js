@@ -2,7 +2,6 @@ import { initEmailJS, handleContactFormSubmit } from './modules/email.js';
 import { initTyping } from './modules/typing.js';
 import { initScroll, handleSmoothScroll, scrollToTop } from './modules/scroll.js';
 import { toggleMobileMenu, closeMobileMenu, initHeadroom } from './modules/ui.js';
-import { initGLightbox } from './modules/lightbox.js';
 import { initializeProjects } from './modules/projects.js';
 
 window.addEventListener("load", () => {
@@ -41,7 +40,6 @@ const PortfolioApp = {
 		initTyping();
 		this.initEventListeners();
 		initHeadroom();
-		initGLightbox();
 		initializeProjects(); // Initialize projects from JSON
 		this.setActiveNavLink(); // Set active link on load
 		this.animateSkillBars(); // Initialize skill bar animations

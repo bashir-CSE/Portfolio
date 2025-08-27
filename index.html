@@ -18,9 +18,6 @@
 	<!-- EmailJS -->
 	<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-	<!-- GLightbox CSS -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css" />
-
 	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,14 +27,13 @@
 
 	<!-- Typed.js for typing effect -->
 	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/lib/typed.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
 
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="styles.css" />
 	<link rel="stylesheet" href="css/modern-projects.css" />
 	<link rel="stylesheet" href="css/animations.css" />
 	<link rel="stylesheet" href="css/project-cards.css" />
-	<!-- GLightbox CSS -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -111,6 +107,10 @@
 						class="nav-link font-bold text-left py-3 px-4 hover:text-blue-600 transition-colors">
 						<i class="fas fa-home mr-3"></i>Home
 					</a>
+					<a href="#about"
+						class="nav-link font-bold text-left py-3 px-4 hover:text-blue-600 transition-colors">
+						<i class="fas fa-user mr-3"></i>About
+					</a>
 					<a href="#experience"
 						class="nav-link font-bold text-left py-3 px-4 hover:text-blue-600 transition-colors">
 						<i class="fas fa-briefcase mr-3"></i>Experience
@@ -120,7 +120,7 @@
 						<i class="fas fa-code mr-3"></i>Projects
 					</a>
 					<a href="#contact"
-						class="nav-link font-bold text-left py-3 px-4 hover:text-blue-600 transition-colors">
+						class="nav-link font-bold text-left py=3 px-4 hover:text-blue-600 transition-colors">
 						<i class="fas fa-envelope mr-3"></i>Contact
 					</a>
 				</nav>
@@ -154,16 +154,18 @@
 					<div class="text-2xl md:text-3xl font-semibold text-gray-600 mb-6" id="typed-text-container">
 						<span id="typed5"></span>
 					</div>
-					<p class="text-gray-600 mb-8 text-lg max-w-3xl mx-auto md:mx-0">I’m an IT enthusiast with experience
-						in system support, ERP operations, and data analysis. I enjoy simplifying tasks
-						through automation and creating smart tech solutions. Currently, I work as an IT Officer at
-						Unicom Education Consultant
-						Services Ltd. I love learning, building tools, and exploring data science in my free time.
+					<p class="text-gray-600 mb-8 text-lg max-w-3xl mx-auto md:mx-0">As an IT professional skilled in
+						MIS, ERP support, and data analysis. I enjoy building automation
+						tools, dashboards, and workflows that reduce manual effort and improve efficiency. Passionate
+						about data-driven
+						solutions, I aim to use technology to solve problems and drive smarter decision-making.
 					</p>
 					<div class="flex justify-center md:justify-start space-x-4">
 						<a href="#projects" class="btn-primary text-white px-6 py-3 rounded-md">View my projects</a>
 						<a href="#contact" class="btn-outline text-blue-500 px-6 py-3 rounded-md">Contact
 							information</a>
+						
+
 					</div>
 				</div>
 				<div class="md:w-1/2 flex justify-end animate-fadeIn" style="animation-delay: 0.3s;">
@@ -182,6 +184,7 @@
 			</div>
 		</div>
 	</section>
+
 
 	<!-- Technical Skills Section -->
 	<section id="skills"
@@ -235,10 +238,18 @@
 	<section id="experience" class="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
 		<!-- Background Elements -->
 		<div class="absolute inset-0">
-			<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.1),transparent_50%)]"></div>
-			<div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(139,92,246,0.1),transparent_50%)]"></div>
-			<div class="absolute w-96 h-96 -top-48 -right-48 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-			<div class="absolute w-96 h-96 -bottom-48 -left-48 bg-violet-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+			<div
+				class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.1),transparent_50%)]">
+			</div>
+			<div
+				class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(139,92,246,0.1),transparent_50%)]">
+			</div>
+			<div
+				class="absolute w-96 h-96 -top-48 -right-48 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob">
+			</div>
+			<div
+				class="absolute w-96 h-96 -bottom-48 -left-48 bg-violet-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000">
+			</div>
 		</div>
 
 		<!-- Content Container -->
@@ -246,16 +257,19 @@
 			<!-- Section Header -->
 			<div class="text-center mb-16">
 				<div class="flex justify-center mb-6">
-					<span class="animate-bounce px-6 py-3 bg-gradient-to-r from-blue-600 to-violet-600 text-white rounded-full shadow-lg inline-flex items-center">
+					<span
+						class="animate-bounce px-6 py-3 bg-gradient-to-r from-blue-600 to-violet-600 text-white rounded-full shadow-lg inline-flex items-center">
 						<i class="fas fa-briefcase mr-2"></i>
 						Professional Journey
 					</span>
 				</div>
-				<h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
+				<h2
+					class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
 					Professional Journey
 				</h2>
 				<p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-					A chronological overview of my professional career, highlighting key roles, responsibilities, and achievements in the IT and data analysis fields.
+					A chronological overview of my professional career, highlighting key roles, responsibilities, and
+					achievements in the IT and data analysis fields.
 				</p>
 			</div>
 
@@ -263,14 +277,17 @@
 			<div class="max-w-4xl mx-auto">
 				<div class="relative">
 					<!-- Timeline Line -->
-					<div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-400 to-violet-500"></div>
+					<div
+						class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-400 to-violet-500">
+					</div>
 
 					<!-- Timeline Items -->
 					<div class="space-y-12">
 						<!-- Experience Item 1 -->
 						<div class="flex md:items-center md:justify-between flex-col md:flex-row">
 							<div class="order-1 w-full md:w-5/12"></div>
-							<div class="z-20 justify-center flex items-center order-1 bg-blue-100 shadow-xl w-12 h-12 rounded-full">
+							<div
+								class="z-20 justify-center flex items-center order-1 bg-blue-100 shadow-xl w-12 h-12 rounded-full">
 								<i class="fas fa-building text-xl text-blue-600"></i>
 							</div>
 							<div class="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4">
@@ -278,10 +295,14 @@
 								<p class="text-sm text-gray-600 mb-1">Ayesha Abed Foundation</p>
 								<p class="text-xs text-gray-500 mb-3">Sep 2025 - Present | Manikganj</p>
 								<ul class="text-sm text-gray-700 space-y-1">
-									<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Time and action calendar creation</li>
-									<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Daily production reporting</li>
-									<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Performance analytics generation</li>
-									<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Billing and status tracking</li>
+									<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Time and action calendar
+										creation</li>
+									<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Daily production reporting
+									</li>
+									<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Performance analytics
+										generation</li>
+									<li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Billing and status
+										tracking</li>
 								</ul>
 							</div>
 						</div>
@@ -293,13 +314,17 @@
 								<p class="text-sm text-gray-600 mb-1">Aloha Bangladesh</p>
 								<p class="text-xs text-gray-500 mb-3">Nov 2024 - Aug 2025 | Dhaka</p>
 								<ul class="text-sm text-gray-700 space-y-1">
-									<li><i class="fas fa-check-circle text-green-500 mr-2"></i>SDM system management</li>
-									<li><i class="fas fa-check-circle text-green-500 mr-2"></i>Power BI dashboard development</li>
+									<li><i class="fas fa-check-circle text-green-500 mr-2"></i>SDM system management
+									</li>
+									<li><i class="fas fa-check-circle text-green-500 mr-2"></i>Power BI dashboard
+										development</li>
 									<li><i class="fas fa-check-circle text-green-500 mr-2"></i>Process automation</li>
-									<li><i class="fas fa-check-circle text-green-500 mr-2"></i>IT support and training</li>
+									<li><i class="fas fa-check-circle text-green-500 mr-2"></i>IT support and training
+									</li>
 								</ul>
 							</div>
-							<div class="z-20 justify-center flex items-center order-1 bg-green-100 shadow-xl w-12 h-12 rounded-full">
+							<div
+								class="z-20 justify-center flex items-center order-1 bg-green-100 shadow-xl w-12 h-12 rounded-full">
 								<i class="fas fa-laptop-code text-xl text-green-600"></i>
 							</div>
 							<div class="order-1 w-full md:w-5/12"></div>
@@ -308,17 +333,20 @@
 						<!-- Experience Item 3 -->
 						<div class="flex md:items-center md:justify-between flex-col md:flex-row">
 							<div class="order-1 w-full md:w-5/12"></div>
-							<div class="z-20 justify-center flex items-center order-1 bg-purple-100 shadow-xl w-12 h-12 rounded-full">
+							<div
+								class="z-20 justify-center flex items-center order-1 bg-purple-100 shadow-xl w-12 h-12 rounded-full">
 								<i class="fas fa-cogs text-xl text-purple-600"></i>
 							</div>
 							<div class="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4">
-								<h3 class="mb-2 font-bold text-purple-600 text-xl">Intern — ERP & Production Planning</h3>
+								<h3 class="mb-2 font-bold text-purple-600 text-xl">Intern — ERP & Production Planning
+								</h3>
 								<p class="text-sm text-gray-600 mb-1">DB Trims, DBL Group</p>
 								<p class="text-xs text-gray-500 mb-3">Apr 2024 - Jul 2024 | Gazipur</p>
 								<ul class="text-sm text-gray-700 space-y-1">
 									<li><i class="fas fa-check-circle text-purple-500 mr-2"></i>Oracle ERP support</li>
 									<li><i class="fas fa-check-circle text-purple-500 mr-2"></i>Excel reporting</li>
-									<li><i class="fas fa-check-circle text-purple-500 mr-2"></i>Workflow documentation</li>
+									<li><i class="fas fa-check-circle text-purple-500 mr-2"></i>Workflow documentation
+									</li>
 									<li><i class="fas fa-check-circle text-purple-500 mr-2"></i>System optimization</li>
 								</ul>
 							</div>
@@ -356,10 +384,18 @@
 	<section id="projects" class="py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
 		<!-- Background Elements -->
 		<div class="absolute inset-0">
-			<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.1),transparent_50%)]"></div>
-			<div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(139,92,246,0.1),transparent_50%)]"></div>
-			<div class="absolute w-96 h-96 -top-48 -right-48 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-			<div class="absolute w-96 h-96 -bottom-48 -left-48 bg-violet-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+			<div
+				class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.1),transparent_50%)]">
+			</div>
+			<div
+				class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(139,92,246,0.1),transparent_50%)]">
+			</div>
+			<div
+				class="absolute w-96 h-96 -top-48 -right-48 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob">
+			</div>
+			<div
+				class="absolute w-96 h-96 -bottom-48 -left-48 bg-violet-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000">
+			</div>
 		</div>
 
 		<!-- Content Container -->
@@ -367,12 +403,14 @@
 			<!-- Section Header -->
 			<div class="text-center mb-16">
 				<div class="flex justify-center mb-6">
-					<span class="animate-bounce px-6 py-3 bg-gradient-to-r from-blue-600 to-violet-600 text-white rounded-full shadow-lg inline-flex items-center">
+					<span
+						class="animate-bounce px-6 py-3 bg-gradient-to-r from-blue-600 to-violet-600 text-white rounded-full shadow-lg inline-flex items-center">
 						<i class="fas fa-code mr-2"></i>
 						Featured Work
 					</span>
 				</div>
-				<h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
+				<h2
+					class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
 					My Latest Projects
 				</h2>
 				<p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
@@ -388,7 +426,7 @@
 
 			<!-- Project Load More Button -->
 			<div class="text-center mt-12">
-				<a href="https://github.com/bashir-CSE" target="_blank" rel="noopener noreferrer" 
+				<a href="https://github.com/bashir-CSE" target="_blank" rel="noopener noreferrer"
 					class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-violet-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
 					<i class="fab fa-github mr-2"></i>
 					View More on GitHub
@@ -402,10 +440,18 @@
 	<section id="education" class="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
 		<!-- Background Elements -->
 		<div class="absolute inset-0">
-			<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.1),transparent_50%)]"></div>
-			<div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(139,92,246,0.1),transparent_50%)]"></div>
-			<div class="absolute w-96 h-96 -top-48 -right-48 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-			<div class="absolute w-96 h-96 -bottom-48 -left-48 bg-violet-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+			<div
+				class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.1),transparent_50%)]">
+			</div>
+			<div
+				class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(139,92,246,0.1),transparent_50%)]">
+			</div>
+			<div
+				class="absolute w-96 h-96 -top-48 -right-48 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob">
+			</div>
+			<div
+				class="absolute w-96 h-96 -bottom-48 -left-48 bg-violet-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000">
+			</div>
 		</div>
 
 		<!-- Content Container -->
@@ -413,16 +459,19 @@
 			<!-- Section Header -->
 			<div class="text-center mb-16">
 				<div class="flex justify-center mb-6">
-					<span class="animate-bounce px-6 py-3 bg-gradient-to-r from-blue-600 to-violet-600 text-white rounded-full shadow-lg inline-flex items-center">
+					<span
+						class="animate-bounce px-6 py-3 bg-gradient-to-r from-blue-600 to-violet-600 text-white rounded-full shadow-lg inline-flex items-center">
 						<i class="fas fa-graduation-cap mr-2"></i>
 						Academic Background
 					</span>
 				</div>
-				<h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
+				<h2
+					class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
 					Education & Certifications
 				</h2>
 				<p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-					A showcase of my academic journey and professional certifications that have shaped my expertise in IT and data science.
+					A showcase of my academic journey and professional certifications that have shaped my expertise in
+					IT and data science.
 				</p>
 			</div>
 
@@ -431,7 +480,9 @@
 				<h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Educational Journey</h3>
 				<div class="relative">
 					<!-- Timeline Line -->
-					<div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-400 to-violet-500"></div>
+					<div
+						class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-400 to-violet-500">
+					</div>
 
 					<!-- Timeline Items -->
 					<div class="space-y-12">
@@ -442,11 +493,14 @@
 								<h1 class="mx-auto font-semibold text-lg text-blue-600">1</h1>
 							</div>
 							<div class="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4">
-								<h3 class="mb-3 font-bold text-blue-600 text-xl">B.Sc. in Computer Science and Engineering</h3>
+								<h3 class="mb-3 font-bold text-blue-600 text-xl">B.Sc. in Computer Science and
+									Engineering</h3>
 								<p class="text-sm text-gray-600">Gono Bishwabidyalay</p>
 								<p class="text-sm text-gray-500">2018 - 2022</p>
 								<div class="mt-2">
-									<span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">GPA: 3.34</span>
+									<span
+										class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">GPA:
+										3.34</span>
 								</div>
 							</div>
 						</div>
@@ -458,7 +512,9 @@
 								<p class="text-sm text-gray-600">MEH Arif College</p>
 								<p class="text-sm text-gray-500">2017</p>
 								<div class="mt-2">
-									<span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">GPA: 4.50</span>
+									<span
+										class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">GPA:
+										4.50</span>
 								</div>
 							</div>
 							<div class="z-20 flex items-center order-1 bg-blue-100 shadow-xl w-8 h-8 rounded-full">
@@ -478,7 +534,9 @@
 								<p class="text-sm text-gray-600">Baidgaon High School</p>
 								<p class="text-sm text-gray-500">2015</p>
 								<div class="mt-2">
-									<span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">GPA: 4.86</span>
+									<span
+										class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">GPA:
+										4.86</span>
 								</div>
 							</div>
 						</div>
@@ -491,9 +549,11 @@
 				<h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Professional Certifications</h3>
 				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 					<!-- Certification Card 1 -->
-					<div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+					<div
+						class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
 						<div class="bg-gradient-to-r from-blue-500 to-blue-600 p-6 text-white">
-							<div class="flex items-center justify-center w-16 h-16 mx-auto bg-white/20 rounded-full mb-4">
+							<div
+								class="flex items-center justify-center w-16 h-16 mx-auto bg-white/20 rounded-full mb-4">
 								<i class="fas fa-table text-2xl"></i>
 							</div>
 							<h4 class="text-xl font-bold text-center">Excel Basics for Data Analysis</h4>
@@ -507,9 +567,11 @@
 					</div>
 
 					<!-- Certification Card 2 -->
-					<div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+					<div
+						class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
 						<div class="bg-gradient-to-r from-green-500 to-green-600 p-6 text-white">
-							<div class="flex items-center justify-center w-16 h-16 mx-auto bg-white/20 rounded-full mb-4">
+							<div
+								class="flex items-center justify-center w-16 h-16 mx-auto bg-white/20 rounded-full mb-4">
 								<i class="fab fa-python text-2xl"></i>
 							</div>
 							<h4 class="text-xl font-bold text-center">Programming in Python</h4>
@@ -523,9 +585,11 @@
 					</div>
 
 					<!-- Certification Card 3 -->
-					<div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+					<div
+						class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
 						<div class="bg-gradient-to-r from-purple-500 to-purple-600 p-6 text-white">
-							<div class="flex items-center justify-center w-16 h-16 mx-auto bg-white/20 rounded-full mb-4">
+							<div
+								class="flex items-center justify-center w-16 h-16 mx-auto bg-white/20 rounded-full mb-4">
 								<i class="fas fa-headset text-2xl"></i>
 							</div>
 							<h4 class="text-xl font-bold text-center">Technical Support Fundamentals</h4>
@@ -539,9 +603,11 @@
 					</div>
 
 					<!-- Certification Card 4 -->
-					<div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+					<div
+						class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
 						<div class="bg-gradient-to-r from-red-500 to-red-600 p-6 text-white">
-							<div class="flex items-center justify-center w-16 h-16 mx-auto bg-white/20 rounded-full mb-4">
+							<div
+								class="flex items-center justify-center w-16 h-16 mx-auto bg-white/20 rounded-full mb-4">
 								<i class="fas fa-shield-alt text-2xl"></i>
 							</div>
 							<h4 class="text-xl font-bold text-center">Foundations of Cybersecurity</h4>
@@ -562,10 +628,18 @@
 	<section id="activities" class="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
 		<!-- Background Elements -->
 		<div class="absolute inset-0">
-			<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.1),transparent_50%)]"></div>
-			<div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(139,92,246,0.1),transparent_50%)]"></div>
-			<div class="absolute w-96 h-96 -top-48 -right-48 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-			<div class="absolute w-96 h-96 -bottom-48 -left-48 bg-violet-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+			<div
+				class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.1),transparent_50%)]">
+			</div>
+			<div
+				class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(139,92,246,0.1),transparent_50%)]">
+			</div>
+			<div
+				class="absolute w-96 h-96 -top-48 -right-48 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob">
+			</div>
+			<div
+				class="absolute w-96 h-96 -bottom-48 -left-48 bg-violet-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000">
+			</div>
 		</div>
 
 		<!-- Content Container -->
@@ -573,23 +647,27 @@
 			<!-- Section Header -->
 			<div class="text-center mb-16">
 				<div class="flex justify-center mb-6">
-					<span class="animate-bounce px-6 py-3 bg-gradient-to-r from-blue-600 to-violet-600 text-white rounded-full shadow-lg inline-flex items-center">
+					<span
+						class="animate-bounce px-6 py-3 bg-gradient-to-r from-blue-600 to-violet-600 text-white rounded-full shadow-lg inline-flex items-center">
 						<i class="fas fa-hands-helping mr-2"></i>
 						Community Engagement
 					</span>
 				</div>
-				<h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
+				<h2
+					class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
 					Activities & Volunteering
 				</h2>
 				<p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-					Explore my journey in community engagement, leadership, and social responsibility through various initiatives and volunteer work.
+					Explore my journey in community engagement, leadership, and social responsibility through various
+					initiatives and volunteer work.
 				</p>
 			</div>
 
 			<!-- Activities Grid -->
 			<div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
 				<!-- Activity Card 1 -->
-				<div class="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+				<div
+					class="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
 					<div class="bg-gradient-to-r from-blue-500 to-blue-600 p-8 text-white text-center">
 						<div class="flex items-center justify-center w-20 h-20 mx-auto bg-white/20 rounded-full mb-4">
 							<i class="fas fa-user-tie text-3xl"></i>
@@ -604,7 +682,7 @@
 								<span class="text-gray-700">Excel & Python Training Sessions</span>
 							</li>
 							<li class="flex items-start">
-								<i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+								<i class="fas fa-check-circle text-blue-500 mt=1 mr-3"></i>
 								<span class="text-gray-700">Web Development Workshops</span>
 							</li>
 							<li class="flex items-start">
@@ -616,7 +694,8 @@
 				</div>
 
 				<!-- Activity Card 2 -->
-				<div class="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+				<div
+					class="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
 					<div class="bg-gradient-to-r from-green-500 to-green-600 p-8 text-white text-center">
 						<div class="flex items-center justify-center w-20 h-20 mx-auto bg-white/20 rounded-full mb-4">
 							<i class="fas fa-users text-3xl"></i>
@@ -643,7 +722,8 @@
 				</div>
 
 				<!-- Activity Card 3 -->
-				<div class="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+				<div
+					class="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
 					<div class="bg-gradient-to-r from-red-500 to-red-600 p-8 text-white text-center">
 						<div class="flex items-center justify-center w-20 h-20 mx-auto bg-white/20 rounded-full mb-4">
 							<i class="fas fa-heart text-3xl"></i>
@@ -672,15 +752,18 @@
 
 			<!-- Stats Section -->
 			<div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
-				<div class="text-center p-6 bg-white rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105">
+				<div
+					class="text-center p-6 bg-white rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105">
 					<div class="text-4xl font-bold text-blue-600 mb-2">4+</div>
 					<div class="text-gray-600">Blood Drives Organized</div>
 				</div>
-				<div class="text-center p-6 bg-white rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105">
+				<div
+					class="text-center p-6 bg-white rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105">
 					<div class="text-4xl font-bold text-green-600 mb-2">50+</div>
 					<div class="text-gray-600">Workshops Conducted</div>
 				</div>
-				<div class="text-center p-6 bg-white rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105">
+				<div
+					class="text-center p-6 bg-white rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105">
 					<div class="text-4xl font-bold text-purple-600 mb-2">1000+</div>
 					<div class="text-gray-600">People Impacted</div>
 				</div>
@@ -692,10 +775,18 @@
 	<section id="contact" class="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
 		<!-- Background Elements -->
 		<div class="absolute inset-0">
-			<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.1),transparent_50%)]"></div>
-			<div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(139,92,246,0.1),transparent_50%)]"></div>
-			<div class="absolute w-96 h-96 -top-48 -right-48 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-			<div class="absolute w-96 h-96 -bottom-48 -left-48 bg-violet-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+			<div
+				class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.1),transparent_50%)]">
+			</div>
+			<div
+				class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(139,92,246,0.1),transparent_50%)]">
+			</div>
+			<div
+				class="absolute w-96 h-96 -top-48 -right-48 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob">
+			</div>
+			<div
+				class="absolute w-96 h-96 -bottom-48 -left-48 bg-violet-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000">
+			</div>
 		</div>
 
 		<!-- Content Container -->
@@ -703,16 +794,19 @@
 			<!-- Section Header -->
 			<div class="text-center mb-16">
 				<div class="flex justify-center mb-6">
-					<span class="animate-bounce px-6 py-3 bg-gradient-to-r from-blue-600 to-violet-600 text-white rounded-full shadow-lg inline-flex items-center">
+					<span
+						class="animate-bounce px-6 py-3 bg-gradient-to-r from-blue-600 to-violet-600 text-white rounded-full shadow-lg inline-flex items-center">
 						<i class="fas fa-paper-plane mr-2"></i>
 						Let's Connect
 					</span>
 				</div>
-				<h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
+				<h2
+					class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
 					Get In Touch
 				</h2>
 				<p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-					I'm always interested in hearing about new opportunities and projects. Whether you have a question or just want to say hi, feel free to reach out!
+					I'm always interested in hearing about new opportunities and projects. Whether you have a question
+					or just want to say hi, feel free to reach out!
 				</p>
 			</div>
 
@@ -727,7 +821,8 @@
 
 					<div class="space-y-6">
 						<div class="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-							<div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+							<div
+								class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
 								<i class="fas fa-phone text-blue-600"></i>
 							</div>
 							<div class="ml-4">
@@ -737,17 +832,20 @@
 						</div>
 
 						<div class="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-							<div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+							<div
+								class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
 								<i class="fas fa-envelope text-blue-600"></i>
 							</div>
 							<div class="ml-4">
 								<h4 class="text-sm font-semibold text-gray-700">Email</h4>
-								<a href="mailto:babashir8811@gmail.com" class="text-blue-600 hover:underline">babashir8811@gmail.com</a>
+								<a href="mailto:babashir8811@gmail.com"
+									class="text-blue-600 hover:underline">babashir8811@gmail.com</a>
 							</div>
 						</div>
 
 						<div class="flex items-start p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-							<div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+							<div
+								class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
 								<i class="fas fa-map-marker-alt text-blue-600"></i>
 							</div>
 							<div class="ml-4">
@@ -757,7 +855,8 @@
 						</div>
 
 						<div class="flex items-start p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-							<div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+							<div
+								class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
 								<i class="fas fa-home text-blue-600"></i>
 							</div>
 							<div class="ml-4">
@@ -767,11 +866,14 @@
 						</div>
 
 						<div class="flex space-x-4 pt-4">
-							<a href="https://www.linkedin.com/in/bashir-6923131b0" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+							<a href="https://www.linkedin.com/in/bashir-6923131b0" target="_blank"
+								rel="noopener noreferrer"
+								class="flex-1 flex items-center justify-center p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
 								<i class="fab fa-linkedin mr-2"></i>
 								LinkedIn
 							</a>
-							<a href="https://github.com/bashir-CSE" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center p-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors">
+							<a href="https://github.com/bashir-CSE" target="_blank" rel="noopener noreferrer"
+								class="flex-1 flex items-center justify-center p-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors">
 								<i class="fab fa-github mr-2"></i>
 								GitHub
 							</a>
@@ -795,8 +897,7 @@
 								</div>
 								<input type="text" id="name" name="name" required
 									class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-									placeholder="Your full name"
-								/>
+									placeholder="Your full name" />
 							</div>
 						</div>
 
@@ -808,8 +909,7 @@
 								</div>
 								<input type="email" id="email" name="email" required
 									class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-									placeholder="your.email@example.com"
-								/>
+									placeholder="your.email@example.com" />
 							</div>
 						</div>
 
@@ -821,8 +921,7 @@
 								</div>
 								<input type="text" id="subject" name="subject" required
 									class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-									placeholder="What is this about?"
-								/>
+									placeholder="What is this about?" />
 							</div>
 						</div>
 
@@ -886,9 +985,7 @@
 	<!-- Typed.js (replaces TypeIt) -->
 	<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 	<!-- Animate.css -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-	<!-- GLightbox JS -->
-	<script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 	<!-- Custom JavaScript -->
 	<script type="module" src="js/main.js"></script>

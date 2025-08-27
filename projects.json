@@ -1,5 +1,10 @@
 [
   {
+    "image": "my-image/P-6.png",
+    "title": "Admission Trends (2024)",
+    "description": "Understanding Monthly Admission Trends in Aloha Bangladesh All Branches (2024)"
+  },
+  {
     "image": "my-image/P-1.png",
     "title": "Student Fee Manager Chrome Extension",
     "description": "A powerful Chrome extension designed to automate student fee record updates. The extension intelligently identifies unpaid fee entries, fills in details automatically, and streamlines the entire process, significantly reducing manual work and errors."
@@ -24,4 +29,5 @@
     "title": "QR Code Generator and Management",
     "description": "Automated QR code generation system for student certificates with Google Sheets integration."
   }
+  
 ]

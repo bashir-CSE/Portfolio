@@ -35,7 +35,7 @@ This repository contains the source code for my personal portfolio website. It's
 
 -   `particles.js`: For creating the interactive and dynamic background in the hero section.
 -   `Typed.js`: Powers the typing animation for text display.
--   `ScrollReveal.js`: Facilitates smooth and subtle fade-in animations for elements as they enter the viewport.
+
 -   `EmailJS`: Enables direct email sending from the contact form without server-side code.
 -   `Headroom.js`: Manages the intelligent sticky header behavior, hiding and showing it based on scroll direction.
 

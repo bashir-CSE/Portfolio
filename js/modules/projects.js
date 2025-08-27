@@ -27,16 +27,14 @@ export function renderProjects(projects) {
 
     projectCard.innerHTML = `
       <div class="project-image-container">
-        <a href="${project.image}" class="glightbox" data-gallery="projects"
-          data-title="${project.title}"
-          data-description="${project.description}">
+        <a href="${project.image}" class="project-link" data-title="${project.title}">
           <img src="${project.image}" alt="${project.title}" class="project-image" loading="lazy">
           <div class="project-overlay">
           </div>
         </a>
       </div>
       <div class="project-content">
-        <h3 class="project-title">${project.title}</h3>
+        <h6 class="project-title">${project.title}</h6>
         <p class="project-description">${project.description}</p>
       </div>
     `;
