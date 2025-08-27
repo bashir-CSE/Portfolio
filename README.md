@@ -11,35 +11,6 @@ This repository contains the source code for my personal portfolio website. It's
 
 ---
 
-![Portfolio Screenshot](https://via.placeholder.com/900x450.png?text=Add+A+Screenshot+Of+Your+Site+Here)
-*A screenshot of the portfolio website's hero section.*
-
-> Note: Legacy references to “Process Automation Scripts” and “Database Management Solutions” have been removed from the site content to better reflect current focus projects.
-
-## ✨ Features
-
--   **Dynamic Hero Section:** Features an engaging background powered by `particles.js` and a typing effect using `Typed.js` (shuffled phrases) to introduce my professional profile.
--   **Interactive & Accessible Skill Visualizations:** Skill bars and percentage counters animate into view with ARIA updates (role="progressbar", aria-valuenow/min/max).
--   **Seamless Navigation:** Sticky header with `Headroom.js`, active link highlighting, smooth scrolling, and a "Back to Top" button.
--   **Engaging UI:** Subtle fade-in animations via `ScrollReveal.js` and a preloader for a smooth load experience.
--   **Integrated Contact Form:** Fully functional form powered by `EmailJS`.
--   **Modern & Responsive Design:** Tailwind CSS + custom CSS tokens with WCAG AA-compliant buttons and focus-visible styles.
-
-## 🛠️ Tech Stack
-
--   **Core Technologies:** HTML5, SCSS, JavaScript (ES6+)
--   **Styling Framework:** Tailwind CSS (via CDN)
--   **Iconography:** Font Awesome
-
-## 📚 Libraries Used
-
--   `particles.js`: For creating the interactive and dynamic background in the hero section.
--   `Typed.js`: Powers the typing animation for text display.
-
--   `EmailJS`: Enables direct email sending from the contact form without server-side code.
--   `Headroom.js`: Manages the intelligent sticky header behavior, hiding and showing it based on scroll direction.
-
-
 
 ## 📫 Contact
 
